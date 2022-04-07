@@ -45,7 +45,8 @@ const News = () => {
         </Article>
         <Article>
           <InnerInfoWrapper>
-            <Icon src="assets/readingBlue.png"></Icon>
+            <Icon src="assets/reading.png"></Icon>
+
             <AllNewsInfo>
               <SourceAndDateWrapper>
                 <PubDate>Mar-10-2022</PubDate>
@@ -122,9 +123,9 @@ const Wrapper = styled.div`
 `;
 
 const Intro = styled.div`
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 900;
-  margin: 40px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
 `;
 
 const AllArticlesWrapper = styled.div`

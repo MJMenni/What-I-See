@@ -30,7 +30,7 @@ const HeaderWrapper = styled.div`
   margin-bottom: 120px;
   flex-direction: row;
   justify-content: space-between;
-  padding: 30px;
+  padding: 30px 40px;
   /* border: 1px var(--blue) solid; */
 `;
 

@@ -5,7 +5,7 @@ const Resources = () => {
   return (
     <Wrapper>
       <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
-      <Intro>To learn more about Visual Snow Syndrome (VSS) </Intro>
+      {/* <Intro>To learn more about Visual Snow Syndrome (VSS) </Intro> */}
       <LinksWrapper>
         <Link
           href="https://www.visualsnowinitiative.org/"
@@ -25,8 +25,13 @@ const Resources = () => {
           style={{ cursor: "pointer", textDecoration: "none" }}
           target="_blank"
         >
-          VSS Reddit Community
+          You are Not Alone!
         </Link>
+        <LinkInfo>
+          You are Not Alone! is a Reddit group for people with VSS. The online
+          community covers all things related to the condition, and is a great
+          place to ask questions.
+        </LinkInfo>
         <Link
           href="https://www.ata.org/"
           style={{ cursor: "pointer", textDecoration: "none" }}
@@ -34,24 +39,30 @@ const Resources = () => {
         >
           American Tinnitus Association
         </Link>
-        <Link
+        <LinkInfo>
+          The American Tinnitus Association is a non-profit organization that
+          focus on tinnitus. Their core purpose is to promote relief, prevent,
+          and find cures for tinnitus, evidenced by its core values of
+          compassion, credibility, and responsibility.
+        </LinkInfo>
+        {/* <Link
           href="https://www.tinnitus.org.uk/"
           style={{ cursor: "pointer", textDecoration: "none" }}
           target="_blank"
         >
           British Tinnitus Association
-        </Link>
-      </LinksWrapper>{" "}
+        </Link> */}
+      </LinksWrapper>
       <News />
     </Wrapper>
   );
 };
 
-const Intro = styled.div`
-  margin: 40px 0px 0px 0px;
-  font-size: 20px;
-  font-weight: 900;
-`;
+// const Intro = styled.div`
+//   margin: 40px 0px 0px 0px;
+//   font-size: 20px;
+//   font-weight: 900;
+// `;
 
 const Wrapper = styled.div`
   width: 66%;
@@ -78,9 +89,10 @@ const Link = styled.a`
   margin-top: 25px;
   font-size: 20px;
   color: var(--blue);
+  font-weight: 600;
 
   &:hover {
-    font-weight: 900;
+    opacity: 75%;
   }
   &:visited {
     text-decoration: none;

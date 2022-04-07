@@ -2,8 +2,14 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const Slider = () => {
-  const [value, setValue] = useState(0);
   const [size, setSize] = useState(50);
+
+  // let slider = document.querySelector("[type=range]");
+  // let div = document.querySelector("#overlay");
+
+  // slider.addEventListener("input", (e) => {
+  //   div.style.width = e.target.value + "px";
+  // });
 
   return (
     <SliderWrapper className="Slider">

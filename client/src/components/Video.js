@@ -24,6 +24,7 @@ const Video = () => {
 
         <OverlayVideoWrapper className="plyr__video-embed" id="video">
           <iframe
+            id="overlay"
             width="640"
             height="480"
             modestbranding="0"

@@ -46,9 +46,23 @@ const About = () => {
           throughout body
         </Symptom>
       </SymptomsWrapper>
+      <IconWrapper>
+        <Icon src="assets/dizzy.png"></Icon>
+      </IconWrapper>
     </AboutWrapper>
   );
 };
+
+const IconWrapper = styled.div``;
+
+const Icon = styled.img`
+  max-width: 80px;
+  max-height: 80px;
+  border: 2px var(--blue) solid;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 15px;
+`;
 
 const AboutWrapper = styled.div`
   max-width: 66%;
