@@ -5,7 +5,7 @@ const News = () => {
   const [news, setNews] = useState();
 
   useEffect(() => {
-    fetch(`/api.bing.microsoft.com/v7.0/news/search`)
+    fetch(`/resources`)
       .then((res) => res.json())
       .then((data) => {
         setNews(data.data);
@@ -122,31 +122,33 @@ const Wrapper = styled.div`
 `;
 
 const Intro = styled.div`
-  margin-top: 25px;
   font-size: 20px;
   font-weight: 900;
+  margin: 40px 0px 0px 0px;
 `;
 
 const AllArticlesWrapper = styled.div`
-  height: 450px;
+  display: flex;
+  flex-direction: row;
+  height: 250px;
   margin: 20px 0px;
   overflow: scroll;
-  max-width: 1500px;
 `;
 
 const AllNewsInfo = styled.div`
   margin-left: 20px;
   margin-right: 20px;
+  width: 350px;
 `;
 
 const Icon = styled.img`
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 80px;
+  max-height: 80px;
   border: 2px var(--blue) solid;
   border-radius: 50%;
   object-fit: cover;
   padding: 15px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 `;
 
 const SourceAndDateWrapper = styled.div`

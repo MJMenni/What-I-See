@@ -60,7 +60,7 @@ const AboutWrapper = styled.div`
 const AboutTitle = styled.div`
   font-size: 28px;
   font-weight: 900;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   text-align: center;
 `;
 

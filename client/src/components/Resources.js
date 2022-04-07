@@ -7,34 +7,40 @@ const Resources = () => {
       <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
       <Intro>To learn more about Visual Snow Syndrome (VSS) </Intro>
       <LinksWrapper>
-        <a
+        <Link
           href="https://www.visualsnowinitiative.org/"
           style={{ cursor: "pointer", textDecoration: "none" }}
           target="_blank"
         >
           Visual Snow Initiative
-        </a>
-        <a
+        </Link>
+        <LinkInfo>
+          The Visual Snow Initiative was established to increase awareness for
+          Visual Snow, build a community for those who suffer from Visual Snow,
+          and to generate the capital necessary for research and medical
+          advancements.
+        </LinkInfo>
+        <Link
           href="https://www.reddit.com/r/visualsnow/"
           style={{ cursor: "pointer", textDecoration: "none" }}
           target="_blank"
         >
           VSS Reddit Community
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.ata.org/"
           style={{ cursor: "pointer", textDecoration: "none" }}
           target="_blank"
         >
           American Tinnitus Association
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.tinnitus.org.uk/"
           style={{ cursor: "pointer", textDecoration: "none" }}
           target="_blank"
         >
           British Tinnitus Association
-        </a>
+        </Link>
       </LinksWrapper>{" "}
       <News />
     </Wrapper>
@@ -42,7 +48,7 @@ const Resources = () => {
 };
 
 const Intro = styled.div`
-  margin: 25px 0px 12px 0px;
+  margin: 40px 0px 0px 0px;
   font-size: 20px;
   font-weight: 900;
 `;
@@ -56,7 +62,7 @@ const Wrapper = styled.div`
 const ResourcesTitle = styled.div`
   font-size: 28px;
   font-weight: 900;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   padding-top: 80px;
   text-align: center;
 `;
@@ -64,9 +70,26 @@ const ResourcesTitle = styled.div`
 const LinksWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  line-height: 32px;
-  font-size: 18px;
   color: var(--blue);
+`;
+
+const Link = styled.a`
+  margin-bottom: 10px;
+  margin-top: 25px;
+  font-size: 20px;
+  color: var(--blue);
+
+  &:hover {
+    font-weight: 900;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+`;
+
+const LinkInfo = styled.div`
+  font-size: 16px;
+  line-height: 22px;
 `;
 
 export default Resources;

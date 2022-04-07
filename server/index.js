@@ -41,8 +41,30 @@ express()
   .use(express.urlencoded({ extended: false }))
   .use("/", express.static(__dirname + "/"))
 
+
+//GET something from a JSON REST API
+  var options = {
+    uri: '/api.bing.microsoft.com/v7.0/news/search',
+    qs: {
+        access_token: '8c0e7bb90e4b4b7fbac08fbc36df006b' // -> uri + '?access_token=xxxxx%20xxxxx'
+    },
+    headers: {
+        'User-Agent': 'Request-Promise'
+    },
+    json: true // Automatically parses the JSON string in the response
+};
+ 
+rp(options)
+    .then(function (repos) {
+        console.log('User has %d repos', repos.length);
+    })
+    .catch(function (err) {
+        // API call failed...
+    });
+
+
   // REST endpoints
-  .get("/api.bing.microsoft.com/v7.0/news/search", responseHandler())
+  .get("/resources", responseHandler())
 
   // .get("/api.bing.microsoft.com/v7.0/news/search", (req, res) =>
   //   res.status(200).json("success")
