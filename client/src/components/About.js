@@ -47,7 +47,12 @@ const About = () => {
         </Symptom>
       </SymptomsWrapper>
       <IconWrapper>
+        <Icon src="assets/snow.png"></Icon>
+        <Icon src="assets/brightness.png"></Icon>
+        <Icon src="assets/depression.png"></Icon>
+        <Icon src="assets/migraines.png"></Icon>
         <Icon src="assets/dizzy.png"></Icon>
+        <Icon src="assets/depersonalization.png"></Icon>
       </IconWrapper>
     </AboutWrapper>
   );
@@ -61,7 +66,8 @@ const Icon = styled.img`
   border: 2px var(--blue) solid;
   border-radius: 50%;
   object-fit: cover;
-  padding: 15px;
+  padding: 10px;
+  margin: 10px;
 `;
 
 const AboutWrapper = styled.div`

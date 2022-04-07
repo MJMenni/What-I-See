@@ -22,7 +22,7 @@ const News = () => {
       <AllArticlesWrapper>
         <Article>
           <InnerInfoWrapper>
-            <Icon src="assets/readingBlue.png"></Icon>
+            <Icon src="assets/reading.png"></Icon>
             <AllNewsInfo>
               <SourceAndDateWrapper>
                 <PubDate>Mar-10-2022</PubDate>
@@ -69,7 +69,7 @@ const News = () => {
         </Article>
         <Article>
           <InnerInfoWrapper>
-            <Icon src="assets/readingBlue.png"></Icon>
+            <Icon src="assets/reading.png"></Icon>
             <AllNewsInfo>
               <SourceAndDateWrapper>
                 <PubDate>Mar-10-2022</PubDate>
@@ -92,7 +92,7 @@ const News = () => {
         </Article>
         <Article>
           <InnerInfoWrapper>
-            <Icon src="assets/readingBlue.png"></Icon>
+            <Icon src="assets/reading.png"></Icon>
             <AllNewsInfo>
               <SourceAndDateWrapper>
                 <PubDate>Mar-10-2022</PubDate>
