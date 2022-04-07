@@ -6,8 +6,7 @@ const Resources = () => {
     <Wrapper>
       <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
       <Intro>
-        Here are some resources for more infromation on Visual Snow Syndrome
-        (VSS).{" "}
+        Here are some resources to learn more about Visual Snow Syndrome (VSS).{" "}
       </Intro>
       <LinksWrapper>
         <a
@@ -44,7 +43,9 @@ const Resources = () => {
   );
 };
 
-const Intro = styled.div``;
+const Intro = styled.div`
+  font-size: 18px;
+`;
 
 const Wrapper = styled.div`
   width: 66%;
@@ -65,6 +66,7 @@ const LinksWrapper = styled.div`
   flex-direction: column;
   line-height: 32px;
   font-size: 18px;
+  color: var(--blue);
 `;
 
 export default Resources;
