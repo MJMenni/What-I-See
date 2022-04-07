@@ -16,7 +16,7 @@ const Home = () => {
 };
 
 const Wrapper = styled.div`
-  border: 1px green solid;
+  border: 1px pink solid;
   width: 66%;
   display: block;
   margin-left: auto;

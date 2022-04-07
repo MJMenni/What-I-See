@@ -57,22 +57,21 @@ const MainVideoWrapper = styled.div`
   position: absolute;
   top: 90%;
   left: 50%;
+  /* top: 0;
+  left: 0; */
   /* transform: translate(-50%, 0%); */
   /* transform: translateY(-50%); */
   /* width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
   bottom: 0; */
 `;
 
 const OverlayVideoWrapper = styled.div`
   position: absolute;
   opacity: 40%;
-  top: -1px;
-  /* transform: translate(-50%, 0%); */
   top: 90%;
   left: 50%;
+  /* transform: translate(-50%, 0%); */
   /* transform: translateY(-50%); */
 `;
 
