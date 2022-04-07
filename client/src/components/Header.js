@@ -35,7 +35,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 200px;
+  width: 180px;
   margin-left: auto;
   margin-right: auto;
 `;

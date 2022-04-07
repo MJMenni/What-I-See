@@ -5,9 +5,7 @@ const Resources = () => {
   return (
     <Wrapper>
       <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
-      <Intro>
-        Here are some resources to learn more about Visual Snow Syndrome (VSS).{" "}
-      </Intro>
+      <Intro>To learn more about Visual Snow Syndrome (VSS) </Intro>
       <LinksWrapper>
         <a
           href="https://www.visualsnowinitiative.org/"
@@ -44,7 +42,9 @@ const Resources = () => {
 };
 
 const Intro = styled.div`
-  font-size: 18px;
+  margin: 25px 0px 12px 0px;
+  font-size: 20px;
+  font-weight: 900;
 `;
 
 const Wrapper = styled.div`

@@ -1,10 +1,25 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 
 const News = () => {
+  const [news, setNews] = useState();
+
+  useEffect(() => {
+    fetch(`/api.bing.microsoft.com/v7.0/news/search`)
+      .then((res) => res.json())
+      .then((data) => {
+        setNews(data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  console.log("news", news);
+
   return (
     <Wrapper>
-      <Message>Keep up with the latest news and development about VSS!</Message>
-      <ArticlesWrapper>
+      <Intro>Keep up with the latest news about VSS!</Intro>
+      <AllArticlesWrapper>
         <Article>
           <InnerInfoWrapper>
             <Icon src="assets/readingBlue.png"></Icon>
@@ -97,7 +112,7 @@ const News = () => {
             </AllNewsInfo>
           </InnerInfoWrapper>
         </Article>
-      </ArticlesWrapper>
+      </AllArticlesWrapper>
     </Wrapper>
   );
 };
@@ -106,16 +121,17 @@ const Wrapper = styled.div`
   line-height: 24px;
 `;
 
-const Message = styled.div`
+const Intro = styled.div`
   margin-top: 25px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 900;
 `;
 
-const ArticlesWrapper = styled.div`
+const AllArticlesWrapper = styled.div`
   height: 450px;
-  margin-top: 20px;
+  margin: 20px 0px;
   overflow: scroll;
+  max-width: 1500px;
 `;
 
 const AllNewsInfo = styled.div`
@@ -124,8 +140,8 @@ const AllNewsInfo = styled.div`
 `;
 
 const Icon = styled.img`
-  max-width: 110px;
-  max-height: 110px;
+  max-width: 100px;
+  max-height: 100px;
   border: 2px var(--blue) solid;
   border-radius: 50%;
   object-fit: cover;

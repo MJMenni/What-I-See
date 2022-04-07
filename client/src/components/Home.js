@@ -5,9 +5,9 @@ import Video from "./Video";
 const Home = () => {
   return (
     <Wrapper>
-      <VideoWrapper>
+      {/* <VideoWrapper>
         <Video />
-      </VideoWrapper>
+      </VideoWrapper> */}
       <DropdownWrapper>
         <Dropdown />
       </DropdownWrapper>
