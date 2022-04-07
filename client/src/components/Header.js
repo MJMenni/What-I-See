@@ -1,33 +1,44 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <HeaderWrapper>
-      <Logo src="assets/logoColor.png"></Logo>
-      <Menu>
-        <Home>Home</Home>
+      <NavLink
+        to="/about"
+        style={{ cursor: "pointer", textDecoration: "none" }}
+      >
         <About>About</About>
+      </NavLink>
+      <NavLink to="/">
+        <Logo src="assets/logoColor.png"></Logo>
+      </NavLink>
+      <NavLink
+        to="/resources"
+        style={{ cursor: "pointer", textDecoration: "none" }}
+      >
         <Resources>Resources</Resources>
-      </Menu>
+      </NavLink>
     </HeaderWrapper>
   );
 };
 
 const HeaderWrapper = styled.div`
   width: 100%;
-  height: 200px;
+  height: 125px;
   display: flex;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  /* border: 1px var(--blue) solid; */
 `;
 
-const Menu = styled.div``;
-
 const Logo = styled.img`
+  width: 200px;
   margin-left: auto;
   margin-right: auto;
 `;
-
-const Home = styled.div``;
 
 const About = styled.div``;
 

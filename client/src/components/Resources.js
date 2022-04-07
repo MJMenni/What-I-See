@@ -5,6 +5,10 @@ const Resources = () => {
   return (
     <Wrapper>
       <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
+      <Intro>
+        Here are some resources for more infromation on Visual Snow Syndrome
+        (VSS).{" "}
+      </Intro>
       <LinksWrapper>
         <a
           href="https://www.visualsnowinitiative.org/"
@@ -40,6 +44,8 @@ const Resources = () => {
   );
 };
 
+const Intro = styled.div``;
+
 const Wrapper = styled.div`
   width: 66%;
   margin-right: auto;
@@ -50,6 +56,7 @@ const ResourcesTitle = styled.div`
   font-size: 28px;
   font-weight: 900;
   margin-bottom: 40px;
+  padding-top: 80px;
   text-align: center;
 `;
 

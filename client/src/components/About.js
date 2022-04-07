@@ -54,7 +54,7 @@ const AboutWrapper = styled.div`
   max-width: 66%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 50px;
+  padding-top: 80px;
 `;
 
 const AboutTitle = styled.div`

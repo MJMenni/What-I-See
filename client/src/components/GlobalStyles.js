@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

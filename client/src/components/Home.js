@@ -8,19 +8,22 @@ const Home = () => {
       <VideoWrapper>
         <Video />
       </VideoWrapper>
-      {/* <DropdownWrapper>
+      <DropdownWrapper>
         <Dropdown />
-      </DropdownWrapper> */}
+      </DropdownWrapper>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  border: 1px pink solid;
-  width: 66%;
+  /* display: flex; */
+  /* display: block; */
+  /* flex-direction: row; */
+  /* border: 1px pink solid; */
+  /* width: 66%;
   display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
   /* height: 100%; */
   /* padding: 20px; */
   /* display: block; */
@@ -30,12 +33,16 @@ const Wrapper = styled.div`
 
 const VideoWrapper = styled.div`
   /* display: block; */
+  /* width: 60%; */
 `;
 
 const DropdownWrapper = styled.div`
   /* margin-left: auto;
   margin-right: auto; */
+  /* display: block; */
+  /* position: absolute */
   /* display: relative; */
+  /* width: 60%; */
 `;
 
 export default Home;

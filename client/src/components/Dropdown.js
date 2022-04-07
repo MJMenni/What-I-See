@@ -5,9 +5,9 @@ const Dropdown = () => {
   var range = document.querySelector("#range");
   var form = document.querySelector("#form");
 
-  range.addEventListener("input", function () {
-    form.style["width"] = this.value + "em";
-  });
+  // range.addEventListener("input", function () {
+  //   form.style["width"] = this.value + "em";
+  // });
 
   return (
     <DropWrapper>
@@ -15,7 +15,7 @@ const Dropdown = () => {
       <SymptomLabel>Visual Snow</SymptomLabel>
       <AdjustLabel>Type</AdjustLabel>
       <AdjustLabel>Size</AdjustLabel>
-      <input
+      {/* <input
         type="range"
         id="range"
         min="1.0"
@@ -27,8 +27,8 @@ const Dropdown = () => {
       <Form id="form">
         <Label for="">Label</Label>
         <input type="text" value="Some Input Value" />
-      </Form>
-      <Slider></Slider>
+      </Form> */}
+      {/* <Slider></Slider> */}
       <AdjustLabel>Speed</AdjustLabel>
       <AdjustLabel>Opacity</AdjustLabel>
       <SymptomLabel>Tinnitus</SymptomLabel>
