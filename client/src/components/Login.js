@@ -61,7 +61,8 @@ const LoginInputsWrap = styled.div`
 `;
 
 const Wrap = styled.div`
-  margin-top: 360px;
+  /* margin-top: 400px; */
+  margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
   width: 640px;
@@ -72,6 +73,7 @@ const LoginWrap = styled.div`
   justify-content: space-between;
   flex-direction: column;
   border: 1px var(--blue) solid;
+  border-radius: 5px;
 `;
 
 const UserInput = styled.input`

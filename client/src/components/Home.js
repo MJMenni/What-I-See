@@ -9,10 +9,10 @@ const Home = () => {
       <VideoWrapper>
         <Video />
       </VideoWrapper>
-      <Login />
       <DropdownWrapper>
         <Dropdown />
       </DropdownWrapper>
+      <Login />
     </Wrapper>
   );
 };

@@ -65,6 +65,7 @@ const DropWrapper = styled.div`
   /* max-width: 65%; */
   width: 640px;
   line-height: 24px;
+  margin-top: 400px;
 `;
 
 const SymptomsLabel = styled.div`

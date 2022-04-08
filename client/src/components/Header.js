@@ -9,13 +9,13 @@ const Header = () => {
           to="/about"
           style={{ cursor: "pointer", textDecoration: "none" }}
         >
-          <About>About</About>
+          <About>ABOUT</About>
         </NavLink>
         <NavLink
           to="/resources"
           style={{ cursor: "pointer", textDecoration: "none" }}
         >
-          <Resources>Resources</Resources>
+          <Resources>RESOURCES</Resources>
         </NavLink>
       </InnerWrapper>
       <NavLink to="/">
@@ -55,10 +55,14 @@ const Logo = styled.img`
 
 const About = styled.div`
   color: white;
+  font-size: 18px;
+  margin-top: -5px;
 `;
 
 const Resources = styled.div`
   color: white;
+  font-size: 18px;
+  margin-top: -5px;
 `;
 
 export default Header;
