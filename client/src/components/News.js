@@ -5,10 +5,12 @@ const News = () => {
   const [news, setNews] = useState();
 
   useEffect(() => {
-    fetch(`/resources`)
+    fetch(`/api/resources`)
       .then((res) => res.json())
       .then((data) => {
-        setNews(data.data);
+        console.log("here");
+        console.log(data);
+        console.log("data", data);
       })
       .catch((err) => {
         console.log(err);
