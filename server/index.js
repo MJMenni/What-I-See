@@ -1,5 +1,8 @@
 "use strict";
 
+require("dotenv").config({ path: "../.env" });
+const { REACT_APP_BING_KEY } = process.env;
+
 const express = require("express");
 const morgan = require("morgan");
 const fetch = require("node-fetch");
@@ -8,7 +11,7 @@ const PORT = 4000;
 
 let https = require("https");
 
-let subscriptionKey = "8c0e7bb90e4b4b7fbac08fbc36df006b";
+let subscriptionKey = REACT_APP_BING_KEY;
 let host = "api.bing.microsoft.com";
 let path = "/v7.0/news/search";
 let term = "visual";
@@ -35,9 +38,9 @@ express()
   .get("/api/resources", (req, res) => {
     // GET something from a JSON REST API
     var options = {
-      // uri: "/api.bing.microsoft.com/v7.0/news/search",
+      uri: "/api.bing.microsoft.com/v7.0/news/search",
       qs: {
-        access_token: "8c0e7bb90e4b4b7fbac08fbc36df006b", // -> uri + '?access_token=xxxxx%20xxxxx'
+        access_token: REACT_APP_BING_KEY, // -> uri + '?access_token=xxxxx%20xxxxx'
       },
       headers: {
         "User-Agent": "Request-Promise",
@@ -46,10 +49,10 @@ express()
     };
     console.log("connected");
     fetch(
-      // "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
+      "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
       {
         headers: {
-          "Ocp-Apim-Subscription-Key": "8c0e7bb90e4b4b7fbac08fbc36df006b",
+          "Ocp-Apim-Subscription-Key": REACT_APP_BING_KEY,
           Accept: "application/json",
         },
       }

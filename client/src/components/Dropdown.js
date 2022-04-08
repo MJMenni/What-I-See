@@ -7,7 +7,6 @@ const Dropdown = () => {
     <DropWrapper>
       <SymptomsLabel>Symptoms</SymptomsLabel>
       <SymptomLabel>Visual Snow</SymptomLabel>
-      <AdjustLabel>Type</AdjustLabel>
       <AdjustLabel>Size</AdjustLabel>
       <Slider />
       <AdjustLabel>Speed</AdjustLabel>

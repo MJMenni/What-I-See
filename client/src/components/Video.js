@@ -41,7 +41,7 @@ const MainVideoWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  margin-top: 125px;
+  /* margin-top: 125px; */
 
   /* top: 90%;
   left: 50%; */
@@ -62,7 +62,7 @@ const OverlayVideoWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  margin-top: 125px;
+  /* margin-top: 125px; */
   /* transform: translate(70%, 30%); */
   /* top: 90%;
   left: 50%; */
