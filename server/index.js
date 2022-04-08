@@ -46,7 +46,7 @@ express()
     };
     console.log("connected");
     fetch(
-      "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
+      // "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
       {
         headers: {
           "Ocp-Apim-Subscription-Key": "8c0e7bb90e4b4b7fbac08fbc36df006b",

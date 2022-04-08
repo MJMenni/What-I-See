@@ -74,16 +74,16 @@ const About = () => {
             <IconText>Sensitivity to light (photophobia)</IconText>
           </IconTextWrapper>
           <IconTextWrapper>
-            <Icon src="assets/entopic.png"></Icon>
+            <Icon src="assets/palinopsia.png"></Icon>
             <IconText>
               Continuing to see an image after it is no longer in the field of
-              vision (Palinopsia)
+              vision (palinopsia)
             </IconText>
           </IconTextWrapper>
           <IconTextWrapper>
             <Icon src="assets/entopic.png"></Icon>
             <IconText>
-              Seeing images within the eye itself (Entopic phenomena)
+              Seeing images within the eye itself (entopic phenomena)
             </IconText>
           </IconTextWrapper>
           <IconTextWrapper>
