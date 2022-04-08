@@ -30,9 +30,8 @@ const Header = () => {
 const OuterWrapper = styled.div`
   width: 100%;
   height: 50px;
-  margin-bottom: 200px;
-  flex-direction: row;
-  padding: 30px 40px;
+  margin-bottom: 225px;
+  padding: 40px;
   background-color: var(--blue);
 `;
 
@@ -52,8 +51,6 @@ const LogoWrapper = styled.div`
 
 const Logo = styled.img`
   width: 180px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 const About = styled.div`

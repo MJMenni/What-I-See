@@ -6,10 +6,10 @@ import Login from "./Login";
 const Home = () => {
   return (
     <Wrapper>
-      <Login />
       <VideoWrapper>
         <Video />
       </VideoWrapper>
+      <Login />
       <DropdownWrapper>
         <Dropdown />
       </DropdownWrapper>
@@ -18,10 +18,11 @@ const Home = () => {
 };
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
+
+  /* flex-direction: column; */
   /* border: 1px pink solid; */
   /* width: 66%;*/
   /* height: 100%; */
@@ -30,14 +31,14 @@ const Wrapper = styled.div`
 `;
 
 const VideoWrapper = styled.div`
-  width: 40%;
+  /* width: 40%; */
   /* display: block; */
 `;
 
 const DropdownWrapper = styled.div`
-  width: 40%;
+  /* width: 40%;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
   /* display: block; */
   /* position: absolute */
   /* display: relative; */

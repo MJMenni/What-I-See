@@ -62,9 +62,9 @@ const AudioWrapper = styled.div`
 const DropWrapper = styled.div`
   margin-right: auto;
   margin-left: auto;
-  max-width: 65%;
+  /* max-width: 65%; */
+  width: 640px;
   line-height: 24px;
-  margin-top: 450px;
 `;
 
 const SymptomsLabel = styled.div`

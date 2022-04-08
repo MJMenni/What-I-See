@@ -9,14 +9,16 @@ const News = () => {
       .then((res) => res.json())
       .then((data) => {
         setNews(data.data);
-        console.log("data", data.data);
-        console.log("news", news);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+  console.log(news);
 
+  if (!news) {
+    return <div>"is loading" </div>;
+  }
   return (
     <Wrapper>
       <Intro>Keep up with the latest news about VSS!</Intro>
@@ -24,24 +26,20 @@ const News = () => {
         <Article>
           <InnerInfoWrapper>
             <Icon src="assets/reading.png"></Icon>
-            <AllNewsInfo>
-              <SourceAndDateWrapper>
-                <PubDate>Mar-10-2022</PubDate>
-                <Source>Yahoo News</Source>
-              </SourceAndDateWrapper>
-              <Title>
-                Ever see spots or dots? Here's all you need to know about Visual
-                Snow Syndrome
-              </Title>
-
-              <Description>
-                He currently serves at the Glasser Brain Tumor Center in Summit,
-                New Jersey. People with visual snow syndrome see tiny,
-                flickering dots in the entire field of vision. The syndrome was
-                once thought to be a form of migraine, but research suggests it
-                is a ...
-              </Description>
-            </AllNewsInfo>
+            <Link
+              href={news.value[0].url}
+              style={{ cursor: "pointer", textDecoration: "none" }}
+              target="_blank"
+            >
+              <AllNewsInfo>
+                <SourceAndDateWrapper>
+                  <PubDate>{news.value[0].datePublished}</PubDate>
+                  <Source>{news.value[0].provider[0].name}</Source>
+                </SourceAndDateWrapper>
+                <Title>{news.value[0].name}</Title>
+                <Description>{news.value[0].description}</Description>
+              </AllNewsInfo>
+            </Link>
           </InnerInfoWrapper>
         </Article>
         <Article>
@@ -119,6 +117,8 @@ const News = () => {
   );
 };
 
+const Link = styled.a``;
+
 const Wrapper = styled.div`
   line-height: 24px;
 `;
@@ -141,6 +141,10 @@ const AllNewsInfo = styled.div`
   margin-left: 20px;
   margin-right: 20px;
   width: 350px;
+  &:visited {
+    text-decoration: none;
+    color: var(--blue);
+  }
 `;
 
 const Icon = styled.img`

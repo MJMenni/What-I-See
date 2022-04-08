@@ -30,8 +30,11 @@ const Video = () => {
 };
 
 const Wrapper = styled.div`
+  margin-top: 300px;
+  margin-bottom: 75px;
   display: flex;
-  flex-direction: row;
+  /* height: fit-content; */
+  /* flex-direction: row; */
 `;
 
 const MainVideoWrapper = styled.div`

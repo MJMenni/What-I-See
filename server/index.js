@@ -49,7 +49,7 @@ express()
     };
     console.log("connected");
     fetch(
-      "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
+      // "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
       {
         headers: {
           "Ocp-Apim-Subscription-Key": REACT_APP_BING_KEY,
@@ -60,13 +60,14 @@ express()
       .then((res) => {
         return res.json();
       })
-      .then((res) => {
-        console.log(res);
+      .then((data) => {
+        console.log(data);
+        res.status(200).json({
+          status: 200,
+          message: "connected",
+          data,
+        });
       });
-    res.status(200).json({
-      status: 200,
-      message: "connected",
-    });
   })
 
   // Catch-all endpoint
