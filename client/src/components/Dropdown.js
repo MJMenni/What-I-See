@@ -65,6 +65,7 @@ const DropWrapper = styled.div`
   margin-left: auto;
   max-width: 65%;
   line-height: 24px;
+  margin-top: 600px;
 `;
 
 const SymptomsLabel = styled.div`
@@ -80,8 +81,6 @@ const SymptomLabel = styled.div`
 `;
 
 const AdjustLabel = styled.div``;
-
-const Button = styled.button``;
 
 export default Dropdown;
 

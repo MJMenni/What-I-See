@@ -36,11 +36,18 @@ const Wrapper = styled.div`
 
 const MainVideoWrapper = styled.div`
   position: absolute;
-  top: 90%;
-  left: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  margin-top: 125px;
+
+  /* top: 90%;
+  left: 50%; */
   /* top: 0;
   left: 0; */
-  /* transform: translate(-50%, 0%); */
+  /* transform: translate(70%, 30%); */
   /* transform: translateY(-50%); */
   /* width: 100%;
   height: 100%;
@@ -50,18 +57,17 @@ const MainVideoWrapper = styled.div`
 const OverlayVideoWrapper = styled.div`
   position: absolute;
   opacity: 40%;
-  top: 90%;
-  left: 50%;
-  /* transform: translate(-50%, 0%); */
-  /* transform: translateY(-50%); */
-`;
-
-const VideoContainer = styled.div`
-  position: relative;
-  max-width: 1000px;
-  margin-top: 50px;
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: auto;
+  width: fit-content;
+  margin-top: 125px;
+  /* transform: translate(70%, 30%); */
+  /* top: 90%;
+  left: 50%; */
+  /* transform: translate(-50%, 0%); */
+  /* transform: translateY(-50%); */
 `;
 
 export default Video;
