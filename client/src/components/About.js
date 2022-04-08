@@ -10,9 +10,7 @@ const About = () => {
         person's entire visual field. It is often described as tiny flickering
         dots that resemble the noise of a detuned analog television. In addition
         to the static, or “snow”, people with VSS typically experience many
-        other visual and non-visual symptoms. These include tinnitus,
-        sensitivity to light, seeing excessive floaters, seeing an image after
-        it's gone, and many others.
+        other visual and non-visual symptoms.
       </AboutCopy>
       <SpecialCopy>
         For people living with VSS, these symptoms occur 24 hours a day, 7 days
@@ -102,6 +100,7 @@ const About = () => {
 const IconWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 `;
 
 const VisualSymptoms = styled.div`

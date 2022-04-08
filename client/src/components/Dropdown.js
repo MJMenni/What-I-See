@@ -16,20 +16,50 @@ const Dropdown = () => {
       <Slider />
       <SymptomLabel>Tinnitus</SymptomLabel>
       <AdjustLabel>Type</AdjustLabel>
-      <ReactAudioPlayer src="assets/Roaring.mp3" controls id="player1" />
-      <Button onclick="document.getElementById('player1').play()">Play</Button>
-      <Button onclick="document.getElementById('player1').pause()">
-        Pause
-      </Button>
-      <Button onclick="document.getElementById('player1').volume += 0.1">
-        Vol +
-      </Button>
-      <Button onclick="document.getElementById('player1').volume -= 0.1">
-        Vol -
-      </Button>
+      <AudioWrapper>
+        <ReactAudioPlayer src="assets/Roaring.mp3" controls id="player1" />
+        <TinnitusType>Roaring</TinnitusType>
+      </AudioWrapper>
+      <AudioWrapper>
+        <ReactAudioPlayer src="assets/TeaKettle.mp3" controls id="player1" />
+        <TinnitusType>Tea kettle</TinnitusType>
+      </AudioWrapper>
+      <AudioWrapper>
+        <ReactAudioPlayer src="assets/Static.mp3" controls id="player1" />
+        <TinnitusType>Static</TinnitusType>
+      </AudioWrapper>
+      <AudioWrapper>
+        <ReactAudioPlayer src="assets/Screeching.mp3" controls id="player1" />
+        <TinnitusType>Screeching</TinnitusType>
+      </AudioWrapper>
+      <AudioWrapper>
+        <ReactAudioPlayer src="assets/Electric.mp3" controls id="player1" />
+        <TinnitusType>Electric</TinnitusType>
+      </AudioWrapper>
     </DropWrapper>
   );
 };
+
+const TinnitusType = styled.div`
+  margin-left: -120px;
+  margin-top: 15px;
+  text-align: right;
+  z-index: 1;
+  font-weight: 900;
+`;
+
+const AudioWrapper = styled.div`
+  margin-top: 20px;
+  display: flex;
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+  }
+  audio::-webkit-media-controls-timeline,
+  video::-webkit-media-controls-timeline {
+    display: none;
+  }
+`;
 
 const DropWrapper = styled.div`
   margin-right: auto;
@@ -55,3 +85,16 @@ const AdjustLabel = styled.div``;
 const Button = styled.button``;
 
 export default Dropdown;
+
+{
+  /* <Button onclick="document.getElementById('player1').play()">Play</Button>
+<Button onclick="document.getElementById('player1').pause()">
+  Pause
+</Button>
+<Button onclick="document.getElementById('player1').volume += 0.1">
+  Vol +
+</Button>
+<Button onclick="document.getElementById('player1').volume -= 0.1">
+  Vol -
+</Button> */
+}

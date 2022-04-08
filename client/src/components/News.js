@@ -127,7 +127,7 @@ const Wrapper = styled.div`
 const Intro = styled.div`
   font-size: 24px;
   font-weight: 900;
-  margin: 50px 0px 0px 0px;
+  margin: 55px 0px 25px 0px;
 `;
 
 const AllArticlesWrapper = styled.div`

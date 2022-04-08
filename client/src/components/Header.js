@@ -11,7 +11,9 @@ const Header = () => {
         <About>About</About>
       </NavLink>
       <NavLink to="/">
-        <Logo src="assets/logoColor.png"></Logo>
+        <LogoWrapper>
+          <Logo src="assets/logoColor.png"></Logo>
+        </LogoWrapper>
       </NavLink>
       <NavLink
         to="/resources"
@@ -25,13 +27,21 @@ const Header = () => {
 
 const HeaderWrapper = styled.div`
   width: 100%;
-  height: 125px;
+  height: 50px;
   display: flex;
-  margin-bottom: 120px;
+  margin-bottom: 200px;
   flex-direction: row;
   justify-content: space-between;
   padding: 30px 40px;
-  /* border: 1px var(--blue) solid; */
+  border: 1px var(--blue) solid;
+  background-color: var(--blue);
+`;
+
+const LogoWrapper = styled.div`
+  background-color: white;
+  width: 180px;
+  height: 180px;
+  margin-top: 60px;
 `;
 
 const Logo = styled.img`
@@ -40,8 +50,12 @@ const Logo = styled.img`
   margin-right: auto;
 `;
 
-const About = styled.div``;
+const About = styled.div`
+  color: white;
+`;
 
-const Resources = styled.div``;
+const Resources = styled.div`
+  color: white;
+`;
 
 export default Header;
