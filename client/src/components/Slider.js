@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const Slider = () => {
-  const [size, setSize] = useState(50);
+  const [value, setValue] = useState(50);
 
   // let slider = document.querySelector("[type=range]");
   // let div = document.querySelector("#overlay");
@@ -20,24 +20,32 @@ const Slider = () => {
         max="100"
         onChange={(e) => {
           const { value } = e.target;
-          setSize(parseInt(value, 10));
+          setValue(parseInt(value, 10));
         }}
       />
+      <CurrentValue>{value}</CurrentValue>
     </SliderWrapper>
   );
 };
 
 const SliderWrapper = styled.div`
   color: var(--blue);
+  display: flex;
+  align-items: center;
 `;
 
 const Input = styled.input`
   -webkit-appearance: none;
   height: 7px;
+  width: 200px;
   background: var(--blue);
   border-radius: 5px;
   background-repeat: no-repeat;
   /* background-image: linear-gradient(#d46a6a, #d46a6a); */
+`;
+
+const CurrentValue = styled.div`
+  margin-left: 10px;
 `;
 
 export default Slider;

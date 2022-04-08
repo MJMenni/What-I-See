@@ -8,8 +8,9 @@ const News = () => {
     fetch(`/api/resources`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("data", data);
+        setNews(data.data);
         console.log("data", data.data);
+        console.log("news", news);
       })
       .catch((err) => {
         console.log(err);

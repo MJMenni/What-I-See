@@ -3,9 +3,9 @@ import React from "react";
 import ReactPlayer from "react-player";
 
 const Video = () => {
-  let range = document.querySelector("#range");
-  let form = document.querySelector("#form");
-  let video = document.querySelector("#video");
+  // let range = document.querySelector("#range");
+  // let form = document.querySelector("#form");
+  // let video = document.querySelector("#video");
 
   return (
     <Wrapper>
