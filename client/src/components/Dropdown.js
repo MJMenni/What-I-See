@@ -15,7 +15,6 @@ const Dropdown = () => {
       <AdjustLabel>Opacity</AdjustLabel>
       <Slider />
       <SymptomLabel>Tinnitus</SymptomLabel>
-      <AdjustLabel>Type</AdjustLabel>
       <AudioWrapper>
         <ReactAudioPlayer src="assets/Roaring.mp3" controls id="player1" />
         <TinnitusType>Roaring</TinnitusType>

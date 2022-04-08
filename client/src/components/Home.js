@@ -18,7 +18,7 @@ const Home = () => {
 const Wrapper = styled.div`
   /* display: flex; */
   /* display: block; */
-  /* flex-direction: row; */
+  /* flex-direction: column; */
   /* border: 1px pink solid; */
   /* width: 66%;
   display: block;

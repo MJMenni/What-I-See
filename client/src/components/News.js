@@ -8,15 +8,13 @@ const News = () => {
     fetch(`/api/resources`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("here");
-        console.log(data);
         console.log("data", data);
+        console.log("data", data.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  console.log("news", news);
 
   return (
     <Wrapper>

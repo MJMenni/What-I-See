@@ -35,7 +35,7 @@ express()
   .get("/api/resources", (req, res) => {
     // GET something from a JSON REST API
     var options = {
-      uri: "/api.bing.microsoft.com/v7.0/news/search",
+      // uri: "/api.bing.microsoft.com/v7.0/news/search",
       qs: {
         access_token: "8c0e7bb90e4b4b7fbac08fbc36df006b", // -> uri + '?access_token=xxxxx%20xxxxx'
       },
