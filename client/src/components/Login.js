@@ -1,8 +1,37 @@
+import { useState, useContext } from "react";
+import UserContext from "./UserContext";
 import styled from "styled-components";
 
+// Missing useHistory b/c new React version. Refer to Facespace to see useHistory use.
+
 const Login = () => {
+  const [state, setState] = useState(true);
+  const [userInput, setUserInput] = useState("");
+  const { loggedInUser, setLoggedInUser, status, setStatus } =
+    useContext(UserContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ userInput }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoggedInUser(data.data);
+        if (data.data) {
+          localStorage.setItem("user", JSON.stringify(data.data));
+        }
+      })
+      .catch((err) => {
+        setState(false);
+        console.log(err);
+      });
   };
 
   return (
@@ -16,26 +45,29 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <LoginInputsWrap>
             <UserInput
-              // value={userInput}
+              value={userInput}
               type="test"
               onChange={(e) => {
-                // setUserInput(e.target.value);
+                setUserInput(e.target.value);
               }}
               minlength="1"
               placeholder="Username"
               placeholderTextColor="#004aad"
             ></UserInput>
             <Password
-              // value={userInput}
+              value={userInput}
               type="test"
               onChange={(e) => {
-                // setUserInput(e.target.value);
+                setUserInput(e.target.value);
               }}
               minlength="1"
               placeholder="Password"
               placeholderTextColor="#004aad"
             ></Password>
-            <LoginButton>Log in</LoginButton>
+            <LoginButton type="submit">Log in</LoginButton>
+            {state === false ? (
+              <div>Invalid username, please try again</div>
+            ) : null}
             <DownloadButton>Download stats</DownloadButton>
           </LoginInputsWrap>
         </form>
