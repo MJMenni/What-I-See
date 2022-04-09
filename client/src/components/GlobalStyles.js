@@ -28,6 +28,7 @@ html, body {
 body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+ 
 }
 img, picture, video, canvas, svg {
   display: block;

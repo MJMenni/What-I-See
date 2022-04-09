@@ -4,95 +4,105 @@ import Slider from "./Slider";
 
 const Dropdown = () => {
   return (
-    <DropWrap>
-      <SymptomsTitle>
-        Adjust the settings to recreate what you see. To keep track of your
-        symptoms, log in at the bottom of the page and download your stats.{" "}
-      </SymptomsTitle>
+    <OuterWrap>
+      <DropWrap>
+        <SymptomsTitle>
+          Adjust the settings to recreate what you see. To keep track of your
+          symptoms, log in at the bottom of the page and download your stats.{" "}
+        </SymptomsTitle>
 
-      <SymptomsLabel>Visual Snow</SymptomsLabel>
+        <SymptomsLabel>Visual Snow</SymptomsLabel>
 
-      <SliderWrap>
-        <AdjustLabel>Size</AdjustLabel>
-        <Slider />
-      </SliderWrap>
+        <SliderWrap>
+          <AdjustLabel>Size</AdjustLabel>
+          <Slider />
+        </SliderWrap>
 
-      <SliderWrap>
-        <AdjustLabel>Speed</AdjustLabel>
-        <Slider />
-      </SliderWrap>
+        <SliderWrap>
+          <AdjustLabel>Speed</AdjustLabel>
+          <Slider />
+        </SliderWrap>
 
-      <SliderWrap>
-        <AdjustLabel>Opacity</AdjustLabel>
-        <Slider />
-      </SliderWrap>
+        <SliderWrap>
+          <AdjustLabel>Opacity</AdjustLabel>
+          <Slider />
+        </SliderWrap>
 
-      <SymptomsLabel>Tinnitus</SymptomsLabel>
-      <AudioOuterWrap>
-        <TinnitusType>Static</TinnitusType>
-        <AudioWrap>
-          <ReactAudioPlayer
-            src="assets/Static.mp3"
-            controls
-            id="player1"
-            loop
-          />
-        </AudioWrap>
-        <TinnitusType>Kettle</TinnitusType>
-        <AudioWrap>
-          <ReactAudioPlayer
-            src="assets/TeaKettle.mp3"
-            controls
-            id="player1"
-            loop
-          />
-        </AudioWrap>
-        <TinnitusType>Roaring</TinnitusType>
-        <AudioWrap>
-          <ReactAudioPlayer
-            src="assets/Roaring.mp3"
-            controls
-            id="player1"
-            loop
-          />
-        </AudioWrap>
-        <TinnitusType>Electric</TinnitusType>
-        <AudioWrap>
-          <ReactAudioPlayer
-            src="assets/Electric.mp3"
-            controls
-            id="player1"
-            loop
-          />
-        </AudioWrap>
-        <TinnitusType>Buzzing</TinnitusType>
-        <AudioWrap>
-          <ReactAudioPlayer
-            src="assets/buzzing.mp3"
-            controls
-            id="player1"
-            loop
-          />
-        </AudioWrap>
-        <TinnitusType>Screeching</TinnitusType>
-        <AudioWrap>
-          <ReactAudioPlayer
-            src="assets/Screeching.mp3"
-            controls
-            id="player1"
-            loop
-          />
-        </AudioWrap>
-      </AudioOuterWrap>
-    </DropWrap>
+        <SymptomsLabel>Tinnitus</SymptomsLabel>
+        <AudioOuterWrap>
+          <TinnitusType>Static</TinnitusType>
+          <AudioWrap>
+            <ReactAudioPlayer
+              src="assets/Static.mp3"
+              controls
+              id="player1"
+              loop
+            />
+          </AudioWrap>
+          <TinnitusType>Kettle</TinnitusType>
+          <AudioWrap>
+            <ReactAudioPlayer
+              src="assets/TeaKettle.mp3"
+              controls
+              id="player1"
+              loop
+            />
+          </AudioWrap>
+          <TinnitusType>Roaring</TinnitusType>
+          <AudioWrap>
+            <ReactAudioPlayer
+              src="assets/Roaring.mp3"
+              controls
+              id="player1"
+              loop
+            />
+          </AudioWrap>
+          <TinnitusType>Electric</TinnitusType>
+          <AudioWrap>
+            <ReactAudioPlayer
+              src="assets/Electric.mp3"
+              controls
+              id="player1"
+              loop
+            />
+          </AudioWrap>
+          <TinnitusType>Buzzing</TinnitusType>
+          <AudioWrap>
+            <ReactAudioPlayer
+              src="assets/buzzing.mp3"
+              controls
+              id="player1"
+              loop
+            />
+          </AudioWrap>
+          <TinnitusType>Screeching</TinnitusType>
+          <AudioWrap>
+            <ReactAudioPlayer
+              src="assets/Screeching.mp3"
+              controls
+              id="player1"
+              loop
+            />
+          </AudioWrap>
+        </AudioOuterWrap>
+      </DropWrap>
+    </OuterWrap>
   );
 };
+
+const OuterWrap = styled.div`
+  display: flex;
+  max-width: 1250px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+`;
 
 const AudioOuterWrap = styled.div`
   display: flex;
   flex-direction: row;
-  width: 85%;
   flex-wrap: wrap;
+  width: 85%;
   background-color: #f1f3f4;
   padding: 10px 10px 10px 40px;
   margin-right: auto;
@@ -121,17 +131,14 @@ const AudioWrap = styled.div`
 const TinnitusType = styled.div`
   margin-top: 25px;
   font-weight: 900;
-  /* margin-left: 20px; */
   width: 15%;
   height: 15%;
-  /* border: 1px pink solid; */
 `;
 
 const SymptomsTitle = styled.div`
   font-size: 18px;
   text-align: justify;
   font-weight: 900;
-  margin-top: 18px;
 `;
 
 const DropWrap = styled.div`

@@ -3,60 +3,68 @@ import News from "./News";
 
 const Resources = () => {
   return (
-    <Wrapper>
-      <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
-      <LinksWrapper>
-        <Link
-          href="https://www.visualsnowinitiative.org/"
-          style={{ cursor: "pointer", textDecoration: "none" }}
-          target="_blank"
-        >
-          Visual Snow Initiative
-        </Link>
-        <LinkInfo>
-          The Visual Snow Initiative was established to increase awareness for
-          Visual Snow, build a community for those who suffer from Visual Snow,
-          and to generate the capital necessary for research and medical
-          advancements.
-        </LinkInfo>
-        <Link
-          href="https://www.reddit.com/r/visualsnow/"
-          style={{ cursor: "pointer", textDecoration: "none" }}
-          target="_blank"
-        >
-          You are Not Alone!
-        </Link>
-        <LinkInfo>
-          You are Not Alone! is a Reddit group for people with VSS. The online
-          community covers all things related to the condition, and is a great
-          place to ask questions.
-        </LinkInfo>
-        <Link
-          href="https://www.ata.org/"
-          style={{ cursor: "pointer", textDecoration: "none" }}
-          target="_blank"
-        >
-          American Tinnitus Association
-        </Link>
-        <LinkInfo>
-          The American Tinnitus Association is a non-profit organization that
-          focus on tinnitus. Their core purpose is to promote relief, prevent,
-          and find cures for tinnitus.
-        </LinkInfo>
-        {/* <Link
+    <OuterWrapper>
+      <InnerWrapper>
+        <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
+        <LinksWrapper>
+          <Link
+            href="https://www.visualsnowinitiative.org/"
+            style={{ cursor: "pointer", textDecoration: "none" }}
+            target="_blank"
+          >
+            Visual Snow Initiative
+          </Link>
+          <LinkInfo>
+            The Visual Snow Initiative was established to increase awareness for
+            Visual Snow, build a community for those who suffer from Visual
+            Snow, and to generate the capital necessary for research and medical
+            advancements.
+          </LinkInfo>
+          <Link
+            href="https://www.reddit.com/r/visualsnow/"
+            style={{ cursor: "pointer", textDecoration: "none" }}
+            target="_blank"
+          >
+            You are Not Alone!
+          </Link>
+          <LinkInfo>
+            You are Not Alone! is a Reddit group for people with VSS. The online
+            community covers all things related to the condition, and is a great
+            place to ask questions.
+          </LinkInfo>
+          <Link
+            href="https://www.ata.org/"
+            style={{ cursor: "pointer", textDecoration: "none" }}
+            target="_blank"
+          >
+            American Tinnitus Association
+          </Link>
+          <LinkInfo>
+            The American Tinnitus Association is a non-profit organization that
+            focus on tinnitus. Their core purpose is to promote relief, prevent,
+            and find cures for tinnitus.
+          </LinkInfo>
+          {/* <Link
           href="https://www.tinnitus.org.uk/"
           style={{ cursor: "pointer", textDecoration: "none" }}
           target="_blank"
         >
           British Tinnitus Association
         </Link> */}
-      </LinksWrapper>
-      <News />
-    </Wrapper>
+        </LinksWrapper>
+        <News />
+      </InnerWrapper>
+    </OuterWrapper>
   );
 };
 
-const Wrapper = styled.div`
+const OuterWrapper = styled.div`
+  max-width: 1250px;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
+const InnerWrapper = styled.div`
   width: 66%;
   margin-right: auto;
   margin-left: auto;

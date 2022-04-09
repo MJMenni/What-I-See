@@ -3,25 +3,21 @@ import React from "react";
 import ReactPlayer from "react-player";
 
 const Video = () => {
-  // let range = document.querySelector("#range");
-  // let form = document.querySelector("#form");
-  // let video = document.querySelector("#video");
-
   return (
     <Wrapper>
       <MainVideoWrapper>
         <ReactPlayer
           url="https://www.youtube.com/embed/ProM7N7v0cE?rel=0"
-          loop="true"
-          controls="false"
+          loop
+          controls={false}
           // playing="true"
         />
       </MainVideoWrapper>
       <OverlayVideoWrapper>
         <ReactPlayer
           url="https://www.youtube.com/embed/UCfKKW65q7Y?rel=0"
-          loop="true"
-          controls="false"
+          loop
+          controls={false}
           // width="800px"
           // height="400px"
           // playing="true"
@@ -33,12 +29,8 @@ const Video = () => {
 
 const Wrapper = styled.div`
   margin-top: 300px;
-  margin-bottom: 75px;
+  margin-bottom: 30px;
   display: flex;
-
-  /* overflow: hidden; */
-  /* height: fit-content; */
-  /* flex-direction: row; */
 `;
 
 const MainVideoWrapper = styled.div`
@@ -48,17 +40,6 @@ const MainVideoWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  /* margin-top: 125px; */
-
-  /* top: 90%;
-  left: 50%; */
-  /* top: 0;
-  left: 0; */
-  /* transform: translate(70%, 30%); */
-  /* transform: translateY(-50%); */
-  /* width: 100%;
-  height: 100%;
-  bottom: 0; */
 `;
 
 const OverlayVideoWrapper = styled.div`
@@ -69,14 +50,13 @@ const OverlayVideoWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-
-  // To hide video that expands beyond bounding box
-  /* width: 650px;
-  height: 350px;
-  overflow: hidden; */
 `;
 
 export default Video;
+
+// let range = document.querySelector("#range");
+// let form = document.querySelector("#form");
+// let video = document.querySelector("#video");
 
 //Slider (former attempt)
 // const Label = styled.div`
