@@ -18,6 +18,47 @@ const About = () => {
       </SpecialCopy>
 
       <IconWrapper>
+        <VisualSymptoms>
+          <SymptomType>Visual Symptoms</SymptomType>
+          <IconTextWrapper>
+            <Icon src="assets/snow.png"></Icon>
+            <IconText>
+              Snow-like dots all over the field of vision (visual snow)
+            </IconText>
+          </IconTextWrapper>
+          <IconTextWrapper>
+            <Icon src="assets/starbursts.png"></Icon>
+            <IconText>Small floating objects or flashing lights</IconText>
+          </IconTextWrapper>
+          <IconTextWrapper>
+            <Icon src="assets/brightness.png"></Icon>
+            <IconText>Sensitivity to light (photophobia)</IconText>
+          </IconTextWrapper>
+          <IconTextWrapper>
+            <Icon src="assets/palinopsia.png"></Icon>
+            <IconText>
+              Continuing to see an image after it is no longer in the field of
+              vision (palinopsia)
+            </IconText>
+          </IconTextWrapper>
+          <IconTextWrapper>
+            <Icon src="assets/entopic.png"></Icon>
+            <IconText>
+              Seeing images within the eye itself (entopic phenomena)
+            </IconText>
+          </IconTextWrapper>
+          <IconTextWrapper>
+            <Icon src="assets/night.png"></Icon>
+            <IconText>Impaired night vision (nyctalopia)</IconText>
+          </IconTextWrapper>
+          <IconTextWrapper>
+            <Icon src="assets/double.png"></Icon>
+            <IconText>
+              Other visual effects such as starburst, halos, and double vision
+              (diplopia)
+            </IconText>
+          </IconTextWrapper>
+        </VisualSymptoms>
         <NonVisualSymptoms>
           <SymptomType>Non-Visual Symptoms</SymptomType>
           <IconTextWrapper>
@@ -55,52 +96,36 @@ const About = () => {
             </IconText>
           </IconTextWrapper>
         </NonVisualSymptoms>
-        <VisualSymptoms>
-          <SymptomType>Visual Symptoms</SymptomType>
-          <IconTextWrapper>
-            <Icon src="assets/snow.png"></Icon>
-            <IconText>
-              Snow-like dots all over the field of vision (visual snow)
-            </IconText>
-          </IconTextWrapper>
-          <IconTextWrapper>
-            <Icon src="assets/starbursts.png"></Icon>
-            <IconText>Small floating objects or flashing lights</IconText>
-          </IconTextWrapper>
-          <IconTextWrapper>
-            <Icon src="assets/brightness.png"></Icon>
-            <IconText>Sensitivity to light (photophobia)</IconText>
-          </IconTextWrapper>
-          <IconTextWrapper>
-            <Icon src="assets/palinopsia.png"></Icon>
-            <IconText>
-              Continuing to see an image after it is no longer in the field of
-              vision (palinopsia)
-            </IconText>
-          </IconTextWrapper>
-          <IconTextWrapper>
-            <Icon src="assets/entopic.png"></Icon>
-            <IconText>
-              Seeing images within the eye itself (entopic phenomena)
-            </IconText>
-          </IconTextWrapper>
-          <IconTextWrapper>
-            <Icon src="assets/double.png"></Icon>
-            <IconText>
-              Other visual effects such as starburst, halos, and double vision
-              (Diplopia)
-            </IconText>
-          </IconTextWrapper>
-        </VisualSymptoms>
       </IconWrapper>
+      <AboutTitle>
+        About <Italic>What I See</Italic>
+      </AboutTitle>
+      <AboutCopy>
+        <Italic>
+          <Bold>What I See</Bold>
+        </Italic>{" "}
+        is a video simulator that recreates the visual and auditory experience
+        of someone who has VSS. Living with VSS can be difficult, and describing
+        it comes with challenges too. Since little is known about the condition,
+        patients with VSS often encounter many hurdles to get to a proper
+        diagnosis. <Italic>What I See</Italic> is designed to help those with
+        VSS express their everyday experience. Through a variety of settings,
+        users can recreate their symptoms to better communicate their reality to
+        others, whether it’s family, friends, or health professionals.
+      </AboutCopy>
     </AboutWrapper>
   );
 };
+
+const Italic = styled.span`
+  font-style: italic;
+`;
 
 const IconWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  margin-bottom: 85px;
 `;
 
 const VisualSymptoms = styled.div`
@@ -123,8 +148,8 @@ const IconText = styled.div`
 `;
 
 const Icon = styled.img`
-  max-width: 85px;
-  max-height: 85px;
+  width: 85px;
+  height: 85px;
   border: 2px var(--blue) solid;
   border-radius: 50%;
   object-fit: cover;
@@ -137,6 +162,7 @@ const AboutWrapper = styled.div`
   margin-right: auto;
   margin-left: auto;
   padding-top: 80px;
+  padding-bottom: 200px;
 `;
 
 const AboutTitle = styled.div`

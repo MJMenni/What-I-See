@@ -22,6 +22,8 @@ const Video = () => {
           url="https://www.youtube.com/embed/UCfKKW65q7Y?rel=0"
           loop="true"
           controls="false"
+          // width="800px"
+          // height="400px"
           // playing="true"
         />
       </OverlayVideoWrapper>
@@ -33,6 +35,8 @@ const Wrapper = styled.div`
   margin-top: 300px;
   margin-bottom: 75px;
   display: flex;
+
+  /* overflow: hidden; */
   /* height: fit-content; */
   /* flex-direction: row; */
 `;
@@ -65,12 +69,11 @@ const OverlayVideoWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  /* margin-top: 125px; */
-  /* transform: translate(70%, 30%); */
-  /* top: 90%;
-  left: 50%; */
-  /* transform: translate(-50%, 0%); */
-  /* transform: translateY(-50%); */
+
+  // To hide video that expands beyond bounding box
+  /* width: 650px;
+  height: 350px;
+  overflow: hidden; */
 `;
 
 export default Video;

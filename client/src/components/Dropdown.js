@@ -6,9 +6,8 @@ const Dropdown = () => {
   return (
     <DropWrap>
       <SymptomsTitle>
-        Adjust the settings to recreate your experience with VSS. To keep track
-        of your symptoms, log in at the bottom of the page and download your
-        stats.{" "}
+        Adjust the settings to recreate what you see. To keep track of your
+        symptoms, log in at the bottom of the page and download your stats.{" "}
       </SymptomsTitle>
 
       <SymptomsLabel>Visual Snow</SymptomsLabel>
@@ -29,50 +28,80 @@ const Dropdown = () => {
       </SliderWrap>
 
       <SymptomsLabel>Tinnitus</SymptomsLabel>
-
-      <AudioWrap>
-        <TinnitusType>Roaring</TinnitusType>
-        <ReactAudioPlayer src="assets/Roaring.mp3" controls id="player1" loop />
-      </AudioWrap>
-      <AudioWrap>
-        <TinnitusType>Tea kettle</TinnitusType>
-        <ReactAudioPlayer
-          src="assets/TeaKettle.mp3"
-          controls
-          id="player1"
-          loop
-        />
-      </AudioWrap>
-      <AudioWrap>
+      <AudioOuterWrap>
         <TinnitusType>Static</TinnitusType>
-        <ReactAudioPlayer src="assets/Static.mp3" controls id="player1" loop />
-      </AudioWrap>
-      <AudioWrap>
-        <TinnitusType>Screeching</TinnitusType>
-        <ReactAudioPlayer
-          src="assets/Screeching.mp3"
-          controls
-          id="player1"
-          loop
-        />
-      </AudioWrap>
-      <AudioWrap>
+        <AudioWrap>
+          <ReactAudioPlayer
+            src="assets/Static.mp3"
+            controls
+            id="player1"
+            loop
+          />
+        </AudioWrap>
+        <TinnitusType>Kettle</TinnitusType>
+        <AudioWrap>
+          <ReactAudioPlayer
+            src="assets/TeaKettle.mp3"
+            controls
+            id="player1"
+            loop
+          />
+        </AudioWrap>
+        <TinnitusType>Roaring</TinnitusType>
+        <AudioWrap>
+          <ReactAudioPlayer
+            src="assets/Roaring.mp3"
+            controls
+            id="player1"
+            loop
+          />
+        </AudioWrap>
         <TinnitusType>Electric</TinnitusType>
-        <AudioTrackWrap>
+        <AudioWrap>
           <ReactAudioPlayer
             src="assets/Electric.mp3"
             controls
             id="player1"
             loop
           />
-        </AudioTrackWrap>
-      </AudioWrap>
+        </AudioWrap>
+        <TinnitusType>Buzzing</TinnitusType>
+        <AudioWrap>
+          <ReactAudioPlayer
+            src="assets/buzzing.mp3"
+            controls
+            id="player1"
+            loop
+          />
+        </AudioWrap>
+        <TinnitusType>Screeching</TinnitusType>
+        <AudioWrap>
+          <ReactAudioPlayer
+            src="assets/Screeching.mp3"
+            controls
+            id="player1"
+            loop
+          />
+        </AudioWrap>
+      </AudioOuterWrap>
     </DropWrap>
   );
 };
 
+const AudioOuterWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  flex-wrap: wrap;
+  background-color: #f1f3f4;
+  padding: 10px 10px 10px 40px;
+  margin-right: auto;
+  margin-left: auto;
+  /* border: 3px yellow solid; */
+`;
+
 const AudioWrap = styled.div`
-  margin-top: 20px;
+  margin: 10px;
   display: flex;
   audio::-webkit-media-controls-current-time-display,
   audio::-webkit-media-controls-time-remaining-display {
@@ -83,30 +112,26 @@ const AudioWrap = styled.div`
     display: none;
   }
 
-  justify-content: space-between;
-  width: 65%;
+  width: 30%;
   margin-left: auto;
   margin-right: auto;
   /* border: 1px green solid; */
 `;
+
+const TinnitusType = styled.div`
+  margin-top: 25px;
+  font-weight: 900;
+  /* margin-left: 20px; */
+  width: 15%;
+  height: 15%;
+  /* border: 1px pink solid; */
+`;
+
 const SymptomsTitle = styled.div`
   font-size: 18px;
   text-align: justify;
   font-weight: 900;
-  margin-top: 20px;
-`;
-
-const AudioTrackWrap = styled.div`
-  align-items: flex-end;
-  /* border: 1px green solid; */
-`;
-
-const TinnitusType = styled.div`
-  margin-top: 15px;
-  text-align: right;
-  z-index: 1;
-  font-weight: 900;
-  /* margin-left: -120px; */
+  margin-top: 18px;
 `;
 
 const DropWrap = styled.div`
@@ -115,7 +140,6 @@ const DropWrap = styled.div`
   width: 640px;
   line-height: 24px;
   margin-top: 400px;
-  /* max-width: 65%; */
 `;
 
 const SliderWrap = styled.div`
