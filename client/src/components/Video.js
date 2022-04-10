@@ -9,7 +9,9 @@ const Video = () => {
         <ReactPlayer
           url="https://www.youtube.com/embed/ProM7N7v0cE?rel=0"
           loop
-          controls={false}
+          controls="false"
+          width="960px"
+          height="540px"
           // playing="true"
         />
       </MainVideoWrapper>
@@ -17,9 +19,11 @@ const Video = () => {
         <ReactPlayer
           url="https://www.youtube.com/embed/UCfKKW65q7Y?rel=0"
           loop
-          controls={false}
-          // width="800px"
-          // height="400px"
+          controls="false"
+          width="960px"
+          height="540px"
+          // width="1152px"
+          // height="648px"
           // playing="true"
         />
       </OverlayVideoWrapper>
@@ -28,9 +32,9 @@ const Video = () => {
 };
 
 const Wrapper = styled.div`
-  margin-top: 300px;
-  margin-bottom: 30px;
+  margin-top: 20px;
   display: flex;
+  margin-bottom: 150px; ;
 `;
 
 const MainVideoWrapper = styled.div`
@@ -50,6 +54,9 @@ const OverlayVideoWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
+  /* width: 960px;
+  height: 540px;
+  overflow: hidden; */
 `;
 
 export default Video;

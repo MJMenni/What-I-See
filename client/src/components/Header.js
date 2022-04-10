@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <OuterWrapper>
-      <InnerWrapper>
+    <OuterWrap>
+      <InnerWrap>
         <NavLink
           to="/about"
           style={{ cursor: "pointer", textDecoration: "none" }}
@@ -17,25 +17,25 @@ const Header = () => {
         >
           <Resources>RESOURCES</Resources>
         </NavLink>
-      </InnerWrapper>
+      </InnerWrap>
       <NavLink to="/">
         <LogoWrapper>
           <Logo src="assets/logoColor.png"></Logo>
         </LogoWrapper>
       </NavLink>
-    </OuterWrapper>
+    </OuterWrap>
   );
 };
 
-const OuterWrapper = styled.div`
+const OuterWrap = styled.div`
   width: 100%;
   height: 50px;
-  margin-bottom: 225px;
+  margin-bottom: 300px;
   padding: 40px;
   background-color: var(--blue);
 `;
 
-const InnerWrapper = styled.div`
+const InnerWrap = styled.div`
   font-weight: 900;
   display: flex;
   justify-content: space-between;

@@ -6,11 +6,6 @@ const Dropdown = () => {
   return (
     <OuterWrap>
       <DropWrap>
-        <SymptomsTitle>
-          Adjust the settings to recreate what you see. To keep track of your
-          symptoms, log in at the bottom of the page and download your stats.{" "}
-        </SymptomsTitle>
-
         <SymptomsLabel>Visual Snow</SymptomsLabel>
 
         <SliderWrap>
@@ -107,12 +102,18 @@ const AudioOuterWrap = styled.div`
   padding: 10px 10px 10px 40px;
   margin-right: auto;
   margin-left: auto;
+  border-radius: 5px;
   /* border: 3px yellow solid; */
 `;
 
 const AudioWrap = styled.div`
   margin: 10px;
   display: flex;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 1px green solid; */
+
   audio::-webkit-media-controls-current-time-display,
   audio::-webkit-media-controls-time-remaining-display {
     display: none;
@@ -121,11 +122,6 @@ const AudioWrap = styled.div`
   video::-webkit-media-controls-timeline {
     display: none;
   }
-
-  width: 30%;
-  margin-left: auto;
-  margin-right: auto;
-  /* border: 1px green solid; */
 `;
 
 const TinnitusType = styled.div`
@@ -135,18 +131,11 @@ const TinnitusType = styled.div`
   height: 15%;
 `;
 
-const SymptomsTitle = styled.div`
-  font-size: 18px;
-  text-align: justify;
-  font-weight: 900;
-`;
-
 const DropWrap = styled.div`
   margin-right: auto;
   margin-left: auto;
   width: 640px;
   line-height: 24px;
-  margin-top: 400px;
 `;
 
 const SliderWrap = styled.div`

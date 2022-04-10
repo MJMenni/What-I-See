@@ -3,30 +3,51 @@ import styled from "styled-components";
 
 const Slider = () => {
   const [value, setValue] = useState(50);
+  const [size, setSize] = useState(60);
 
-  // let slider = document.querySelector("[type=range]");
-  // let div = document.querySelector("#overlay");
+  let sliderValue = document.getElementById("range");
+  // console.log(sliderValue.value);
 
-  // slider.addEventListener("input", (e) => {
-  //   div.style.width = e.target.value + "px";
-  // });
+  // let sliderSize = document.getElementById("size");
+  // console.log(sliderSize.size);
+
+  // if (!value || !size) {
+  //   return <div>"is loading" </div>;
+  // }
 
   return (
-    <SliderWrapper className="Slider">
-      <Input
-        id="range"
-        type="range"
-        min="0"
-        max="100"
-        onChange={(e) => {
-          const { value } = e.target;
-          setValue(parseInt(value, 10));
-        }}
-      />
-      <CurrentValue>{value}</CurrentValue>
-    </SliderWrapper>
+    <Wrap>
+      <SliderWrapper className="SliderValue">
+        <Input
+          id="range"
+          type="range"
+          min="0"
+          max="100"
+          onChange={(e) => {
+            const { value } = e.target;
+            setValue(parseInt(value, 10));
+          }}
+        />
+        <CurrentValue>{value}</CurrentValue>
+      </SliderWrapper>
+      {/* <SliderWrapper className="SliderSize">
+        <Input
+          id="range"
+          type="range"
+          min="0"
+          max="100"
+          onChange={(e) => {
+            const { size } = e.target;
+            setSize(parseInt(size, 10));
+          }}
+        />
+        <CurrentValue>{size}</CurrentValue>
+      </SliderWrapper> */}
+    </Wrap>
   );
 };
+
+const Wrap = styled.div``;
 
 const SliderWrapper = styled.div`
   color: var(--blue);

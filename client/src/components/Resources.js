@@ -74,7 +74,6 @@ const ResourcesTitle = styled.div`
   font-size: 28px;
   font-weight: 900;
   margin-bottom: 50px;
-  padding-top: 80px;
   text-align: center;
 `;
 

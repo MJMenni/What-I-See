@@ -36,16 +36,16 @@ const About = () => {
               <IconText>Sensitivity to light (photophobia)</IconText>
             </IconTextWrapper>
             <IconTextWrapper>
+              <Icon src="assets/entopic.png"></Icon>
+              <IconText>
+                Seeing images within the eye itself (entopic phenomena)
+              </IconText>
+            </IconTextWrapper>
+            <IconTextWrapper>
               <Icon src="assets/palinopsia.png"></Icon>
               <IconText>
                 Continuing to see an image after it is no longer in the field of
                 vision (palinopsia)
-              </IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
-              <Icon src="assets/entopic.png"></Icon>
-              <IconText>
-                Seeing images within the eye itself (entopic phenomena)
               </IconText>
             </IconTextWrapper>
             <IconTextWrapper>
@@ -174,7 +174,6 @@ const AboutWrapper = styled.div`
   max-width: 66%;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 80px;
   padding-bottom: 200px;
 `;
 
