@@ -8,9 +8,9 @@ const Video = () => {
         <video
           width="960px"
           height="540px"
+          loop={true}
           controls
-          loop="true"
-          // autoplay="true"
+          // autoplay={true}
         >
           <source src="/assets/Original.mp4" type="video/mp4"></source>
         </video>
@@ -19,8 +19,8 @@ const Video = () => {
         <video
           width="960px"
           height="540px"
-          loop="true"
-          // autoplay="true"
+          loop={true}
+          // autoplay={true}
         >
           <source src="/assets/Overlay.mp4" type="video/mp4"></source>
         </video>
@@ -52,9 +52,6 @@ const OverlayVideoWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  /* width: 960px;
-  height: 540px;
-  overflow: hidden; */
 `;
 
 export default Video;
