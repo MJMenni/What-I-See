@@ -5,6 +5,7 @@ const SliderContext = createContext(null);
 
 const initialState = {
   sliderData: "",
+  setSliderData: "",
 };
 
 export const SliderProvider = ({ children }) => {

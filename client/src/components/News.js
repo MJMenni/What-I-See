@@ -25,6 +25,7 @@ const News = () => {
     <Wrapper>
       <Intro>Keep up with the latest news about VSS!</Intro>
       <AllArticlesWrapper>
+        {/* <AllArticlesWrapper key={news[0]._id}> */}
         {news.map((article, index) => {
           return (
             <Article>

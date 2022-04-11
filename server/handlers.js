@@ -1,4 +1,5 @@
 "use strict";
+const { sendResponse } = require("./utils");
 
 const options = {
   useNewUrlParser: true,
@@ -24,6 +25,15 @@ response.on("end", function () {
   console.log(body);
 });
 
+const handleLogin = (req, res) => {
+  const { emailInput } = req.body;
+  const loggedInUser = res.find((email) => {
+    return email === emailInput;
+  });
+  sendResponse(res, 200, loggedInUser);
+};
+
 module.exports = {
   responseHandler,
+  handleLogin,
 };

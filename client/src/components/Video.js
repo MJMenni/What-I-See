@@ -21,8 +21,8 @@ const Video = () => {
       </MainVideoWrapper>
       <OverlayVideoWrapper>
         <video
-          width="960px"
-          height="540px"
+          width={sliderData}
+          height={"540px"}
           loop={true}
           // autoplay={true}
         >

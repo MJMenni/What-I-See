@@ -12,6 +12,8 @@ const PORT = 4000;
 
 let https = require("https");
 
+// const { handleLogin } = require("./handlers");
+
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -64,7 +66,7 @@ express()
     }
 
     // GET something from a JSON REST API
-    // var options = {
+    // let options = {
     //   uri: "/api.bing.microsoft.com/v7.0/news/search",
     //   qs: {
     //     access_token: REACT_APP_BING_KEY, // -> uri + '?access_token=xxxxx%20xxxxx'
@@ -96,6 +98,9 @@ express()
     //     });
     //   });
   })
+
+  // Post endpoint
+  // .post("/api/login", handleLogin())
 
   // Catch-all endpoint
   .get("*", (req, res) => {

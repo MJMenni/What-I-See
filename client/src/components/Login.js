@@ -7,8 +7,8 @@ import styled from "styled-components";
 const Login = () => {
   const [state, setState] = useState(true);
   const [userInput, setUserInput] = useState("");
-  const { loggedInUser, setLoggedInUser, status, setStatus } =
-    useContext(UserContext);
+  const [emailInput, setEmailInput] = useState("");
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,6 +46,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <LoginInputWrap>
             <UserInput
+              id="username"
               value={userInput}
               type="test"
               onChange={(e) => {
@@ -56,10 +57,11 @@ const Login = () => {
               placeholderTextColor="#004aad"
             ></UserInput>
             <Email
-              value={userInput}
+              id="email"
+              value={emailInput}
               type="test"
               onChange={(e) => {
-                setUserInput(e.target.value);
+                setEmailInput(e.target.value);
               }}
               minlength="1"
               placeholder="Email"
@@ -68,12 +70,10 @@ const Login = () => {
             <LoginButton type="submit">Log in</LoginButton>
             {state === false ? (
               <div>Invalid username, please try again</div>
-            ) : null}
+            ) : (
+              <div>Success. Logged in!</div>
+            )}
           </LoginInputWrap>
-          <ConfirmationMessage>Success. Logged in!</ConfirmationMessage>
-          {/* <ConfirmationMessage>
-            Missing some info, try again!{" "}
-          </ConfirmationMessage> */}
           <DownloadWrap>
             <DownloadButton>Download stats</DownloadButton>
           </DownloadWrap>
@@ -111,13 +111,6 @@ const LoginMessage = styled.div`
   margin-right: auto;
   margin-top: 15px;
   margin-bottom: 20px;
-`;
-
-const ConfirmationMessage = styled.div`
-  opacity: 60%;
-  text-align: right;
-  font-size: 14px;
-  margin-right: 25px;
 `;
 
 const LoginInputWrap = styled.div`
