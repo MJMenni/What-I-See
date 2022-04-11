@@ -49,11 +49,12 @@ express()
       await client.connect();
       const db = client.db("WhatISee");
 
-      const news = await db.collection("news").find({}).toArray;
+      const news = await db.collection("news").find({}).toArray();
+      console.log("news", news);
       return res.status(200).json({
         status: 200,
         message: "news fetched",
-        news,
+        data: { value: news },
       });
     } catch (error) {
       console.log(error.stack);

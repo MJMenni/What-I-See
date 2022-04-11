@@ -4,13 +4,11 @@ import Video from "./Video";
 import Login from "./Login";
 
 import { useState } from "react";
+const initialState = { size: 50, speed: 50, opacity: 50 };
 
 const Home = () => {
-  const [value, setValue] = useState(50);
-  const [size, setSize] = useState(60);
-
-  let sliderValue = document.getElementById("range");
-  console.log(sliderValue.value);
+  const [value, setValue] = useState(initialState);
+  console.log(value);
 
   return (
     <Wrap>
@@ -24,18 +22,50 @@ const Home = () => {
         <SliderWrapper className="SliderValue">
           <SliderLabel>Size</SliderLabel>
           <Input
-            id="range"
+            id="size"
             type="range"
             min="0"
             max="100"
+            value={value.size}
             onChange={(e) => {
-              const { value } = e.target;
-              setValue(parseInt(value, 10));
+              setValue({ ...value, size: parseInt(e.target.value) });
             }}
           />
-          <CurrentValue>{value}</CurrentValue>
+          <CurrentValue>{value.size}</CurrentValue>
         </SliderWrapper>
-      </Slider>{" "}
+      </Slider>
+      <Slider>
+        <SliderWrapper className="SliderSpeed">
+          <SliderLabel>Speed</SliderLabel>
+          <Input
+            id="speed"
+            type="range"
+            min="0"
+            max="100"
+            value={value.speed}
+            onChange={(e) => {
+              setValue({ ...value, speed: parseInt(e.target.value) });
+            }}
+          />
+          <CurrentValue>{value.speed}</CurrentValue>
+        </SliderWrapper>
+      </Slider>
+      <Slider>
+        <SliderWrapper className="SliderOpacity">
+          <SliderLabel>Opacity</SliderLabel>
+          <Input
+            id="opacity"
+            type="range"
+            min="0"
+            max="100"
+            value={value.opacity}
+            onChange={(e) => {
+              setValue({ ...value, opacity: parseInt(e.target.value) });
+            }}
+          />
+          <CurrentValue>{value.opacity}</CurrentValue>
+        </SliderWrapper>
+      </Slider>
       <Dropdown />
       <Login />
     </Wrap>
@@ -66,6 +96,7 @@ const SymptomTitle = styled.div`
 const Slider = styled.div`
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   width: 400px;
 `;
 
