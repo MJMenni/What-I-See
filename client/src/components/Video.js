@@ -59,32 +59,3 @@ const OverlayVideoWrapper = styled.div`
 `;
 
 export default Video;
-
-// let range = document.querySelector("#range");
-// let form = document.querySelector("#form");
-// let video = document.querySelector("#video");
-
-// range.addEventListener("input", function () {
-//   form.style["font-size"] = this.value + "em";
-// });
-
-// range.addEventListener("input", function () {
-//   video.style["width"] = this.value + "em";
-// });
-
-{
-  /* <Slider>
-      {" "}
-  <input
-  type="range"
-    id="range"
-    min="1.0"
-    max="3.0"
-    step="0.1"
-    value="2.0"
-    />
-    <Form id="form">
-    <Label for="">Label</Label>
-    </Form>
-    </Slider> */
-}

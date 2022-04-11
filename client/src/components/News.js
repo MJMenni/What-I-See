@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import { Loading } from "./Loading";
 
 const News = () => {
   const [news, setNews] = useState();
@@ -17,101 +18,38 @@ const News = () => {
   }, []);
 
   if (!news) {
-    return <div>"is loading" </div>;
+    return <Loading />;
   }
+
   return (
     <Wrapper>
       <Intro>Keep up with the latest news about VSS!</Intro>
       <AllArticlesWrapper>
-        <Article>
-          <InnerInfoWrapper>
-            <Icon src="assets/reading.png"></Icon>
-            <Link
-              href={news[0].url}
-              style={{ cursor: "pointer", textDecoration: "none" }}
-              target="_blank"
-            >
-              <AllNewsInfo>
-                <SourceAndDateWrapper>
-                  <PubDate>{news[0].datePublished.substr(0, 10)}</PubDate>
-                  <Source>{news[0].provider[0].name}</Source>
-                </SourceAndDateWrapper>
-                <Title>{news[0].name}</Title>
-                <Description>{news[0].description}</Description>
-              </AllNewsInfo>
-            </Link>
-          </InnerInfoWrapper>
-        </Article>
-        <Article>
-          <InnerInfoWrapper>
-            <Icon src="assets/reading.png"></Icon>
-
-            <AllNewsInfo>
-              <SourceAndDateWrapper>
-                <PubDate>Mar-10-2022</PubDate>
-                <Source>Yahoo News</Source>
-              </SourceAndDateWrapper>
-              <Title>
-                Ever see spots or dots? Here's all you need to know about Visual
-                Snow Syndrome
-              </Title>
-
-              <Description>
-                He currently serves at the Glasser Brain Tumor Center in Summit,
-                New Jersey. People with visual snow syndrome see tiny,
-                flickering dots in the entire field of vision. The syndrome was
-                once thought to be a form of migraine, but research suggests it
-                is a ...
-              </Description>
-            </AllNewsInfo>
-          </InnerInfoWrapper>
-        </Article>
-        <Article>
-          <InnerInfoWrapper>
-            <Icon src="assets/reading.png"></Icon>
-            <AllNewsInfo>
-              <SourceAndDateWrapper>
-                <PubDate>Mar-10-2022</PubDate>
-                <Source>Yahoo News</Source>
-              </SourceAndDateWrapper>
-              <Title>
-                Ever see spots or dots? Here's all you need to know about Visual
-                Snow Syndrome
-              </Title>
-
-              <Description>
-                He currently serves at the Glasser Brain Tumor Center in Summit,
-                New Jersey. People with visual snow syndrome see tiny,
-                flickering dots in the entire field of vision. The syndrome was
-                once thought to be a form of migraine, but research suggests it
-                is a ...
-              </Description>
-            </AllNewsInfo>
-          </InnerInfoWrapper>
-        </Article>
-        <Article>
-          <InnerInfoWrapper>
-            <Icon src="assets/reading.png"></Icon>
-            <AllNewsInfo>
-              <SourceAndDateWrapper>
-                <PubDate>Mar-10-2022</PubDate>
-                <Source>Yahoo News</Source>
-              </SourceAndDateWrapper>
-              <Title>
-                Ever see spots or dots? Here's all you need to know about Visual
-                Snow Syndrome
-              </Title>
-
-              <Description>
-                He currently serves at the Glasser Brain Tumor Center in Summit,
-                New Jersey. People with visual snow syndrome see tiny,
-                flickering dots in the entire field of vision. The syndrome was
-                once thought to be a form of migraine, but research suggests it
-                is a ...
-              </Description>
-            </AllNewsInfo>
-          </InnerInfoWrapper>
-        </Article>
+        {news.map((article, index) => {
+          return (
+            <Article>
+              <InnerInfoWrapper>
+                <Icon src="assets/reading.png"></Icon>
+                <Link
+                  href={news[index].url}
+                  style={{ cursor: "pointer", textDecoration: "none" }}
+                  target="_blank"
+                >
+                  <AllNewsInfo>
+                    <SourceAndDateWrapper>
+                      <PubDate>
+                        {news[index].datePublished.substr(0, 10)}
+                      </PubDate>
+                      <Source>{news[index].provider[0].name}</Source>
+                    </SourceAndDateWrapper>
+                    <Title>{news[index].name}</Title>
+                    <Description>{news[index].description}</Description>
+                  </AllNewsInfo>
+                </Link>
+              </InnerInfoWrapper>
+            </Article>
+          );
+        })}
       </AllArticlesWrapper>
     </Wrapper>
   );
