@@ -8,17 +8,14 @@ const News = () => {
     fetch(`/api/resources`)
       .then((res) => res.json())
       .then((data) => {
-        setNews(data.data);
+        setNews(data.news);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  console.log(news);
 
-  if (!news) {
-    return <div>"is loading" </div>;
-  }
+  console.log(news);
   return (
     <Wrapper>
       <Intro>Keep up with the latest news about VSS!</Intro>
@@ -27,17 +24,17 @@ const News = () => {
           <InnerInfoWrapper>
             <Icon src="assets/reading.png"></Icon>
             <Link
-              href={news.value[0].url}
+              // href={news}
               style={{ cursor: "pointer", textDecoration: "none" }}
               target="_blank"
             >
               <AllNewsInfo>
                 <SourceAndDateWrapper>
-                  <PubDate>{news.value[0].datePublished}</PubDate>
-                  <Source>{news.value[0].provider[0].name}</Source>
+                  <PubDate></PubDate>
+                  <Source>{}</Source>
                 </SourceAndDateWrapper>
-                <Title>{news.value[0].name}</Title>
-                <Description>{news.value[0].description}</Description>
+                <Title>{}</Title>
+                <Description>{}</Description>
               </AllNewsInfo>
             </Link>
           </InnerInfoWrapper>

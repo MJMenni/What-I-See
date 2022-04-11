@@ -1,7 +1,8 @@
 "use strict";
 
+const { MongoClient } = require("mongodb");
+
 require("dotenv").config({ path: "../.env" });
-const { REACT_APP_BING_KEY } = process.env;
 
 const express = require("express");
 const morgan = require("morgan");
@@ -10,6 +11,13 @@ const fetch = require("node-fetch");
 const PORT = 4000;
 
 let https = require("https");
+
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+
+const { MONGO_URI, REACT_APP_BING_KEY } = process.env;
 
 let subscriptionKey = REACT_APP_BING_KEY;
 let host = "api.bing.microsoft.com";
@@ -35,39 +43,57 @@ express()
   .use("/", express.static(__dirname + "/"))
 
   // REST endpoints
-  .get("/api/resources", (req, res) => {
-    // GET something from a JSON REST API
-    var options = {
-      uri: "/api.bing.microsoft.com/v7.0/news/search",
-      qs: {
-        access_token: REACT_APP_BING_KEY, // -> uri + '?access_token=xxxxx%20xxxxx'
-      },
-      headers: {
-        "User-Agent": "Request-Promise",
-      },
-      json: true, // Automatically parses the JSON string in the response
-    };
-    console.log("connected");
-    fetch(
-      // "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
-      {
-        headers: {
-          "Ocp-Apim-Subscription-Key": REACT_APP_BING_KEY,
-          Accept: "application/json",
-        },
-      }
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        res.status(200).json({
-          status: 200,
-          message: "connected",
-          data,
-        });
+  .get("/api/resources", async (req, res) => {
+    const client = new MongoClient(MONGO_URI, options);
+    try {
+      await client.connect();
+      const db = client.db("WhatISee");
+
+      const news = await db.collection("news").find({}).toArray;
+      return res.status(200).json({
+        status: 200,
+        message: "news fetched",
+        news,
       });
+    } catch (error) {
+      console.log(error.stack);
+    } finally {
+      await client.close();
+      console.log("Disconnected");
+    }
+
+    // GET something from a JSON REST API
+    // var options = {
+    //   uri: "/api.bing.microsoft.com/v7.0/news/search",
+    //   qs: {
+    //     access_token: REACT_APP_BING_KEY, // -> uri + '?access_token=xxxxx%20xxxxx'
+    //   },
+    //   headers: {
+    //     "User-Agent": "Request-Promise",
+    //   },
+    //   json: true, // Automatically parses the JSON string in the response
+    // };
+    // console.log("connected");
+    // fetch(
+    //   "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
+    //   {
+    //     headers: {
+    //       "Ocp-Apim-Subscription-Key": REACT_APP_BING_KEY,
+    //       Accept: "application/json",
+    //     },
+    //   }
+    // )
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //     res.status(200).json({
+    //       status: 200,
+    //       message: "connected",
+    //       data,
+    //     });
+    //   });
   })
 
   // Catch-all endpoint

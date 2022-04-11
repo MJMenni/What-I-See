@@ -1,39 +1,44 @@
 const { MongoClient } = require("mongodb");
 const { v4: uuidv4 } = require("uuid");
-require("dotenv").config();
+require("dotenv").config({ path: "../.env" });
+const fetch = require("node-fetch");
 
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
-const items = require("./data/items.json");
 
-const { MONGO_URI } = process.env;
-const client = new MongoClient(MONGO_URI, options);
-const db = client.db("WhatISee");
-console.log("Connected!");
+const { MONGO_URI, REACT_APP_BING_KEY } = process.env;
 
 const newsBatchImport = async () => {
-  await client.connect();
-
+  const client = new MongoClient(MONGO_URI, options);
   try {
-    // Iterate over items, get news value, get rid of duplicates, create an object with _id & news key value pairs. Then, insert resulting documents into MongoDB
-    const news = items.map((item) => item.news);
-    const newsSet = new Set(news);
-    const uniqueNews = [...newsSet];
-    const newsDocs = uniqueNews.map((news, _id) => ({
-      _id: uuidv4(),
-      news,
-    }));
+    await client.connect();
+    console.log("connected");
+    const db = client.db("WhatISee");
 
-    await db.collection("news").insertMany(newsDocs);
+    const result = await fetch(
+      "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome?count%20=10&offset&mkt=en-in",
+      {
+        headers: {
+          "Ocp-Apim-Subscription-Key": REACT_APP_BING_KEY,
+          Accept: "application/json",
+        },
+      }
+    );
+    const json = await result.json();
+
+    console.log(json.value);
+
+    await db.collection("news").insertMany(json.value);
 
     console.log("Done! Successfully imported file.");
   } catch (error) {
     console.log(error.stack);
+  } finally {
+    await client.close();
+    console.log("Disconnected");
   }
-  client.close();
-  console.log("Disconnected");
 };
 
 newsBatchImport();
