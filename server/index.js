@@ -12,7 +12,7 @@ const PORT = 4000;
 
 let https = require("https");
 
-// const { handleLogin } = require("./handlers");
+const { handleLogin, handleSignup } = require("./handlers");
 
 const options = {
   useNewUrlParser: true,
@@ -100,8 +100,8 @@ express()
   })
 
   // Post endpoint
-  // .post("/api/login", handleLogin())
-
+  .post("/api/login", handleLogin)
+  .post("/api/signup", handleSignup)
   // Catch-all endpoint
   .get("*", (req, res) => {
     res.status(404).json({

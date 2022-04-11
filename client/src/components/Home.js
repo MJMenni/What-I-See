@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Dropdown from "./Dropdown";
 import Video from "./Video";
 import Login from "./Login";
-
+import Signup from "./Signup";
 import { useState } from "react";
 const initialState = { size: 50, speed: 50, opacity: 50 };
 
@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <Wrap>
-      <Video />
+      <Video stats={value} />
       <Instructions>
         Adjust the settings to recreate what you see. To keep track of your
         symptoms, log in at the bottom of the page and download your stats.{" "}
@@ -68,6 +68,7 @@ const Home = () => {
       </Slider>
       <Dropdown />
       <Login />
+      <Signup />
     </Wrap>
   );
 };

@@ -3,9 +3,8 @@ import React from "react";
 import SliderContext from "./SliderContext";
 import { useContext } from "react";
 
-const Video = () => {
-  const { sliderData, setSliderData } = useContext(SliderContext);
-  console.log(sliderData);
+const Video = ({ stats }) => {
+  const { size, opacity, speed } = stats;
   return (
     <Wrapper>
       <MainVideoWrapper>
@@ -21,7 +20,7 @@ const Video = () => {
       </MainVideoWrapper>
       <OverlayVideoWrapper>
         <video
-          width={sliderData}
+          width={size}
           height={"540px"}
           loop={true}
           // autoplay={true}

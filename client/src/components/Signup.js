@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 // Missing useHistory b/c using new React version. Refer to Facespace to see useHistory use.
 
-const Login = () => {
+const Signup = () => {
   const [state, setState] = useState(true);
   const [userInput, setUserInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
@@ -13,18 +13,18 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("/api/login", {
+    fetch("/api/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ emailInput }),
+      body: JSON.stringify({ emailInput, userInput }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("logged in");
         setLoggedInUser(data.data);
+        console.log("signed in");
         if (data.data) {
           localStorage.setItem("user", JSON.stringify(data.data));
         }
@@ -69,11 +69,6 @@ const Login = () => {
               placeholderTextColor="#004aad"
             ></Email>
             <LoginButton type="submit">Log in</LoginButton>
-            {state === false ? (
-              <div>Invalid username, please try again</div>
-            ) : (
-              <div>Success. Logged in!</div>
-            )}
           </LoginInputWrap>
           <DownloadWrap>
             <DownloadButton>Download stats</DownloadButton>
@@ -87,7 +82,6 @@ const Login = () => {
 const Wrap = styled.div`
   margin-top: 50px;
   max-width: 540px;
-  /* width: 38%; */
   margin-right: auto;
   margin-left: auto;
 `;
@@ -159,4 +153,4 @@ const DownloadButton = styled.button`
   margin: 20px 0px;
 `;
 
-export default Login;
+export default Signup;
