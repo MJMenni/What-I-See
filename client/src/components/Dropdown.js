@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import ReactAudioPlayer from "react-audio-player";
-import Slider from "./Slider";
+// import Slider from "./Slider";
 
 const Dropdown = () => {
   return (
     <OuterWrap>
       <DropWrap>
-        <SymptomsLabel>Visual Snow</SymptomsLabel>
+        {/* <SymptomsLabel>Visual Snow</SymptomsLabel>
 
         <SliderWrap>
           <AdjustLabel>Size</AdjustLabel>
@@ -21,7 +21,7 @@ const Dropdown = () => {
         <SliderWrap>
           <AdjustLabel>Opacity</AdjustLabel>
           <Slider />
-        </SliderWrap>
+        </SliderWrap> */}
 
         <SymptomsLabel>Tinnitus</SymptomsLabel>
         <AudioOuterWrap>

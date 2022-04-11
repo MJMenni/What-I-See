@@ -66,7 +66,7 @@ const Input = styled.input`
 `;
 
 const CurrentValue = styled.div`
-  margin-left: 25px;
+  /* margin-left: 25px; */
 `;
 
 export default Slider;

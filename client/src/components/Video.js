@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import React from "react";
+import SliderContext from "./SliderContext";
+import { useContext } from "react";
 
 const Video = () => {
+  const { sliderData, setSliderData } = useContext(SliderContext);
+  console.log(sliderData);
   return (
     <Wrapper>
       <MainVideoWrapper>
