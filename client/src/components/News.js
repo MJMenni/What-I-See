@@ -48,6 +48,7 @@ const News = () => {
                   </AllNewsInfo>
                 </Link>
               </InnerInfoWrapper>
+              <ReadMore>Read more</ReadMore>
             </Article>
           );
         })}
@@ -56,7 +57,12 @@ const News = () => {
   );
 };
 
-const Link = styled.a``;
+const Link = styled.a`
+  &:visited {
+    text-decoration: none;
+    color: var(--blue);
+  }
+`;
 
 const Wrapper = styled.div`
   line-height: 24px;
@@ -65,67 +71,73 @@ const Wrapper = styled.div`
 const Intro = styled.div`
   font-size: 24px;
   font-weight: 900;
-  margin: 55px 0px 25px 0px;
+  margin: 55px 0px 40px 0px;
+  text-align: center;
 `;
 
 const AllArticlesWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  height: 250px;
-  margin: 20px 0px;
-  overflow: scroll;
+  justify-content: space-between;
 `;
 
 const AllNewsInfo = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 350px;
   &:visited {
     text-decoration: none;
     color: var(--blue);
   }
 `;
 
+const ReadMore = styled.span`
+  font-weight: 900;
+`;
+
 const Icon = styled.img`
-  max-width: 80px;
-  max-height: 80px;
+  width: 85px;
+  height: 85px;
   border: 2px var(--blue) solid;
   border-radius: 50%;
   object-fit: cover;
   padding: 15px;
-  /* margin-top: 5px; */
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
 `;
 
 const SourceAndDateWrapper = styled.div`
-  display: flex;
-  margin-bottom: 10px;
+  text-align: center;
+  margin: 10px 0px;
 `;
 
-const InnerInfoWrapper = styled.div`
-  display: flex;
-`;
+const InnerInfoWrapper = styled.div``;
 
 const Article = styled.div`
+  border: 2px var(--blue) solid;
+  width: 30%;
   border-radius: 5px;
   padding: 20px;
   font-size: 16px;
   text-align: justify;
   line-height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const Title = styled.div`
   font-size: 16px;
   font-weight: 900;
-  text-align: left;
-  margin-bottom: 5px;
+  text-align: center;
+  margin-bottom: 15px;
 `;
 
-const Description = styled.div``;
+const Description = styled.div`
+  font-size: 15px;
+`;
 
 const Source = styled.div``;
 
-const PubDate = styled.div`
-  padding-right: 20px;
-`;
+const PubDate = styled.div``;
 
 export default News;
