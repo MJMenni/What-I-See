@@ -20,7 +20,7 @@ const LoaderWrapper = styled.div`
 `;
 
 const Loader = styled.span`
-  margin-top: 50px;
+  margin-top: 25%;
   border: 4px solid white;
   border-top: 4px solid var(--blue);
   border-radius: 50%;

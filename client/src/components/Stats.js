@@ -4,8 +4,8 @@ const Stats = () => {
   return (
     <Wrap>
       <ViewStatsWrap>
-        <ViewStatsButton>View stats</ViewStatsButton>
         <AddStatsButton>Add stats</AddStatsButton>
+        <ViewStatsButton>View stats</ViewStatsButton>
       </ViewStatsWrap>
       <StatsWrap>
         <StatsTitle>Your VSS Stats</StatsTitle>
@@ -26,6 +26,7 @@ const Wrap = styled.div`
   /* width: 38%; */
   margin-right: auto;
   margin-left: auto;
+  border-radius: 5px;
 `;
 
 const Stat = styled.div`
@@ -46,6 +47,7 @@ const ViewStatsWrap = styled.div`
   width: fit-content;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
   /* border: 1px green solid; */
 `;
 
@@ -61,6 +63,7 @@ const AddStatsButton = styled.button`
   margin-left: auto;
   font-size: 18px;
   width: 150px;
+  margin-right: 5px;
 `;
 
 const ViewStatsButton = styled.button`
@@ -75,6 +78,7 @@ const ViewStatsButton = styled.button`
   margin-left: auto;
   font-size: 18px;
   width: 150px;
+  margin-left: 5px;
   /* border: 1px green solid; */
 `;
 

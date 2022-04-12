@@ -20,12 +20,12 @@ const Home = () => {
         is a video simulator that recreates the visual and auditory experience
         of someone who has{" "}
         <Bold>
-          <Link
+          <NavLinks
             to="/about"
             style={{ cursor: "pointer", textDecoration: "none" }}
           >
             Visual Snow Syndrome (VSS)
-          </Link>
+          </NavLinks>
         </Bold>
         . Living with VSS can be difficult, and describing it comes with
         challenges too. Since little is known about the condition, patients with
@@ -99,22 +99,19 @@ const Home = () => {
   );
 };
 
-const Link = styled(NavLink)`
+const NavLinks = styled(NavLink)`
   &:hover {
     opacity: 75%;
   }
   &:visited {
     text-decoration: none;
+    color: var(--blue);
   }
 `;
 
 const Bold = styled.span`
   font-weight: 600;
   color: var(--blue);
-  &:visited {
-    text-decoration: none;
-    color: var(--blue);
-  }
 `;
 
 const Wrap = styled.div`

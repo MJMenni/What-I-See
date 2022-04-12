@@ -30,12 +30,12 @@ const News = () => {
           return (
             <Article>
               <InnerInfoWrapper>
-                <Icon src="assets/reading.png"></Icon>
                 <Link
                   href={news[index].url}
                   style={{ cursor: "pointer", textDecoration: "none" }}
                   target="_blank"
                 >
+                  <Icon src="assets/reading.png"></Icon>
                   <AllNewsInfo>
                     <SourceAndDateWrapper>
                       <PubDate>
@@ -48,13 +48,6 @@ const News = () => {
                   </AllNewsInfo>
                 </Link>
               </InnerInfoWrapper>
-              <Link
-                href={news[index].url}
-                style={{ cursor: "pointer", textDecoration: "none" }}
-                target="_blank"
-              >
-                <ReadMore>Read more</ReadMore>
-              </Link>
             </Article>
           );
         })}
@@ -130,6 +123,9 @@ const Article = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  &:hover {
+    opacity: 50%;
+  }
 `;
 
 const Title = styled.div`

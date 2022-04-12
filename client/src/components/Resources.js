@@ -7,50 +7,50 @@ const Resources = () => {
       <InnerWrapper>
         <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
         <LinksWrapper>
-          <Link
-            href="https://www.visualsnowinitiative.org/"
-            style={{ cursor: "pointer", textDecoration: "none" }}
-            target="_blank"
-          >
-            Visual Snow Initiative
-          </Link>
-          <LinkInfo>
-            The Visual Snow Initiative was established to increase awareness for
-            Visual Snow, build a community for those who suffer from Visual
-            Snow, and to generate the capital necessary for research and medical
-            advancements.
-          </LinkInfo>
-          <Link
-            href="https://www.reddit.com/r/visualsnow/"
-            style={{ cursor: "pointer", textDecoration: "none" }}
-            target="_blank"
-          >
-            You are Not Alone!
-          </Link>
-          <LinkInfo>
-            You are Not Alone! is a Reddit group for people with VSS. The online
-            community covers all things related to the condition, and is a great
-            place to ask questions.
-          </LinkInfo>
-          <Link
-            href="https://www.ata.org/"
-            style={{ cursor: "pointer", textDecoration: "none" }}
-            target="_blank"
-          >
-            American Tinnitus Association
-          </Link>
-          <LinkInfo>
-            The American Tinnitus Association is a non-profit organization that
-            focus on tinnitus. Their core purpose is to promote relief, prevent,
-            and find cures for tinnitus.
-          </LinkInfo>
-          {/* <Link
-          href="https://www.tinnitus.org.uk/"
-          style={{ cursor: "pointer", textDecoration: "none" }}
-          target="_blank"
-        >
-          British Tinnitus Association
-        </Link> */}
+          <SingleLinkWrap>
+            <Link
+              href="https://www.visualsnowinitiative.org/"
+              style={{ cursor: "pointer", textDecoration: "none" }}
+              target="_blank"
+            >
+              <Resource>Visual Snow Initiative</Resource>
+            </Link>
+            <LinkInfo>
+              The Visual Snow Initiative was established to increase awareness
+              for visual snow, build a community for those who suffer from the
+              condition, and to generate the capital necessary for research and
+              medical advancements.
+            </LinkInfo>
+          </SingleLinkWrap>
+          <SingleLinkWrap>
+            <Link
+              href="https://www.reddit.com/r/visualsnow/"
+              style={{ cursor: "pointer", textDecoration: "none" }}
+              target="_blank"
+            >
+              <Resource>You are Not Alone!</Resource>
+            </Link>
+            <LinkInfo>
+              You are Not Alone! is a Reddit group for people living with VSS.
+              The online community covers all things related to the condition,
+              and is a great place to look up specific topics and ask questions.
+            </LinkInfo>
+          </SingleLinkWrap>
+          <SingleLinkWrap>
+            <Link
+              href="https://www.ata.org/"
+              style={{ cursor: "pointer", textDecoration: "none" }}
+              target="_blank"
+            >
+              <Resource>American Tinnitus Association</Resource>
+            </Link>
+            <LinkInfo>
+              The American Tinnitus Association is a non-profit organization
+              that focus on tinnitus. Their core purpose is to promote
+              prevention and relief, while working towards finding a cure for
+              tinnitus.
+            </LinkInfo>
+          </SingleLinkWrap>
         </LinksWrapper>
         <News />
       </InnerWrapper>
@@ -78,19 +78,11 @@ const ResourcesTitle = styled.div`
   text-align: center;
 `;
 
-const LinksWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: var(--blue);
-`;
-
-const Link = styled.a`
-  margin-bottom: 10px;
-  margin-top: 25px;
-  font-size: 20px;
-  color: var(--blue);
-  font-weight: 600;
-
+const SingleLinkWrap = styled.div`
+  width: 30%;
+  justify-content: space-between;
+  border: 2px var(--blue) solid;
+  border-radius: 5px;
   &:hover {
     opacity: 75%;
   }
@@ -99,9 +91,31 @@ const Link = styled.a`
   }
 `;
 
+const LinksWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  color: var(--blue);
+  justify-content: space-between;
+`;
+
+const Resource = styled.div`
+  text-align: center;
+  margin-top: 20px;
+`;
+
+const Link = styled.a`
+  font-size: 20px;
+  color: var(--blue);
+  font-weight: 600;
+  margin-top: 50px;
+`;
+
 const LinkInfo = styled.div`
   font-size: 16px;
   line-height: 22px;
+  text-align: justify;
+  padding: 20px;
+  /* font-weight: 300; */
 `;
 
 export default Resources;
