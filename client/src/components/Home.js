@@ -12,6 +12,19 @@ const Home = () => {
 
   return (
     <Wrap>
+      <AboutTitle>What I See</AboutTitle>
+      <AboutCopy>
+        <Italic>What I See </Italic>
+        is a video simulator that recreates the visual and auditory experience
+        of someone who has Visual Snow Syndrome (VSS). Living with VSS can be
+        difficult, and describing it comes with challenges too. Since little is
+        known about the condition, patients with VSS often encounter many
+        hurdles to get to a proper diagnosis. <Italic>What I See</Italic> is
+        designed to help those with VSS express their everyday experience.
+        Through a variety of settings, users can recreate their symptoms to
+        better communicate their reality to others, whether it’s family,
+        friends, or health professionals.
+      </AboutCopy>
       <Video stats={value} />
       <Instructions>
         Adjust the settings to recreate what you see. To keep track of your
@@ -26,6 +39,7 @@ const Home = () => {
             type="range"
             min="1"
             max="10"
+            step="0.5"
             value={value.size}
             onChange={(e) => {
               setValue({ ...value, size: parseInt(e.target.value) });
@@ -72,6 +86,31 @@ const Home = () => {
     </Wrap>
   );
 };
+
+const Italic = styled.span`
+  font-style: italic;
+`;
+
+const AboutTitle = styled.div`
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 50px;
+  text-align: center;
+`;
+
+const AboutCopy = styled.div`
+  line-height: 24px;
+  font-size: 18px;
+  text-align: justify;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+`;
+
+const Bold = styled.span`
+  font-weight: 600;
+`;
 
 const Wrap = styled.div``;
 

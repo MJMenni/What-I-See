@@ -36,9 +36,9 @@ const Video = ({ stats }) => {
 };
 
 const Wrapper = styled.div`
-  margin-top: 20px;
   display: flex;
-  margin-bottom: 150px;
+  /* margin-top: 20px; */
+  /* margin-bottom: 150px; */
 `;
 
 const MainVideoWrapper = styled.div`
@@ -51,13 +51,23 @@ const MainVideoWrapper = styled.div`
 `;
 
 const OverlayVideoWrapper = styled.div`
-  position: absolute;
   opacity: 40%;
+  margin: auto;
+  position: absolute;
+  /* top: 0;
   left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
+  bottom: 0;
+  right: 0; */
+
+  /* position: sticky; */
+  /* display: block; */
+  /* flex-grow: 0; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* float: left; */
+  /* vertical-align: top; */
+  /* box-sizing: border-box; */
+  /* width: fit-content; */
 `;
 
 export default Video;

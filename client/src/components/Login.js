@@ -84,7 +84,7 @@ const Login = () => {
           <Username>Username:</Username>
           <VSDataSize>Visual snow size:</VSDataSize>
           <VSDataOpacity>Visual snow opacity:</VSDataOpacity>
-          <TinnitusData>Tinnitus track:</TinnitusData>
+          <TinnitusData>Tinnitus track(s):</TinnitusData>
         </StatsWrap>
       </LoginWrap>
     </Wrap>

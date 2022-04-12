@@ -14,7 +14,7 @@ const About = () => {
           addition to the static, people with VSS typically experience many
           other visual and non-visual symptoms. While some may experience
           moderate symptoms that have little impact on their daily lives, others
-          are completely debilitated by their symptoms.
+          are completely debilitated by the condition.
         </AboutCopy>
         <SpecialCopy>
           For people living with VSS, these symptoms occur 24 hours a day, 7
@@ -103,21 +103,6 @@ const About = () => {
             </IconTextWrapper>
           </NonVisualSymptoms>
         </IconWrapper>
-        <AboutTitle>About What I See</AboutTitle>
-        <AboutCopy>
-          <Italic>
-            <Bold>What I See</Bold>
-          </Italic>{" "}
-          is a video simulator that recreates the visual and auditory experience
-          of someone who has VSS. Living with VSS can be difficult, and
-          describing it comes with challenges too. Since little is known about
-          the condition, patients with VSS often encounter many hurdles to get
-          to a proper diagnosis. <Italic>What I See</Italic> is designed to help
-          those with VSS express their everyday experience. Through a variety of
-          settings, users can recreate their symptoms to better communicate
-          their reality to others, whether it’s family, friends, or health
-          professionals.
-        </AboutCopy>
       </AboutWrapper>
     </Wrapper>
   );
@@ -127,10 +112,6 @@ const Wrapper = styled.div`
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
-`;
-
-const Italic = styled.span`
-  font-style: italic;
 `;
 
 const IconWrapper = styled.div`
