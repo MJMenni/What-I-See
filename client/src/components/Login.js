@@ -79,10 +79,35 @@ const Login = () => {
         <DownloadWrap>
           <DownloadButton>View stats</DownloadButton>
         </DownloadWrap>
+        <StatsWrap>
+          <StatsTitle>Your VSS Stats</StatsTitle>
+          <Username>Username:</Username>
+          <VSDataSize>Visual snow size:</VSDataSize>
+          <VSDataOpacity>Visual snow opacity:</VSDataOpacity>
+          <TinnitusData>Tinnitus track:</TinnitusData>
+        </StatsWrap>
       </LoginWrap>
     </Wrap>
   );
 };
+
+const TinnitusData = styled.div``;
+
+const VSDataSize = styled.div``;
+
+const VSDataOpacity = styled.div``;
+
+const Username = styled.div``;
+
+const StatsTitle = styled.div`
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 10px;
+`;
+
+const StatsWrap = styled.div`
+  padding: 15px;
+`;
 
 const Confirmation = styled.div``;
 

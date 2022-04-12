@@ -6,29 +6,71 @@ Calls are made to the Bing News Search API: www.microsoft.com/en-us/bing/apis/bi
 
 ### GET /api/resources
 
-Gets all news stories that match the "visual snow syndrome" query.
+Gets three top news stories that match the "visual snow syndrome" query.
 
 Should come in this shape:
 
-<!-- ```json
-{
-  "filter": null,
-	"limit": 25,
-	"start": null,
-	"status": 200,
-	"error": false,
-	"message": "Data found.",
-	"total": "7 result(s) found.",
-    "data": [
-	    {
-		    "_id": "c70bc8a8-17f3-4e55-b760-8d45dfd80897",
-		    "category": "Fitness"
-	    },
-      ...
-    ]
+```json
+news [
+  {
+    _id: new ObjectId("62535d5417e350c80ef29583"),
+    name: 'The reason your sight may be clouded by what looks like white noise or static',
+    url: 'https://www.msn.com/en-gb/health/medical/the-reason-your-sight-may-be-clouded-by-what-looks-like-white-noise-or-static/ar-AAW2TJ3',
+    image: { thumbnail: [Object] },
+    description: "Visual snow syndrome has been described as 'tinnitus for the eyes' and also has links to anxiety and depression",
+    mentions: [ [Object], [Object], [Object] ],
+    provider: [ [Object] ],
+    datePublished: '2022-04-10T15:13:44.0000000Z'
   }
-``` -->
+]
+```
+
+### POST /api/login
+
+Description
+
+Should come in this shape:
+
+```json
+// news [
+//   {
+//     _id: new ObjectId("62535d5417e350c80ef29583"),
+//     name: 'The reason your sight may be clouded by what looks like white noise or static',
+//     url: 'https://www.msn.com/en-gb/health/medical/the-reason-your-sight-may-be-clouded-by-what-looks-like-white-noise-or-static/ar-AAW2TJ3',
+//     image: { thumbnail: [Object] },
+//     description: "Visual snow syndrome has been described as 'tinnitus for the eyes' and also has links to anxiety and depression",
+//     mentions: [ [Object], [Object], [Object] ],
+//     provider: [ [Object] ],
+//     datePublished: '2022-04-10T15:13:44.0000000Z'
+//   }
+// ]
+```
+
+### POST /api/signup
+
+Description
+
+Should come in this shape:
+
+```json
+// news [
+//   {
+//     _id: new ObjectId("62535d5417e350c80ef29583"),
+//     name: 'The reason your sight may be clouded by what looks like white noise or static',
+//     url: 'https://www.msn.com/en-gb/health/medical/the-reason-your-sight-may-be-clouded-by-what-looks-like-white-noise-or-static/ar-AAW2TJ3',
+//     image: { thumbnail: [Object] },
+//     description: "Visual snow syndrome has been described as 'tinnitus for the eyes' and also has links to anxiety and depression",
+//     mentions: [ [Object], [Object], [Object] ],
+//     provider: [ [Object] ],
+//     datePublished: '2022-04-10T15:13:44.0000000Z'
+//   }
+// ]
+```
 
 | Endpoint | Method | Description |
 
-| `/api/resources` | GET | This endpoint returns an array of objects with all news stories about VSS |
+| `/api/resources` | GET | This endpoint returns an array of objects with three top news stories about VSS |
+
+| `/api/login` | POST | This endpoint |
+
+| `/api/signup` | POST | This endpoint |
