@@ -86,6 +86,10 @@ const Home = () => {
   );
 };
 
+const Wrap = styled.div`
+  /* max-width: 1000px; */
+`;
+
 const Italic = styled.span`
   font-style: italic;
 `;
@@ -106,8 +110,6 @@ const AboutCopy = styled.div`
   margin-right: auto;
   margin-bottom: 25px;
 `;
-
-const Wrap = styled.div``;
 
 const Instructions = styled.div`
   font-size: 16px;
