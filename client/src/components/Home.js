@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import Video from "./Video";
 import Login from "./Login";
 import Signup from "./Signup";
-import { useState } from "react";
 import Stats from "./Stats";
-import { NavLink } from "react-router-dom";
 const initialState = { size: 1, speed: 1, opacity: 1 };
 
 const Home = () => {
@@ -15,31 +15,34 @@ const Home = () => {
   return (
     <Wrap>
       <AboutTitle>What I See</AboutTitle>
-      <AboutCopy>
-        <Italic>What I See </Italic>
-        is a video simulator that recreates the visual and auditory experience
-        of someone who has{" "}
-        <Bold>
-          <NavLinks
-            to="/about"
-            style={{ cursor: "pointer", textDecoration: "none" }}
-          >
-            Visual Snow Syndrome (VSS)
-          </NavLinks>
-        </Bold>
-        . Living with VSS can be difficult, and describing it comes with
-        challenges too. Since little is known about the condition, patients with
-        VSS often encounter many hurdles to get to a proper diagnosis.{" "}
-        <Italic>What I See</Italic> is designed to help those with VSS express
-        their everyday experience. Through a variety of settings, users can
-        recreate their symptoms to better communicate their reality to others,
-        whether it’s family, friends, or health professionals.
-      </AboutCopy>
+      <AboutWrap>
+        {/* <Icon src="assets/slider.png"></Icon> */}
+        <AboutCopy>
+          <Italic>What I See </Italic>
+          is a video simulator that recreates the visual and auditory experience
+          of someone who has{" "}
+          <Bold>
+            <NavLinks
+              to="/about"
+              style={{ cursor: "pointer", textDecoration: "none" }}
+            >
+              Visual Snow Syndrome (VSS)
+            </NavLinks>
+          </Bold>
+          . Living with VSS can be difficult, and describing it comes with
+          challenges too. Since little is known about the condition, patients
+          with VSS often encounter many hurdles to get to a proper diagnosis.{" "}
+          <Italic>What I See</Italic> is designed to help those with VSS express
+          their everyday experience. Through a variety of settings, users can
+          recreate their symptoms to better communicate their reality to others,
+          whether it’s family, friends, or health professionals.
+        </AboutCopy>
+      </AboutWrap>
       <Video stats={value} />
-      <Instructions>
-        Adjust the settings to recreate what you see. To keep track of your
-        symptoms and view your stats, log in at the bottom of the page.
-      </Instructions>
+      {/* <Instructions>
+        Adjust the settings to recreate what you see. Keep track of your
+        symptoms at the bottom of the page.
+      </Instructions> */}
       <SectionTitle>Visual Snow</SectionTitle>
       <Slider>
         <SliderWrapper className="SliderValue">
@@ -99,6 +102,35 @@ const Home = () => {
   );
 };
 
+const AboutWrap = styled.div`
+  max-width: 956px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  /* border: 1px green solid; */
+`;
+
+// const Icon = styled.img`
+//   width: 85px;
+//   height: 85px;
+//   border: 2px var(--blue) solid;
+//   border-radius: 50%;
+//   object-fit: cover;
+//   padding: 15px;
+//   margin-top: 50px;
+// `;
+
+const AboutCopy = styled.div`
+  line-height: 24px;
+  font-size: 16px;
+  text-align: justify;
+  width: 810px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  /* border: 2px yellow solid; */
+`;
+
 const NavLinks = styled(NavLink)`
   &:hover {
     opacity: 75%;
@@ -114,9 +146,7 @@ const Bold = styled.span`
   color: var(--blue);
 `;
 
-const Wrap = styled.div`
-  /* max-width: 1000px; */
-`;
+const Wrap = styled.div``;
 
 const Italic = styled.span`
   font-style: italic;
@@ -129,16 +159,6 @@ const AboutTitle = styled.div`
   text-align: center;
 `;
 
-const AboutCopy = styled.div`
-  line-height: 24px;
-  font-size: 18px;
-  text-align: justify;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 25px;
-`;
-
 const Instructions = styled.div`
   font-size: 16px;
   text-align: justify;
@@ -147,6 +167,7 @@ const Instructions = styled.div`
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  width: 800px;
 `;
 
 const SectionTitle = styled.div`

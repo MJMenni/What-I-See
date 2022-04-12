@@ -98,7 +98,7 @@ const AudioOuterWrap = styled.div`
   flex-wrap: wrap;
   width: 85%;
   background-color: #f1f3f4;
-  padding: 10px 10px 10px 25px;
+  padding: 15px 5px 15px 35px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 5px;

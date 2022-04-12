@@ -87,11 +87,6 @@ const AllNewsInfo = styled.div`
   }
 `;
 
-const ReadMore = styled.span`
-  font-weight: 900;
-  margin-top: 20px;
-`;
-
 const Icon = styled.img`
   width: 85px;
   height: 85px;

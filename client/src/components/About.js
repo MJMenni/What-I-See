@@ -9,9 +9,9 @@ const About = () => {
           <Bold>Visual Snow Syndrome (VSS)</Bold> is a neurological disorder
           that impacts how a person processes visual and auditory information.
           The condition causes individuals to see a continuous layer of tiny
-          flickering dots over their entire visual field. This is often describe
-          this as seeing through a transparent layer of television static. In
-          addition to the static, people with VSS typically experience many
+          flickering dots over their entire visual field. This is often
+          described as seeing through a transparent layer of television static.
+          In addition to the static, people with VSS typically experience many
           other visual and non-visual symptoms. While some may experience
           moderate symptoms that have little impact on their daily lives, others
           are completely debilitated by the condition.
