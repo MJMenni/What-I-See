@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const About = () => {
   return (
-    <Wrapper>
-      <AboutWrapper>
+    <Wrap>
+      <AboutWrap>
         <AboutTitle>About Visual Snow Syndrome</AboutTitle>
         <AboutCopy>
           <Bold>Visual Snow Syndrome (VSS)</Bold> is a neurological disorder
@@ -103,12 +103,12 @@ const About = () => {
             </IconTextWrapper>
           </NonVisualSymptoms>
         </IconWrapper>
-      </AboutWrapper>
-    </Wrapper>
+      </AboutWrap>
+    </Wrap>
   );
 };
 
-const Wrapper = styled.div`
+const Wrap = styled.div`
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
@@ -154,7 +154,7 @@ const Icon = styled.img`
   }
 `;
 
-const AboutWrapper = styled.div`
+const AboutWrap = styled.div`
   max-width: 66%;
   margin-right: auto;
   margin-left: auto;

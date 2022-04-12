@@ -4,7 +4,7 @@ import Video from "./Video";
 import Login from "./Login";
 import Signup from "./Signup";
 import { useState } from "react";
-const initialState = { size: 1, speed: 50, opacity: 5 };
+const initialState = { size: 1, speed: 1, opacity: 1 };
 
 const Home = () => {
   const [value, setValue] = useState(initialState);
@@ -39,7 +39,6 @@ const Home = () => {
             type="range"
             min="1"
             max="10"
-            step="0.5"
             value={value.size}
             onChange={(e) => {
               setValue({ ...value, size: parseInt(e.target.value) });
@@ -54,8 +53,8 @@ const Home = () => {
           <Input
             id="speed"
             type="range"
-            min="0"
-            max="100"
+            min="1"
+            max="10"
             value={value.speed}
             onChange={(e) => {
               setValue({ ...value, speed: parseInt(e.target.value) });
@@ -70,7 +69,7 @@ const Home = () => {
           <Input
             id="opacity"
             type="range"
-            min="0"
+            min="1"
             max="10"
             value={value.opacity}
             onChange={(e) => {
@@ -108,16 +107,12 @@ const AboutCopy = styled.div`
   margin-bottom: 25px;
 `;
 
-const Bold = styled.span`
-  font-weight: 600;
-`;
-
 const Wrap = styled.div``;
 
 const Instructions = styled.div`
   font-size: 16px;
   text-align: justify;
-  margin-top: 555px;
+  margin-top: 8px;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;

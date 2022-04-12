@@ -13,17 +13,17 @@ const Video = ({ stats }) => {
   return (
     <Wrapper>
       <MainVideoWrapper>
-        <video width={960} height={540} loop={true} controls autoplay={true}>
+        <video width={960} height={540} loop={true} controls autoPlay={true}>
           <source src="/assets/Original.mp4" type="video/mp4"></source>
         </video>
       </MainVideoWrapper>
       <OverlayVideoWrapper onLoad={videoRate} style={{ opacity: opacity / 20 }}>
         <video
           id="vid2"
-          width={size * 2048}
-          height={size * 512}
+          width={size * size * size + 1000}
           autoPlay={true}
           loop={true}
+          // height={size * 512}
           // controls
           // playbackRate={0.5}
           muted
@@ -37,8 +37,17 @@ const Video = ({ stats }) => {
 
 const Wrapper = styled.div`
   display: flex;
-  /* margin-top: 20px; */
-  /* margin-bottom: 150px; */
+  position: relative;
+  /* width: 960px; */
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+
+  video {
+    border: 4px pink solid;
+    max-width: 100%;
+    overflow: hidden;
+  }
 `;
 
 const MainVideoWrapper = styled.div`
@@ -51,9 +60,17 @@ const MainVideoWrapper = styled.div`
 `;
 
 const OverlayVideoWrapper = styled.div`
-  opacity: 40%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  max-width: 100%;
+  /* opacity: 40%;
   position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0; */
+  border: 5px green solid;
+
   /* top: 0;
   left: 0;
   bottom: 0;
