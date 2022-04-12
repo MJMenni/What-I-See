@@ -95,7 +95,7 @@ const LoginWrap = styled.div`
 const MessagesWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 15px;
+  margin: 25px;
 `;
 
 const LoginMessage = styled.div`
@@ -109,7 +109,7 @@ const LoginMessage = styled.div`
 const LoginInputWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0px 15px 10px 15px;
+  margin: 0px 25px 25px 25px;
 `;
 
 const UserInput = styled.input`

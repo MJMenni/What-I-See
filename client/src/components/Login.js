@@ -37,12 +37,12 @@ const Login = () => {
 
   return (
     <Wrap>
-      <LoginWrap>
-        <MessagesWrap>
+      <OuterWrap>
+        <InnerWrap>
           <LoginMessage>
             Already have an account? Log in and view your stats
           </LoginMessage>
-        </MessagesWrap>
+        </InnerWrap>
 
         <form onSubmit={handleSubmit}>
           <LoginInputWrap>
@@ -69,35 +69,31 @@ const Login = () => {
               placeholderTextColor="#004aad"
             ></Email>
             <LoginButton type="submit">Log in</LoginButton>
-            {state === false ? (
-              <Confirmation>Invalid username, please try again</Confirmation>
-            ) : (
-              <Confirmation>Success. Logged in!</Confirmation>
-            )}
           </LoginInputWrap>
+          {state === false ? (
+            <Confirmation>Invalid username, please try again</Confirmation>
+          ) : (
+            <Confirmation>Success. Logged in!</Confirmation>
+          )}
         </form>
         <DownloadWrap>
           <DownloadButton>View stats</DownloadButton>
         </DownloadWrap>
         <StatsWrap>
           <StatsTitle>Your VSS Stats</StatsTitle>
-          <Username>Username:</Username>
-          <VSDataSize>Visual snow size:</VSDataSize>
-          <VSDataOpacity>Visual snow opacity:</VSDataOpacity>
-          <TinnitusData>Tinnitus track(s):</TinnitusData>
+          <Stats>Username:</Stats>
+          <Stats>Visual snow size:</Stats>
+          <Stats>Visual snow opacity:</Stats>
+          <Stats>Tinnitus track(s):</Stats>
         </StatsWrap>
-      </LoginWrap>
+      </OuterWrap>
     </Wrap>
   );
 };
 
-const TinnitusData = styled.div``;
-
-const VSDataSize = styled.div``;
-
-const VSDataOpacity = styled.div``;
-
-const Username = styled.div``;
+const Stats = styled.div`
+  line-height: 30px;
+`;
 
 const StatsTitle = styled.div`
   font-weight: 900;
@@ -106,10 +102,14 @@ const StatsTitle = styled.div`
 `;
 
 const StatsWrap = styled.div`
-  padding: 15px;
+  padding: 25px;
 `;
 
-const Confirmation = styled.div``;
+const Confirmation = styled.div`
+  text-align: center;
+  opacity: 75%;
+  font-size: 14px;
+`;
 
 const Wrap = styled.div`
   margin-top: 50px;
@@ -119,7 +119,7 @@ const Wrap = styled.div`
   margin-left: auto;
 `;
 
-const LoginWrap = styled.div`
+const OuterWrap = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -127,24 +127,24 @@ const LoginWrap = styled.div`
   border-radius: 5px;
 `;
 
-const MessagesWrap = styled.div`
+const InnerWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+  margin: 25px;
 `;
 
 const LoginMessage = styled.div`
   font-weight: 900;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
+  margin-top: 25px;
   margin-bottom: 10px;
 `;
 
 const LoginInputWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0px 15px 10px 15px;
+  margin: 0px 25px 10px 25px;
 `;
 
 const UserInput = styled.input`
@@ -170,10 +170,10 @@ const LoginButton = styled.button`
 `;
 
 const DownloadWrap = styled.div`
-  width: 150px;
-  font-size: 15px;
+  width: fit-content;
   margin-right: auto;
   margin-left: auto;
+  /* border: 1px green solid; */
 `;
 
 const DownloadButton = styled.button`
@@ -181,9 +181,14 @@ const DownloadButton = styled.button`
   color: white;
   border: var(--blue) 1px solid;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 10px 20px;
   font-weight: 900;
   margin: 20px 0px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 18px;
+  width: 150px;
+  /* border: 1px green solid; */
 `;
 
 export default Login;

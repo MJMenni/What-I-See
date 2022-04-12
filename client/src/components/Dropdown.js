@@ -6,23 +6,6 @@ const Dropdown = () => {
   return (
     <OuterWrap>
       <DropWrap>
-        {/* <SymptomsLabel>Visual Snow</SymptomsLabel>
-
-        <SliderWrap>
-          <AdjustLabel>Size</AdjustLabel>
-          <Slider />
-        </SliderWrap>
-
-        <SliderWrap>
-          <AdjustLabel>Speed</AdjustLabel>
-          <Slider />
-        </SliderWrap>
-
-        <SliderWrap>
-          <AdjustLabel>Opacity</AdjustLabel>
-          <Slider />
-        </SliderWrap> */}
-
         <SymptomsLabel>Tinnitus</SymptomsLabel>
         <AudioOuterWrap>
           <TinnitusType>Static</TinnitusType>
@@ -80,10 +63,26 @@ const Dropdown = () => {
             />
           </AudioWrap>
         </AudioOuterWrap>
+        <SymptomsLabel>Notes</SymptomsLabel>
+        <NotesInput
+          placeholder="Feel free to add notes here. For example: &#10;Wed, Apr 20. Intense after-images and light sensitivity today, especially when walking through the mall. Noticed my static, tinnitus, and floaters increased as the day went on. Possible triggers: work-related stress, exposure to intense lighting, too much screen time."
+        ></NotesInput>
       </DropWrap>
     </OuterWrap>
   );
 };
+
+const NotesInput = styled.textarea`
+  border: var(--blue) 1px solid;
+  min-height: 175px;
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 25px;
+  border-radius: 5px;
+  line-height: 24px;
+  font-size: 16px;
+`;
 
 const OuterWrap = styled.div`
   display: flex;
@@ -99,11 +98,10 @@ const AudioOuterWrap = styled.div`
   flex-wrap: wrap;
   width: 85%;
   background-color: #f1f3f4;
-  padding: 10px 10px 10px 40px;
+  padding: 10px 10px 10px 25px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 5px;
-  /* border: 3px yellow solid; */
 `;
 
 const AudioWrap = styled.div`
@@ -112,7 +110,6 @@ const AudioWrap = styled.div`
   width: 30%;
   margin-left: auto;
   margin-right: auto;
-  /* border: 1px green solid; */
 
   audio::-webkit-media-controls-current-time-display,
   audio::-webkit-media-controls-time-remaining-display {
@@ -135,37 +132,15 @@ const DropWrap = styled.div`
   margin-right: auto;
   margin-left: auto;
   width: 640px;
-  line-height: 24px;
-`;
-
-const SliderWrap = styled.div`
   display: flex;
-  margin-top: 20px;
-  justify-content: center;
-  /* border: 1px green solid; */
+  flex-direction: column;
+  line-height: 24px;
 `;
 
 const SymptomsLabel = styled.div`
   font-size: 18px;
   font-weight: 900;
-  margin: 50px 0px 25px 0px;
-`;
-
-const AdjustLabel = styled.div`
-  width: 80px;
+  margin: 40px 0px 25px 0px;
 `;
 
 export default Dropdown;
-
-{
-  /* <Button onclick="document.getElementById('player1').play()">Play</Button>
-<Button onclick="document.getElementById('player1').pause()">
-  Pause
-</Button>
-<Button onclick="document.getElementById('player1').volume += 0.1">
-  Vol +
-</Button>
-<Button onclick="document.getElementById('player1').volume -= 0.1">
-  Vol -
-</Button> */
-}

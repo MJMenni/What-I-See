@@ -44,11 +44,19 @@ const Wrapper = styled.div`
   /* border: 4px yellow solid; */
   /* display: flex; */
 
-  video {
-    object-fit: none;
-    /* border: 4px pink solid; */
-    /* max-width: 100%; */
-    /* overflow: hidden; */
+  video::-webkit-media-controls-current-time-display,
+  video::-webkit-media-controls-time-remaining-display {
+    display: none;
+    video {
+      object-fit: none;
+
+      /* border: 4px pink solid; */
+      /* max-width: 100%; */
+      /* overflow: hidden; */
+    }
+  }
+  video::-webkit-media-controls-timeline {
+    display: none;
   }
 `;
 
