@@ -40,7 +40,7 @@ const Login = () => {
       <LoginWrap>
         <MessagesWrap>
           <LoginMessage>
-            Log in to save your stats and track your symptoms
+            Already have an account? Log in and view your stats
           </LoginMessage>
         </MessagesWrap>
 
@@ -75,10 +75,10 @@ const Login = () => {
               <div>Success. Logged in!</div>
             )}
           </LoginInputWrap>
-          <DownloadWrap>
-            <DownloadButton>Download stats</DownloadButton>
-          </DownloadWrap>
         </form>
+        <DownloadWrap>
+          <DownloadButton>View stats</DownloadButton>
+        </DownloadWrap>
       </LoginWrap>
     </Wrap>
   );

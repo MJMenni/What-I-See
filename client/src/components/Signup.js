@@ -40,7 +40,7 @@ const Signup = () => {
       <LoginWrap>
         <MessagesWrap>
           <LoginMessage>
-            Log in to save your stats and track your symptoms
+            New to the site? Create your free account today
           </LoginMessage>
         </MessagesWrap>
 
@@ -68,11 +68,8 @@ const Signup = () => {
               placeholder="Email"
               placeholderTextColor="#004aad"
             ></Email>
-            <LoginButton type="submit">Log in</LoginButton>
+            <LoginButton type="submit">Create account</LoginButton>
           </LoginInputWrap>
-          <DownloadWrap>
-            <DownloadButton>Download stats</DownloadButton>
-          </DownloadWrap>
         </form>
       </LoginWrap>
     </Wrap>
@@ -134,23 +131,6 @@ const LoginButton = styled.button`
   color: var(--blue);
   border: lightgray 1px solid;
   border-radius: 5px;
-`;
-
-const DownloadWrap = styled.div`
-  width: 150px;
-  font-size: 15px;
-  margin-right: auto;
-  margin-left: auto;
-`;
-
-const DownloadButton = styled.button`
-  background-color: var(--blue);
-  color: white;
-  border: var(--blue) 1px solid;
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-weight: 900;
-  margin: 20px 0px;
 `;
 
 export default Signup;

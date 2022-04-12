@@ -4,7 +4,7 @@ import Video from "./Video";
 import Login from "./Login";
 import Signup from "./Signup";
 import { useState } from "react";
-const initialState = { size: 50, speed: 50, opacity: 50 };
+const initialState = { size: 1, speed: 50, opacity: 5 };
 
 const Home = () => {
   const [value, setValue] = useState(initialState);
@@ -24,8 +24,8 @@ const Home = () => {
           <Input
             id="size"
             type="range"
-            min="0"
-            max="100"
+            min="1"
+            max="10"
             value={value.size}
             onChange={(e) => {
               setValue({ ...value, size: parseInt(e.target.value) });
@@ -57,7 +57,7 @@ const Home = () => {
             id="opacity"
             type="range"
             min="0"
-            max="100"
+            max="10"
             value={value.opacity}
             onChange={(e) => {
               setValue({ ...value, opacity: parseInt(e.target.value) });
@@ -67,8 +67,8 @@ const Home = () => {
         </SliderWrapper>
       </Slider>
       <Dropdown />
-      <Login />
       <Signup />
+      <Login />
     </Wrap>
   );
 };
