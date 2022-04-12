@@ -62,6 +62,7 @@ const OuterWrapper = styled.div`
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 50px;
 `;
 
 const InnerWrapper = styled.div`

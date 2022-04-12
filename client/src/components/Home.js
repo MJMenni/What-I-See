@@ -15,7 +15,7 @@ const Home = () => {
       <Video stats={value} />
       <Instructions>
         Adjust the settings to recreate what you see. To keep track of your
-        symptoms, log in at the bottom of the page and download your stats.{" "}
+        symptoms and view your stats, log in at the bottom of the pages.
       </Instructions>
       <SymptomTitle>Visual Snow</SymptomTitle>
       <Slider>
@@ -82,6 +82,7 @@ const Instructions = styled.div`
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 `;
 
 const SymptomTitle = styled.div`

@@ -48,7 +48,13 @@ const News = () => {
                   </AllNewsInfo>
                 </Link>
               </InnerInfoWrapper>
-              <ReadMore>Read more</ReadMore>
+              <Link
+                href={news[index].url}
+                style={{ cursor: "pointer", textDecoration: "none" }}
+                target="_blank"
+              >
+                <ReadMore>Read more</ReadMore>
+              </Link>
             </Article>
           );
         })}
@@ -71,7 +77,7 @@ const Wrapper = styled.div`
 const Intro = styled.div`
   font-size: 24px;
   font-weight: 900;
-  margin: 55px 0px 40px 0px;
+  margin: 65px 0px 40px 0px;
   text-align: center;
 `;
 
@@ -90,6 +96,7 @@ const AllNewsInfo = styled.div`
 
 const ReadMore = styled.span`
   font-weight: 900;
+  margin-top: 20px;
 `;
 
 const Icon = styled.img`
@@ -129,11 +136,13 @@ const Title = styled.div`
   font-size: 16px;
   font-weight: 900;
   text-align: center;
+  margin-top: 15px;
   margin-bottom: 15px;
 `;
 
 const Description = styled.div`
   font-size: 15px;
+  padding-bottom: 15px;
 `;
 
 const Source = styled.div``;
