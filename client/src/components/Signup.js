@@ -77,7 +77,6 @@ const Signup = () => {
 };
 
 const Wrap = styled.div`
-  margin-top: 50px;
   max-width: 540px;
   margin-right: auto;
   margin-left: auto;

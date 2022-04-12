@@ -76,34 +76,10 @@ const Login = () => {
             <Confirmation>Success. Logged in!</Confirmation>
           )}
         </form>
-        <DownloadWrap>
-          <DownloadButton>View stats</DownloadButton>
-        </DownloadWrap>
-        <StatsWrap>
-          <StatsTitle>Your VSS Stats</StatsTitle>
-          <Stats>Username:</Stats>
-          <Stats>Visual snow size:</Stats>
-          <Stats>Visual snow opacity:</Stats>
-          <Stats>Tinnitus track(s):</Stats>
-        </StatsWrap>
       </OuterWrap>
     </Wrap>
   );
 };
-
-const Stats = styled.div`
-  line-height: 30px;
-`;
-
-const StatsTitle = styled.div`
-  font-weight: 900;
-  font-size: 18px;
-  margin-bottom: 10px;
-`;
-
-const StatsWrap = styled.div`
-  padding: 25px;
-`;
 
 const Confirmation = styled.div`
   text-align: center;
@@ -130,7 +106,7 @@ const OuterWrap = styled.div`
 const InnerWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 25px;
+  margin: 15px 0px 25px 0px;
 `;
 
 const LoginMessage = styled.div`
@@ -167,28 +143,6 @@ const LoginButton = styled.button`
   color: var(--blue);
   border: lightgray 1px solid;
   border-radius: 5px;
-`;
-
-const DownloadWrap = styled.div`
-  width: fit-content;
-  margin-right: auto;
-  margin-left: auto;
-  /* border: 1px green solid; */
-`;
-
-const DownloadButton = styled.button`
-  background-color: var(--blue);
-  color: white;
-  border: var(--blue) 1px solid;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-weight: 900;
-  margin: 20px 0px;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 18px;
-  width: 150px;
-  /* border: 1px green solid; */
 `;
 
 export default Login;

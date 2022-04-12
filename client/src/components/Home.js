@@ -4,6 +4,8 @@ import Video from "./Video";
 import Login from "./Login";
 import Signup from "./Signup";
 import { useState } from "react";
+import Stats from "./Stats";
+import { NavLink } from "react-router-dom";
 const initialState = { size: 1, speed: 1, opacity: 1 };
 
 const Home = () => {
@@ -16,21 +18,29 @@ const Home = () => {
       <AboutCopy>
         <Italic>What I See </Italic>
         is a video simulator that recreates the visual and auditory experience
-        of someone who has Visual Snow Syndrome (VSS). Living with VSS can be
-        difficult, and describing it comes with challenges too. Since little is
-        known about the condition, patients with VSS often encounter many
-        hurdles to get to a proper diagnosis. <Italic>What I See</Italic> is
-        designed to help those with VSS express their everyday experience.
-        Through a variety of settings, users can recreate their symptoms to
-        better communicate their reality to others, whether it’s family,
-        friends, or health professionals.
+        of someone who has{" "}
+        <Bold>
+          <Link
+            to="/about"
+            style={{ cursor: "pointer", textDecoration: "none" }}
+          >
+            Visual Snow Syndrome (VSS)
+          </Link>
+        </Bold>
+        . Living with VSS can be difficult, and describing it comes with
+        challenges too. Since little is known about the condition, patients with
+        VSS often encounter many hurdles to get to a proper diagnosis.{" "}
+        <Italic>What I See</Italic> is designed to help those with VSS express
+        their everyday experience. Through a variety of settings, users can
+        recreate their symptoms to better communicate their reality to others,
+        whether it’s family, friends, or health professionals.
       </AboutCopy>
       <Video stats={value} />
       <Instructions>
         Adjust the settings to recreate what you see. To keep track of your
         symptoms and view your stats, log in at the bottom of the page.
       </Instructions>
-      <SymptomTitle>Visual Snow</SymptomTitle>
+      <SectionTitle>Visual Snow</SectionTitle>
       <Slider>
         <SliderWrapper className="SliderValue">
           <SliderLabel>Size</SliderLabel>
@@ -80,11 +90,32 @@ const Home = () => {
         </SliderWrapper>
       </Slider>
       <Dropdown />
+      <SectionTitle>Login</SectionTitle>
       <Signup />
       <Login />
+      <SectionTitle>Stats</SectionTitle>
+      <Stats />
     </Wrap>
   );
 };
+
+const Link = styled(NavLink)`
+  &:hover {
+    opacity: 75%;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+`;
+
+const Bold = styled.span`
+  font-weight: 600;
+  color: var(--blue);
+  &:visited {
+    text-decoration: none;
+    color: var(--blue);
+  }
+`;
 
 const Wrap = styled.div`
   /* max-width: 1000px; */
@@ -121,7 +152,7 @@ const Instructions = styled.div`
   text-align: center;
 `;
 
-const SymptomTitle = styled.div`
+const SectionTitle = styled.div`
   font-size: 18px;
   font-weight: 900;
   margin: 50px 0px 25px 0px;
