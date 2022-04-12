@@ -110,6 +110,7 @@ const SliderWrapper = styled.div`
 
 const SliderLabel = styled.div`
   padding-right: 20px;
+  width: 75px;
 `;
 
 const Input = styled.input`
@@ -119,6 +120,7 @@ const Input = styled.input`
   background: var(--blue);
   border-radius: 5px;
   background-repeat: no-repeat;
+
   /* background-image: linear-gradient(#d46a6a, #d46a6a); */
 `;
 
