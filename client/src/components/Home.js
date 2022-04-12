@@ -15,7 +15,7 @@ const Home = () => {
       <Video stats={value} />
       <Instructions>
         Adjust the settings to recreate what you see. To keep track of your
-        symptoms and view your stats, log in at the bottom of the pages.
+        symptoms and view your stats, log in at the bottom of the page.
       </Instructions>
       <SymptomTitle>Visual Snow</SymptomTitle>
       <Slider>

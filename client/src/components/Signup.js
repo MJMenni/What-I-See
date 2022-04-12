@@ -89,20 +89,21 @@ const LoginWrap = styled.div`
   flex-direction: column;
   border: 1px var(--blue) solid;
   border-radius: 5px;
+  padding-bottom: 15px;
 `;
 
 const MessagesWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 16px;
+  margin: 15px;
 `;
 
 const LoginMessage = styled.div`
   font-weight: 900;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const LoginInputWrap = styled.div`

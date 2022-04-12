@@ -70,9 +70,9 @@ const Login = () => {
             ></Email>
             <LoginButton type="submit">Log in</LoginButton>
             {state === false ? (
-              <div>Invalid username, please try again</div>
+              <Confirmation>Invalid username, please try again</Confirmation>
             ) : (
-              <div>Success. Logged in!</div>
+              <Confirmation>Success. Logged in!</Confirmation>
             )}
           </LoginInputWrap>
         </form>
@@ -83,6 +83,8 @@ const Login = () => {
     </Wrap>
   );
 };
+
+const Confirmation = styled.div``;
 
 const Wrap = styled.div`
   margin-top: 50px;
@@ -103,7 +105,7 @@ const LoginWrap = styled.div`
 const MessagesWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 16px;
+  margin: 10px;
 `;
 
 const LoginMessage = styled.div`
@@ -111,7 +113,7 @@ const LoginMessage = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 const LoginInputWrap = styled.div`
