@@ -17,7 +17,6 @@ const Home = () => {
     <Wrap>
       <AboutTitle>What I See</AboutTitle>
       <AboutWrap>
-        {/* <Icon src="assets/slider.png"></Icon> */}
         <AboutCopy>
           <Bold>
             <Italic>What I See </Italic>
