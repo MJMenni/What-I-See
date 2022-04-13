@@ -5,7 +5,7 @@ const Resources = () => {
   return (
     <OuterWrap>
       <InnerWrap>
-        <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
+        <Title>Visual Snow Syndrome Resources</Title>
         <LinksWrap>
           <SingleLinkWrap>
             <Link
@@ -72,12 +72,7 @@ const InnerWrap = styled.div`
   margin-left: auto;
 `;
 
-const ResourcesTitle = styled.div`
-  font-size: 28px;
-  font-weight: 900;
-  margin-bottom: 50px;
-  text-align: center;
-`;
+const Title = styled.h1``;
 
 const SingleLinkWrap = styled.div`
   width: 30%;
@@ -115,7 +110,6 @@ const Link = styled.a`
 const LinkInfo = styled.div`
   font-size: 16px;
   line-height: 22px;
-  /* text-align: justify; */
   padding: 20px;
   font-weight: 300;
   &:hover {

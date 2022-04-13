@@ -27,6 +27,13 @@ const Wrap = styled.div`
   border-radius: 5px;
 `;
 
+const ViewStatsWrap = styled.div`
+  width: fit-content;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
 const Stat = styled.div`
   line-height: 30px;
 `;
@@ -39,14 +46,6 @@ const StatsTitle = styled.div`
 
 const StatsWrap = styled.div`
   padding: 25px;
-`;
-
-const ViewStatsWrap = styled.div`
-  width: fit-content;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  /* border: 1px green solid; */
 `;
 
 const AddStatsButton = styled.button`
@@ -65,19 +64,17 @@ const AddStatsButton = styled.button`
 `;
 
 const ViewStatsButton = styled.button`
-  background-color: var(--blue);
   color: white;
+  font-size: 18px;
+  font-weight: 900;
+  width: 150px;
+  background-color: var(--blue);
   border: var(--blue) 1px solid;
   border-radius: 5px;
   padding: 10px 20px;
-  font-weight: 900;
-  margin: 20px 0px;
+  margin: 20px 0px 20px 5px;
   margin-right: auto;
   margin-left: auto;
-  font-size: 18px;
-  width: 150px;
-  margin-left: 5px;
-  /* border: 1px green solid; */
 `;
 
 export default Stats;

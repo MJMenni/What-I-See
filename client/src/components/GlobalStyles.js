@@ -40,6 +40,13 @@ input, button, textarea, select {
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
+h1 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
 #root, #__next {
   isolation: isolate;
 }

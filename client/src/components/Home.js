@@ -110,6 +110,7 @@ const Home = () => {
   );
 };
 
+// Outer wrap
 const Wrap = styled.div`
   max-width: 956px;
   margin-left: auto;
@@ -117,12 +118,7 @@ const Wrap = styled.div`
 `;
 
 // About section
-const AboutTitle = styled.div`
-  font-size: 28px;
-  font-weight: 900;
-  margin-bottom: 50px;
-  text-align: center;
-`;
+const AboutTitle = styled.h1``;
 
 const AboutWrap = styled.div`
   max-width: 956px;
@@ -132,20 +128,16 @@ const AboutWrap = styled.div`
   margin-left: auto;
   justify-content: center;
   margin-bottom: 50px;
-
-  /* border: 1px green solid; */
 `;
 
 const AboutCopy = styled.div`
-  line-height: 24px;
-  font-size: 16px;
+  font-size: 18px;
   text-align: justify;
+  line-height: 24px;
   width: 85%;
   margin-bottom: 25px;
-  font-size: 18px;
   margin-right: auto;
   margin-left: auto;
-  /* border: 2px yellow solid; */
 `;
 
 const NavLinks = styled(NavLink)`
@@ -172,19 +164,19 @@ const Italic = styled.span`
 const SectionTitle = styled.div`
   font-size: 18px;
   font-weight: 900;
-  margin: 50px 0px 25px 0px;
+  text-align: left;
   width: 85%;
+  margin: 50px 0px 25px 0px;
   margin-left: auto;
   margin-right: auto;
-  text-align: left;
 `;
 
 // Sliders
 const SliderOuterWrap = styled.div`
   background-color: #f1f3f4;
+  width: 72%;
   margin-left: auto;
   margin-right: auto;
-  width: 72%;
   padding: 25px 0px;
   border-radius: 5px;
 `;
@@ -198,7 +190,6 @@ const SliderWrap = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px 0px;
-  /* border: 1px yellow solid; */
 `;
 
 const Slider = styled.div`
@@ -209,15 +200,12 @@ const Slider = styled.div`
   margin-right: auto;
   margin-left: auto;
   justify-content: space-between;
-  /* border: 1px green solid; */
 `;
 
 const SliderLabel = styled.div`
   width: 75px;
   font-weight: 600;
   font-size: 16px;
-  /* padding-right: 20px; */
-  /* border: 1px pink solid; */
 `;
 
 const Input = styled.input`
@@ -227,9 +215,6 @@ const Input = styled.input`
   background: var(--blue);
   border-radius: 5px;
   background-repeat: no-repeat;
-  /* border: 5px gray dotted; */
-
-  /* background-image: linear-gradient(#d46a6a, #d46a6a); */
 `;
 
 const CurrentValue = styled.div`
@@ -237,13 +222,3 @@ const CurrentValue = styled.div`
 `;
 
 export default Home;
-
-// const Icon = styled.img`
-//   width: 85px;
-//   height: 85px;
-//   border: 2px var(--blue) solid;
-//   border-radius: 50%;
-//   object-fit: cover;
-//   padding: 15px;
-//   margin-top: 50px;
-// `;

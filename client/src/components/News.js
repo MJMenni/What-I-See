@@ -54,17 +54,18 @@ const News = () => {
   );
 };
 
-const Link = styled.a`
-  &:visited {
-    text-decoration: none;
-    color: var(--blue);
-  }
-`;
-
+// Wraps
 const Wrap = styled.div`
   line-height: 24px;
 `;
 
+const AllArticlesWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+// Articles
 const Intro = styled.div`
   font-size: 24px;
   font-weight: 900;
@@ -72,10 +73,26 @@ const Intro = styled.div`
   text-align: center;
 `;
 
-const AllArticlesWrap = styled.div`
+const Article = styled.div`
+  border: 2px var(--blue) solid;
+  width: 30%;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 18px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  &:hover {
+    opacity: 50%;
+  }
+`;
+
+const Link = styled.a`
+  &:visited {
+    text-decoration: none;
+    color: var(--blue);
+  }
 `;
 
 const AllNewsInfo = styled.div`
@@ -98,28 +115,17 @@ const Icon = styled.img`
   margin-bottom: 15px;
 `;
 
+// Article info
+const InnerInfoWrap = styled.div``;
+
 const SourceAndDateWrap = styled.div`
   text-align: center;
   margin: 10px 0px;
 `;
 
-const InnerInfoWrap = styled.div``;
+const Source = styled.div``;
 
-const Article = styled.div`
-  border: 2px var(--blue) solid;
-  width: 30%;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 16px;
-  /* text-align: justify; */
-  line-height: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  &:hover {
-    opacity: 50%;
-  }
-`;
+const PubDate = styled.div``;
 
 const Title = styled.div`
   font-size: 16px;
@@ -135,9 +141,5 @@ const Description = styled.div`
   font-weight: 300;
   padding-bottom: 15px;
 `;
-
-const Source = styled.div``;
-
-const PubDate = styled.div``;
 
 export default News;

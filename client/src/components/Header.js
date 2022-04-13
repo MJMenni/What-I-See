@@ -41,18 +41,6 @@ const InnerWrap = styled.div`
   justify-content: space-between;
 `;
 
-const LogoWrap = styled.div`
-  width: 180px;
-  height: 180px;
-  margin-top: 60px;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-const Logo = styled.img`
-  width: 180px;
-`;
-
 const About = styled.div`
   color: white;
   font-size: 18px;
@@ -63,6 +51,18 @@ const Resources = styled.div`
   color: white;
   font-size: 18px;
   margin-top: -5px;
+`;
+
+const LogoWrap = styled.div`
+  width: 180px;
+  height: 180px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const Logo = styled.img`
+  width: 180px;
 `;
 
 export default Header;

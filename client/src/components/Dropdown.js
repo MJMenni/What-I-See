@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import ReactAudioPlayer from "react-audio-player";
 import { useState } from "react";
 
 const Dropdown = () => {
@@ -11,16 +10,16 @@ const Dropdown = () => {
   console.log("currentlyPlaying", currentlyPlaying);
   console.log("isPlaying", isPlaying);
   return (
-    <OuterWrap>
-      <DropWrap>
+    <Wrap>
+      <InnerWrap>
         <SymptomsLabel>Tinnitus</SymptomsLabel>
         <AudioOuterWrap>
           <TinnitusType>Static</TinnitusType>
           <AudioWrap>
             <audio
               src="assets/Static.mp3"
-              controls
               id="static"
+              controls
               loop
               onPlay={(e) => {
                 currentlyPlaying.push(e.target.id);
@@ -57,19 +56,20 @@ const Dropdown = () => {
         <NotesInput
           placeholder="Feel free to add notes here. For example: &#10;Apr-20-2022 – Intense after-images and light sensitivity, especially when walking through the mall. Noticed static, tinnitus, and floaters increased as the day went on. Possible triggers: work-related stress, exposure to intense lighting, too much screen time."
         ></NotesInput>
-      </DropWrap>
-    </OuterWrap>
+      </InnerWrap>
+    </Wrap>
   );
 };
 
-const OuterWrap = styled.div`
+// Wraps
+const Wrap = styled.div`
   display: flex;
   max-width: 956px;
   margin-right: auto;
   margin-left: auto;
 `;
 
-const DropWrap = styled.div`
+const InnerWrap = styled.div`
   width: 85%;
   margin-right: auto;
   margin-left: auto;
@@ -78,22 +78,19 @@ const DropWrap = styled.div`
   line-height: 24px;
 `;
 
+// Symptoms label
 const SymptomsLabel = styled.div`
   font-size: 18px;
   font-weight: 900;
   margin: 40px 0px 25px 0px;
 `;
 
-const NotesInput = styled.textarea`
-  border: var(--blue) 1px solid;
-  min-height: 175px;
-  width: 85%;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 25px;
-  border-radius: 5px;
-  line-height: 24px;
-  font-size: 16px;
+// Tinnitus section
+const TinnitusType = styled.div`
+  margin-top: 25px;
+  font-weight: 900;
+  width: 15%;
+  height: 15%;
 `;
 
 const AudioOuterWrap = styled.div`
@@ -125,11 +122,17 @@ const AudioWrap = styled.div`
   }
 `;
 
-const TinnitusType = styled.div`
-  margin-top: 25px;
-  font-weight: 900;
-  width: 15%;
-  height: 15%;
+// Notes section
+const NotesInput = styled.textarea`
+  border: var(--blue) 1px solid;
+  min-height: 175px;
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 25px;
+  border-radius: 5px;
+  line-height: 24px;
+  font-size: 16px;
 `;
 
 export default Dropdown;

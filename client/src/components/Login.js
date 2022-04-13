@@ -81,16 +81,10 @@ const Login = () => {
   );
 };
 
-const Confirmation = styled.div`
-  text-align: center;
-  opacity: 75%;
-  font-size: 14px;
-`;
-
+// Wraps
 const Wrap = styled.div`
-  margin-top: 50px;
   max-width: 540px;
-  /* width: 38%; */
+  margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
 `;
@@ -109,6 +103,7 @@ const InnerWrap = styled.div`
   margin: 15px 0px 25px 0px;
 `;
 
+// Login message
 const LoginMessage = styled.div`
   font-weight: 900;
   margin-left: auto;
@@ -117,6 +112,7 @@ const LoginMessage = styled.div`
   margin-bottom: 10px;
 `;
 
+// Login
 const LoginInputWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -138,11 +134,18 @@ const Email = styled.input`
 `;
 
 const LoginButton = styled.button`
+  color: var(--blue);
   width: 150px;
   padding: 5px 10px;
-  color: var(--blue);
   border: lightgray 1px solid;
   border-radius: 5px;
+`;
+
+// Confirmation
+const Confirmation = styled.div`
+  text-align: center;
+  opacity: 75%;
+  font-size: 14px;
 `;
 
 export default Login;
