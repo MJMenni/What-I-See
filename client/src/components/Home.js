@@ -37,15 +37,18 @@ const Home = () => {
           recreate their symptoms to better communicate their reality to others,
           whether it’s family, friends, or health professionals.
         </AboutCopy>
+        <AboutCopy>
+          <Bold>How it works:</Bold>
+          <br /> Adjust the settings below the video to recreate what you see.
+          To keep track of your symptoms, login or create an account in the{" "}
+          <Bold>Login</Bold> section. To add your current settings or view your
+          past entries, see the <Bold>Stats</Bold> section.
+        </AboutCopy>
       </AboutWrap>
       <Video stats={value} />
-      {/* <Instructions>
-        Adjust the settings to recreate what you see. Keep track of your
-        symptoms at the bottom of the page.
-      </Instructions> */}
       <SectionTitle>Visual Snow</SectionTitle>
-      <Slider>
-        <SliderWrapper className="SliderValue">
+      <SliderWrap>
+        <Slider className="SliderValue">
           <SliderLabel>Size</SliderLabel>
           <Input
             id="size"
@@ -58,10 +61,10 @@ const Home = () => {
             }}
           />
           <CurrentValue>{value.size}</CurrentValue>
-        </SliderWrapper>
-      </Slider>
-      <Slider>
-        <SliderWrapper className="SliderSpeed">
+        </Slider>
+      </SliderWrap>
+      <SliderWrap>
+        <Slider className="SliderSpeed">
           <SliderLabel>Speed</SliderLabel>
           <Input
             id="speed"
@@ -74,10 +77,10 @@ const Home = () => {
             }}
           />
           <CurrentValue>{value.speed}</CurrentValue>
-        </SliderWrapper>
-      </Slider>
-      <Slider>
-        <SliderWrapper className="SliderOpacity">
+        </Slider>
+      </SliderWrap>
+      <SliderWrap>
+        <Slider className="SliderOpacity">
           <SliderLabel>Opacity</SliderLabel>
           <Input
             id="opacity"
@@ -90,8 +93,8 @@ const Home = () => {
             }}
           />
           <CurrentValue>{value.opacity}</CurrentValue>
-        </SliderWrapper>
-      </Slider>
+        </Slider>
+      </SliderWrap>
       <Dropdown />
       <SectionTitle>Login</SectionTitle>
       <Signup />
@@ -102,32 +105,36 @@ const Home = () => {
   );
 };
 
+const Wrap = styled.div``;
+
+// About section
+const AboutTitle = styled.div`
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 50px;
+  text-align: center;
+`;
+
 const AboutWrap = styled.div`
   max-width: 956px;
   display: flex;
+  flex-direction: column;
   margin-right: auto;
   margin-left: auto;
   justify-content: center;
+  margin-bottom: 50px;
   /* border: 1px green solid; */
 `;
-
-// const Icon = styled.img`
-//   width: 85px;
-//   height: 85px;
-//   border: 2px var(--blue) solid;
-//   border-radius: 50%;
-//   object-fit: cover;
-//   padding: 15px;
-//   margin-top: 50px;
-// `;
 
 const AboutCopy = styled.div`
   line-height: 24px;
   font-size: 16px;
   text-align: justify;
-  width: 810px;
+  width: 85%;
   margin-bottom: 25px;
   font-size: 18px;
+  margin-right: auto;
+  margin-left: auto;
   /* border: 2px yellow solid; */
 `;
 
@@ -141,35 +148,17 @@ const NavLinks = styled(NavLink)`
   }
 `;
 
+// Bold and italic styles
 const Bold = styled.span`
   font-weight: 600;
   color: var(--blue);
 `;
 
-const Wrap = styled.div``;
-
 const Italic = styled.span`
   font-style: italic;
 `;
 
-const AboutTitle = styled.div`
-  font-size: 28px;
-  font-weight: 900;
-  margin-bottom: 50px;
-  text-align: center;
-`;
-
-const Instructions = styled.div`
-  font-size: 16px;
-  text-align: justify;
-  margin-top: 8px;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 800px;
-`;
-
+// Section titles
 const SectionTitle = styled.div`
   font-size: 18px;
   font-weight: 900;
@@ -180,14 +169,15 @@ const SectionTitle = styled.div`
   text-align: left;
 `;
 
-const Slider = styled.div`
+// Sliders
+const SliderWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   width: 400px;
 `;
 
-const SliderWrapper = styled.div`
+const Slider = styled.div`
   color: var(--blue);
   display: flex;
   align-items: center;
@@ -214,3 +204,13 @@ const CurrentValue = styled.div`
 `;
 
 export default Home;
+
+// const Icon = styled.img`
+//   width: 85px;
+//   height: 85px;
+//   border: 2px var(--blue) solid;
+//   border-radius: 50%;
+//   object-fit: cover;
+//   padding: 15px;
+//   margin-top: 50px;
+// `;

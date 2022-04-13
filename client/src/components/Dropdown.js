@@ -65,12 +65,34 @@ const Dropdown = () => {
         </AudioOuterWrap>
         <SymptomsLabel>Notes</SymptomsLabel>
         <NotesInput
-          placeholder="Feel free to add notes here. For example: &#10;Wed, Apr 20. Intense after-images and light sensitivity today, especially when walking through the mall. Noticed my static, tinnitus, and floaters increased as the day went on. Possible triggers: work-related stress, exposure to intense lighting, too much screen time."
+          placeholder="Feel free to add notes here. For example: &#10;Apr-20-2022 – Intense after-images and light sensitivity, especially when walking through the mall. Noticed static, tinnitus, and floaters increased as the day went on. Possible triggers: work-related stress, exposure to intense lighting, too much screen time."
         ></NotesInput>
       </DropWrap>
     </OuterWrap>
   );
 };
+
+const OuterWrap = styled.div`
+  display: flex;
+  max-width: 1250px;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
+const DropWrap = styled.div`
+  margin-right: auto;
+  margin-left: auto;
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  line-height: 24px;
+`;
+
+const SymptomsLabel = styled.div`
+  font-size: 18px;
+  font-weight: 900;
+  margin: 40px 0px 25px 0px;
+`;
 
 const NotesInput = styled.textarea`
   border: var(--blue) 1px solid;
@@ -82,14 +104,6 @@ const NotesInput = styled.textarea`
   border-radius: 5px;
   line-height: 24px;
   font-size: 16px;
-`;
-
-const OuterWrap = styled.div`
-  display: flex;
-  max-width: 1250px;
-  width: 50%;
-  margin-right: auto;
-  margin-left: auto;
 `;
 
 const AudioOuterWrap = styled.div`
@@ -126,21 +140,6 @@ const TinnitusType = styled.div`
   font-weight: 900;
   width: 15%;
   height: 15%;
-`;
-
-const DropWrap = styled.div`
-  margin-right: auto;
-  margin-left: auto;
-  width: 640px;
-  display: flex;
-  flex-direction: column;
-  line-height: 24px;
-`;
-
-const SymptomsLabel = styled.div`
-  font-size: 18px;
-  font-weight: 900;
-  margin: 40px 0px 25px 0px;
 `;
 
 export default Dropdown;
