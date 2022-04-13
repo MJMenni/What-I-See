@@ -10,25 +10,6 @@ const options = {
   useUnifiedTopology: true,
 };
 
-// let responseHandler = (response) => {
-//   let body = "";
-// };
-
-// response.on("data", function (d) {
-//   body += d;
-// });
-
-// response.on("end", function () {
-//   console.log("\nRelevant Headers:\n");
-//   // header keys are lower-cased by Node.js
-//   for (var header in response.headers)
-//     if (header.startsWith("bingapis-") || header.startsWith("x-msedge-"))
-//       console.log(header + ": " + response.headers[header]);
-//   body = JSON.stringify(JSON.parse(body), null, "  ");
-//   console.log("\nJSON Response:\n");
-//   console.log(body);
-// });
-
 const handleLogin = async (req, res) => {
   const client = new MongoClient(MONGO_URI, options);
   try {
@@ -85,7 +66,54 @@ const handleSignup = async (req, res) => {
   }
 };
 
+// Not changed yet, still copied handler that needs to be updated for addStats
+const addStats = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  try {
+    await client.connect();
+    const db = client.db("WhatISee");
+    const { emailInput } = req.body;
+    const user = await db.collection("users").findOne({ email: emailInput });
+    if (!user) {
+      return res.status(401).json({
+        status: 401,
+        message: "User not exists",
+      });
+    }
+
+    return res.status(200).json({
+      status: 200,
+      data: user,
+    });
+  } catch (err) {
+    res.status(500).json({ status: "Error", data: req.body, msg: err.message });
+  } finally {
+    client.close();
+  }
+};
+
 module.exports = {
   handleLogin,
   handleSignup,
+  addStats,
+  // getStats,
 };
+
+// let responseHandler = (response) => {
+//   let body = "";
+// };
+
+// response.on("data", function (d) {
+//   body += d;
+// });
+
+// response.on("end", function () {
+//   console.log("\nRelevant Headers:\n");
+//   // header keys are lower-cased by Node.js
+//   for (var header in response.headers)
+//     if (header.startsWith("bingapis-") || header.startsWith("x-msedge-"))
+//       console.log(header + ": " + response.headers[header]);
+//   body = JSON.stringify(JSON.parse(body), null, "  ");
+//   console.log("\nJSON Response:\n");
+//   console.log(body);
+// });

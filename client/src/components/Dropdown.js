@@ -1,8 +1,19 @@
 import styled from "styled-components";
-import ReactAudioPlayer from "react-audio-player";
-// import Slider from "./Slider";
+// import ReactAudioPlayer from "react-audio-player";
+import { useState } from "react";
 
 const Dropdown = () => {
+  // const [playing, setPlaying] = useState(false);
+
+  let myAudio = document.getElementById("audio1");
+  console.log(myAudio);
+
+  if (myAudio) {
+    myAudio.addEventListener("play", () => {
+      console.log("playing");
+    });
+  }
+
   return (
     <OuterWrap>
       <DropWrap>
@@ -10,57 +21,27 @@ const Dropdown = () => {
         <AudioOuterWrap>
           <TinnitusType>Static</TinnitusType>
           <AudioWrap>
-            <ReactAudioPlayer
-              src="assets/Static.mp3"
-              controls
-              id="player1"
-              loop
-            />
+            <audio src="assets/Static.mp3" controls id="audio1" loop />
           </AudioWrap>
           <TinnitusType>Kettle</TinnitusType>
           <AudioWrap>
-            <ReactAudioPlayer
-              src="assets/TeaKettle.mp3"
-              controls
-              id="player1"
-              loop
-            />
+            <audio src="assets/TeaKettle.mp3" controls id="audio2" loop />
           </AudioWrap>
           <TinnitusType>Roaring</TinnitusType>
           <AudioWrap>
-            <ReactAudioPlayer
-              src="assets/Roaring.mp3"
-              controls
-              id="player1"
-              loop
-            />
+            <audio src="assets/Roaring.mp3" controls id="audio3" loop />
           </AudioWrap>
           <TinnitusType>Electric</TinnitusType>
           <AudioWrap>
-            <ReactAudioPlayer
-              src="assets/Electric.mp3"
-              controls
-              id="player1"
-              loop
-            />
+            <audio src="assets/Electric.mp3" controls id="audio4" loop />
           </AudioWrap>
           <TinnitusType>Buzzing</TinnitusType>
           <AudioWrap>
-            <ReactAudioPlayer
-              src="assets/buzzing.mp3"
-              controls
-              id="player1"
-              loop
-            />
+            <audio src="assets/buzzing.mp3" controls id="audio5" loop />
           </AudioWrap>
           <TinnitusType>Screeching</TinnitusType>
           <AudioWrap>
-            <ReactAudioPlayer
-              src="assets/Screeching.mp3"
-              controls
-              id="player1"
-              loop
-            />
+            <audio src="assets/Screeching.mp3" controls id="audio6" loop />
           </AudioWrap>
         </AudioOuterWrap>
         <SymptomsLabel>Notes</SymptomsLabel>

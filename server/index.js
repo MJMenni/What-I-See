@@ -12,7 +12,7 @@ const PORT = 4000;
 
 let https = require("https");
 
-const { handleLogin, handleSignup } = require("./handlers");
+const { handleLogin, handleSignup, addStats, getStats } = require("./handlers");
 
 const options = {
   useNewUrlParser: true,
@@ -45,6 +45,11 @@ express()
   .use("/", express.static(__dirname + "/"))
 
   // REST endpoints
+
+  // GET endpoints
+
+  // Toggle between the next two GET endpoints to get data while limiting API calls.
+  // GET stored API data in MongoDB
   .get("/api/resources", async (req, res) => {
     const client = new MongoClient(MONGO_URI, options);
     try {
@@ -65,7 +70,7 @@ express()
       console.log("Disconnected");
     }
 
-    // GET something from a JSON REST API
+    // GET JSON API data from Bing News API
     // let options = {
     //   uri: "/api.bing.microsoft.com/v7.0/news/search",
     //   qs: {
@@ -99,9 +104,13 @@ express()
     //   });
   })
 
-  // Post endpoint
+  // .get("/api/get-stats", getStats)
+
+  // POST endpoints
   .post("/api/login", handleLogin)
   .post("/api/signup", handleSignup)
+  .post("/api/add-stats", addStats)
+
   // Catch-all endpoint
   .get("*", (req, res) => {
     res.status(404).json({

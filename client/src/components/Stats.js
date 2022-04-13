@@ -10,8 +10,7 @@ const Stats = () => {
       <StatsWrap>
         <StatsTitle>Your VSS Stats</StatsTitle>
         <Stat>Username:</Stat>
-        <Stat>Visual snow size:</Stat>
-        <Stat>Visual snow opacity:</Stat>
+        <Stat>Visual snow:</Stat>
         <Stat>Tinnitus track(s):</Stat>
         <Stat>Notes:</Stat>
       </StatsWrap>
@@ -23,7 +22,6 @@ const Wrap = styled.div`
   border: 1px var(--blue) solid;
   margin-top: 50px;
   max-width: 540px;
-  /* width: 38%; */
   margin-right: auto;
   margin-left: auto;
   border-radius: 5px;

@@ -12,6 +12,7 @@ const Home = () => {
   const [value, setValue] = useState(initialState);
   console.log(value);
 
+  console.log("value is", value);
   return (
     <Wrap>
       <AboutTitle>What I See</AboutTitle>
