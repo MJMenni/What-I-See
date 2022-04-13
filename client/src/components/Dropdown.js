@@ -10,7 +10,7 @@ const Dropdown = () => {
 
   if (myAudio) {
     myAudio.addEventListener("play", () => {
-      console.log("playing");
+      return console.log("playing");
     });
   }
 
