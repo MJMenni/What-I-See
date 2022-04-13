@@ -22,14 +22,14 @@ const News = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrap>
       <Intro>Keep up with the latest news about VSS!</Intro>
-      <AllArticlesWrapper>
-        {/* <AllArticlesWrapper key={news[0]._id}> */}
+      <AllArticlesWrap>
+        {/* <AllArticlesWrap key={news[0]._id}> */}
         {news.map((article, index) => {
           return (
             <Article>
-              <InnerInfoWrapper>
+              <InnerInfoWrap>
                 <Link
                   href={news[index].url}
                   style={{ cursor: "pointer", textDecoration: "none" }}
@@ -37,22 +37,22 @@ const News = () => {
                 >
                   <Icon src="assets/reading.png"></Icon>
                   <AllNewsInfo>
-                    <SourceAndDateWrapper>
+                    <SourceAndDateWrap>
                       <PubDate>
                         {news[index].datePublished.substr(0, 10)}
                       </PubDate>
                       <Source>{news[index].provider[0].name}</Source>
-                    </SourceAndDateWrapper>
+                    </SourceAndDateWrap>
                     <Title>{news[index].name}</Title>
                     <Description>{news[index].description}</Description>
                   </AllNewsInfo>
                 </Link>
-              </InnerInfoWrapper>
+              </InnerInfoWrap>
             </Article>
           );
         })}
-      </AllArticlesWrapper>
-    </Wrapper>
+      </AllArticlesWrap>
+    </Wrap>
   );
 };
 
@@ -63,7 +63,7 @@ const Link = styled.a`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrap = styled.div`
   line-height: 24px;
 `;
 
@@ -74,7 +74,7 @@ const Intro = styled.div`
   text-align: center;
 `;
 
-const AllArticlesWrapper = styled.div`
+const AllArticlesWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -100,12 +100,12 @@ const Icon = styled.img`
   margin-bottom: 15px;
 `;
 
-const SourceAndDateWrapper = styled.div`
+const SourceAndDateWrap = styled.div`
   text-align: center;
   margin: 10px 0px;
 `;
 
-const InnerInfoWrapper = styled.div``;
+const InnerInfoWrap = styled.div``;
 
 const Article = styled.div`
   border: 2px var(--blue) solid;

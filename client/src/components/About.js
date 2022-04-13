@@ -21,88 +21,88 @@ const About = () => {
           days a week, even when their eyes are closed.
         </SpecialCopy>
 
-        <IconWrapper>
+        <IconWrap>
           <VisualSymptoms>
             <SymptomType>Visual Symptoms</SymptomType>
-            <IconTextWrapper>
+            <IconTextWrap>
               <Icon src="assets/snow.png"></Icon>
               <IconText>
                 Snow-like dots all over the field of vision (visual snow)
               </IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/starbursts.png"></Icon>
               <IconText>Small floating objects or flashing lights</IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/brightness.png"></Icon>
               <IconText>Sensitivity to light (photophobia)</IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/entopic.png"></Icon>
               <IconText>
                 Seeing images within the eye itself (entopic phenomena)
               </IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/palinopsia.png"></Icon>
               <IconText>
                 Continuing to see an image after it is no longer in the field of
                 vision (palinopsia)
               </IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/night.png"></Icon>
               <IconText>Impaired night vision (nyctalopia)</IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/double.png"></Icon>
               <IconText>
                 Other visual effects such as starburst, halos, and double vision
                 (diplopia)
               </IconText>
-            </IconTextWrapper>
+            </IconTextWrap>
           </VisualSymptoms>
           <NonVisualSymptoms>
             <SymptomType>Non-Visual Symptoms</SymptomType>
-            <IconTextWrapper>
+            <IconTextWrap>
               <Icon src="assets/tinnitus.png"></Icon>
               <IconText>
                 Ringing, humming, or buzzing sounds (tinnitus)
               </IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/depersonalization.png"></Icon>
               <IconText>
                 Feeling detached from yourself (depersonalization)
               </IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/depression.png"></Icon>
               <IconText>Symptoms of anxiety and/or depression</IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/migraines.png"></Icon>
               <IconText>Frequent migraines, brain fog, and confusion</IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/dizzy.png"></Icon>
               <IconText>Dizziness and nausea</IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/insomnia.png"></Icon>
               <IconText>Insomnia and other sleep-related issues</IconText>
-            </IconTextWrapper>
-            <IconTextWrapper>
+            </IconTextWrap>
+            <IconTextWrap>
               <Icon src="assets/tingling.png"></Icon>
               <IconText>
                 {" "}
                 Tingling sensations in legs and arms, accompanied by general
                 pain throughout body
               </IconText>
-            </IconTextWrapper>
+            </IconTextWrap>
           </NonVisualSymptoms>
-        </IconWrapper>
+        </IconWrap>
       </AboutWrap>
     </Wrap>
   );
@@ -114,7 +114,7 @@ const Wrap = styled.div`
   margin-left: auto;
 `;
 
-const IconWrapper = styled.div`
+const IconWrap = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
@@ -129,7 +129,7 @@ const NonVisualSymptoms = styled.div`
   width: 46%;
 `;
 
-const IconTextWrapper = styled.div`
+const IconTextWrap = styled.div`
   display: flex;
   margin-top: 10px;
 `;

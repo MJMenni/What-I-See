@@ -19,9 +19,9 @@ const Header = () => {
         </NavLink>
       </InnerWrap>
       <NavLink to="/">
-        <LogoWrapper>
+        <LogoWrap>
           <Logo src="assets/logoColor.png"></Logo>
-        </LogoWrapper>
+        </LogoWrap>
       </NavLink>
     </OuterWrap>
   );
@@ -41,7 +41,7 @@ const InnerWrap = styled.div`
   justify-content: space-between;
 `;
 
-const LogoWrapper = styled.div`
+const LogoWrap = styled.div`
   width: 180px;
   height: 180px;
   margin-top: 60px;

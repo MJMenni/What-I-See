@@ -17,7 +17,7 @@ const Slider = () => {
 
   return (
     <Wrap>
-      <SliderWrapper className="SliderValue">
+      <SliderWrap className="SliderValue">
         <Input
           id="range"
           type="range"
@@ -29,8 +29,8 @@ const Slider = () => {
           }}
         />
         <CurrentValue>{value}</CurrentValue>
-      </SliderWrapper>
-      {/* <SliderWrapper className="SliderSize">
+      </SliderWrap>
+      {/* <SliderWrap className="SliderSize">
         <Input
           id="range"
           type="range"
@@ -42,14 +42,14 @@ const Slider = () => {
           }}
         />
         <CurrentValue>{size}</CurrentValue>
-      </SliderWrapper> */}
+      </SliderWrap> */}
     </Wrap>
   );
 };
 
 const Wrap = styled.div``;
 
-const SliderWrapper = styled.div`
+const SliderWrap = styled.div`
   color: var(--blue);
   display: flex;
   align-items: center;

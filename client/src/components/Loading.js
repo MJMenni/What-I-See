@@ -3,14 +3,14 @@ import styled from "styled-components";
 const Loading = () => {
   return (
     <>
-      <LoaderWrapper>
+      <LoaderWrap>
         <Loader />
-      </LoaderWrapper>
+      </LoaderWrap>
     </>
   );
 };
 
-const LoaderWrapper = styled.div`
+const LoaderWrap = styled.div`
   height: 100%;
   width: 100%;
   display: flex;

@@ -3,10 +3,10 @@ import News from "./News";
 
 const Resources = () => {
   return (
-    <OuterWrapper>
-      <InnerWrapper>
+    <OuterWrap>
+      <InnerWrap>
         <ResourcesTitle>Visual Snow Syndrome Resources</ResourcesTitle>
-        <LinksWrapper>
+        <LinksWrap>
           <SingleLinkWrap>
             <Link
               href="https://www.visualsnowinitiative.org/"
@@ -51,21 +51,21 @@ const Resources = () => {
               tinnitus.
             </LinkInfo>
           </SingleLinkWrap>
-        </LinksWrapper>
+        </LinksWrap>
         <News />
-      </InnerWrapper>
-    </OuterWrapper>
+      </InnerWrap>
+    </OuterWrap>
   );
 };
 
-const OuterWrapper = styled.div`
+const OuterWrap = styled.div`
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 50px;
 `;
 
-const InnerWrapper = styled.div`
+const InnerWrap = styled.div`
   width: 66%;
   margin-right: auto;
   margin-left: auto;
@@ -91,7 +91,7 @@ const SingleLinkWrap = styled.div`
   }
 `;
 
-const LinksWrapper = styled.div`
+const LinksWrap = styled.div`
   display: flex;
   flex-direction: row;
   color: var(--blue);
@@ -115,7 +115,6 @@ const LinkInfo = styled.div`
   line-height: 22px;
   text-align: justify;
   padding: 20px;
-  /* font-weight: 300; */
 `;
 
 export default Resources;

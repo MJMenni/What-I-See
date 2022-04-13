@@ -11,13 +11,13 @@ const Video = ({ stats }) => {
     vidOverlay.playbackRate = 0.5;
   };
   return (
-    <Wrapper>
-      <MainVideoWrapper>
+    <Wrap>
+      <MainVideoWrap>
         <video width={960} height={540} loop={true} controls>
           <source src="/assets/Original.mp4" type="video/mp4"></source>
         </video>
-      </MainVideoWrapper>
-      <OverlayVideoWrapper onLoad={videoRate} style={{ opacity: opacity / 20 }}>
+      </MainVideoWrap>
+      <OverlayVideoWrap onLoad={videoRate} style={{ opacity: opacity / 20 }}>
         <video
           id="vid2"
           width={1000 * size * size}
@@ -30,12 +30,12 @@ const Video = ({ stats }) => {
         >
           <source src="/assets/Overlay.mp4" type="video/mp4"></source>
         </video>
-      </OverlayVideoWrapper>
-    </Wrapper>
+      </OverlayVideoWrap>
+    </Wrap>
   );
 };
 
-const Wrapper = styled.div`
+const Wrap = styled.div`
   position: relative;
   overflow: hidden;
   width: 960px;
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const MainVideoWrapper = styled.div`
+const MainVideoWrap = styled.div`
   left: 0;
   right: 0;
   margin-left: auto;
@@ -68,7 +68,7 @@ const MainVideoWrapper = styled.div`
   width: fit-content;
 `;
 
-const OverlayVideoWrapper = styled.div`
+const OverlayVideoWrap = styled.div`
   top: 0;
   left: 0;
   position: absolute;
