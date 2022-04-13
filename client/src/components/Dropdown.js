@@ -74,15 +74,16 @@ const Dropdown = () => {
 
 const OuterWrap = styled.div`
   display: flex;
-  max-width: 1250px;
+  max-width: 956px;
   margin-right: auto;
   margin-left: auto;
 `;
 
 const DropWrap = styled.div`
+  width: 85%;
   margin-right: auto;
   margin-left: auto;
-  width: 640px;
+  width: 85%;
   display: flex;
   flex-direction: column;
   line-height: 24px;

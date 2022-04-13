@@ -9,7 +9,7 @@ const Header = () => {
           to="/about"
           style={{ cursor: "pointer", textDecoration: "none" }}
         >
-          <About>ABOUT</About>
+          <About>ABOUT VSS</About>
         </NavLink>
         <NavLink
           to="/resources"

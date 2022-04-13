@@ -47,54 +47,56 @@ const Home = () => {
       </AboutWrap>
       <Video stats={value} />
       <SectionTitle>Visual Snow</SectionTitle>
-      <SliderWrap>
-        <Slider className="SliderValue">
-          <SliderLabel>Size</SliderLabel>
-          <Input
-            id="size"
-            type="range"
-            min="1"
-            max="10"
-            value={value.size}
-            onChange={(e) => {
-              setValue({ ...value, size: parseInt(e.target.value) });
-            }}
-          />
-          <CurrentValue>{value.size}</CurrentValue>
-        </Slider>
-      </SliderWrap>
-      <SliderWrap>
-        <Slider className="SliderSpeed">
-          <SliderLabel>Speed</SliderLabel>
-          <Input
-            id="speed"
-            type="range"
-            min="1"
-            max="10"
-            value={value.speed}
-            onChange={(e) => {
-              setValue({ ...value, speed: parseInt(e.target.value) });
-            }}
-          />
-          <CurrentValue>{value.speed}</CurrentValue>
-        </Slider>
-      </SliderWrap>
-      <SliderWrap>
-        <Slider className="SliderOpacity">
-          <SliderLabel>Opacity</SliderLabel>
-          <Input
-            id="opacity"
-            type="range"
-            min="1"
-            max="10"
-            value={value.opacity}
-            onChange={(e) => {
-              setValue({ ...value, opacity: parseInt(e.target.value) });
-            }}
-          />
-          <CurrentValue>{value.opacity}</CurrentValue>
-        </Slider>
-      </SliderWrap>
+      <SliderOuterWrap>
+        <SliderWrap>
+          <Slider className="SliderValue">
+            <SliderLabel>Size</SliderLabel>
+            <Input
+              id="size"
+              type="range"
+              min="1"
+              max="10"
+              value={value.size}
+              onChange={(e) => {
+                setValue({ ...value, size: parseInt(e.target.value) });
+              }}
+            />
+            <CurrentValue>{value.size}</CurrentValue>
+          </Slider>
+        </SliderWrap>
+        <SliderWrap>
+          <Slider className="SliderSpeed">
+            <SliderLabel>Speed</SliderLabel>
+            <Input
+              id="speed"
+              type="range"
+              min="1"
+              max="10"
+              value={value.speed}
+              onChange={(e) => {
+                setValue({ ...value, speed: parseInt(e.target.value) });
+              }}
+            />
+            <CurrentValue>{value.speed}</CurrentValue>
+          </Slider>
+        </SliderWrap>
+        <SliderWrap>
+          <Slider className="SliderOpacity">
+            <SliderLabel>Opacity</SliderLabel>
+            <Input
+              id="opacity"
+              type="range"
+              min="1"
+              max="10"
+              value={value.opacity}
+              onChange={(e) => {
+                setValue({ ...value, opacity: parseInt(e.target.value) });
+              }}
+            />
+            <CurrentValue>{value.opacity}</CurrentValue>
+          </Slider>
+        </SliderWrap>
+      </SliderOuterWrap>
       <Dropdown />
       <SectionTitle>Login</SectionTitle>
       <Signup />
@@ -163,29 +165,49 @@ const SectionTitle = styled.div`
   font-size: 18px;
   font-weight: 900;
   margin: 50px 0px 25px 0px;
-  width: 640px;
+  width: 810px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
 `;
 
 // Sliders
+const SliderOuterWrap = styled.div`
+  background-color: #f1f3f4;
+  margin-left: auto;
+  margin-right: auto;
+  width: 46%;
+  padding: 25px 0px;
+  border-radius: 5px;
+`;
+
 const SliderWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  width: 400px;
+  max-width: 85%;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px yellow solid; */
 `;
 
 const Slider = styled.div`
   color: var(--blue);
   display: flex;
   align-items: center;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: space-between;
+  /* border: 1px green solid; */
 `;
 
 const SliderLabel = styled.div`
-  padding-right: 20px;
   width: 75px;
+  font-weight: 600;
+  font-size: 16px;
+  /* padding-right: 20px; */
+  /* border: 1px pink solid; */
 `;
 
 const Input = styled.input`
@@ -195,6 +217,7 @@ const Input = styled.input`
   background: var(--blue);
   border-radius: 5px;
   background-repeat: no-repeat;
+  /* border: 5px gray dotted; */
 
   /* background-image: linear-gradient(#d46a6a, #d46a6a); */
 `;
