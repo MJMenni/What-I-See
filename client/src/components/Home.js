@@ -42,14 +42,30 @@ const Home = () => {
           <br /> Adjust the settings below the video to recreate what you see.
           To keep track of your symptoms, login or create an account in the{" "}
           <Bold>Login</Bold> section. To add your current settings or view your
-          past entries, see the <Bold>Stats</Bold> section.
+          past entries, see the <Bold>My Stats</Bold> section.
         </AboutCopy>
       </AboutWrap>
       <Video stats={value} />
       <SectionTitle>Visual Snow</SectionTitle>
       <SliderOuterWrap>
         <SliderWrap>
-          <Slider className="SliderValue">
+          <Slider className="SliderOpacity">
+            <SliderLabel>Opacity</SliderLabel>
+            <Input
+              id="opacity"
+              type="range"
+              min="1"
+              max="10"
+              value={value.opacity}
+              onChange={(e) => {
+                setValue({ ...value, opacity: parseInt(e.target.value) });
+              }}
+            />
+            <CurrentValue>{value.opacity}</CurrentValue>
+          </Slider>
+        </SliderWrap>
+        <SliderWrap>
+          <Slider className="SliderSize">
             <SliderLabel>Size</SliderLabel>
             <Input
               id="size"
@@ -80,28 +96,12 @@ const Home = () => {
             <CurrentValue>{value.speed}</CurrentValue>
           </Slider>
         </SliderWrap>
-        <SliderWrap>
-          <Slider className="SliderOpacity">
-            <SliderLabel>Opacity</SliderLabel>
-            <Input
-              id="opacity"
-              type="range"
-              min="1"
-              max="10"
-              value={value.opacity}
-              onChange={(e) => {
-                setValue({ ...value, opacity: parseInt(e.target.value) });
-              }}
-            />
-            <CurrentValue>{value.opacity}</CurrentValue>
-          </Slider>
-        </SliderWrap>
       </SliderOuterWrap>
       <Dropdown />
       <SectionTitle>Login</SectionTitle>
       <Signup />
       <Login />
-      <SectionTitle>Stats</SectionTitle>
+      <SectionTitle>My Stats</SectionTitle>
       <Stats />
     </Wrap>
   );

@@ -45,7 +45,8 @@ const Wrap = styled.div`
   /* display: flex; */
 
   video::-webkit-media-controls-current-time-display,
-  video::-webkit-media-controls-time-remaining-display {
+  video::-webkit-media-controls-time-remaining-display,
+  video::-webkit-media-controls-fullscreen-button {
     display: none;
     video {
       object-fit: none;
