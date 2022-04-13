@@ -113,7 +113,7 @@ const Article = styled.div`
   border-radius: 5px;
   padding: 20px;
   font-size: 16px;
-  text-align: justify;
+  /* text-align: justify; */
   line-height: 18px;
   display: flex;
   flex-direction: column;
@@ -132,7 +132,9 @@ const Title = styled.div`
 `;
 
 const Description = styled.div`
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
   padding-bottom: 15px;
 `;
 

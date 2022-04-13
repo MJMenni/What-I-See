@@ -18,7 +18,9 @@ const Home = () => {
       <AboutWrap>
         {/* <Icon src="assets/slider.png"></Icon> */}
         <AboutCopy>
-          <Italic>What I See </Italic>
+          <Bold>
+            <Italic>What I See </Italic>
+          </Bold>
           is a video simulator that recreates the visual and auditory experience
           of someone who has{" "}
           <Bold>

@@ -14,13 +14,13 @@ const Resources = () => {
               target="_blank"
             >
               <Resource>Visual Snow Initiative</Resource>
+              <LinkInfo>
+                The Visual Snow Initiative was established to increase awareness
+                for visual snow, build a community for those who suffer from the
+                condition, and to generate the capital necessary for research
+                and medical advancements.
+              </LinkInfo>
             </Link>
-            <LinkInfo>
-              The Visual Snow Initiative was established to increase awareness
-              for visual snow, build a community for those who suffer from the
-              condition, and to generate the capital necessary for research and
-              medical advancements.
-            </LinkInfo>
           </SingleLinkWrap>
           <SingleLinkWrap>
             <Link
@@ -29,12 +29,13 @@ const Resources = () => {
               target="_blank"
             >
               <Resource>You are Not Alone!</Resource>
+              <LinkInfo>
+                You are Not Alone! is a Reddit group for people living with VSS.
+                The online community covers all things related to the condition,
+                and is a great place to look up specific topics and ask
+                questions.
+              </LinkInfo>
             </Link>
-            <LinkInfo>
-              You are Not Alone! is a Reddit group for people living with VSS.
-              The online community covers all things related to the condition,
-              and is a great place to look up specific topics and ask questions.
-            </LinkInfo>
           </SingleLinkWrap>
           <SingleLinkWrap>
             <Link
@@ -43,13 +44,13 @@ const Resources = () => {
               target="_blank"
             >
               <Resource>American Tinnitus Association</Resource>
+              <LinkInfo>
+                The American Tinnitus Association is a non-profit organization
+                that focus on tinnitus. Their core purpose is to promote
+                prevention and relief, while working towards finding a cure for
+                tinnitus.
+              </LinkInfo>
             </Link>
-            <LinkInfo>
-              The American Tinnitus Association is a non-profit organization
-              that focus on tinnitus. Their core purpose is to promote
-              prevention and relief, while working towards finding a cure for
-              tinnitus.
-            </LinkInfo>
           </SingleLinkWrap>
         </LinksWrap>
         <News />
@@ -101,6 +102,7 @@ const LinksWrap = styled.div`
 const Resource = styled.div`
   text-align: center;
   margin-top: 20px;
+  font-size: 18px;
 `;
 
 const Link = styled.a`
@@ -113,8 +115,15 @@ const Link = styled.a`
 const LinkInfo = styled.div`
   font-size: 16px;
   line-height: 22px;
-  text-align: justify;
+  /* text-align: justify; */
   padding: 20px;
+  font-weight: 300;
+  &:hover {
+    opacity: 75%;
+  }
+  &:visited {
+    text-decoration: none;
+  }
 `;
 
 export default Resources;
