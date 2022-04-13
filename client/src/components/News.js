@@ -24,27 +24,25 @@ const News = () => {
   return (
     <Wrap>
       <Intro>Keep up with the latest news about VSS!</Intro>
+
       <AllArticlesWrap>
-        {/* <AllArticlesWrap key={news[0]._id}> */}
-        {news.map((article, index) => {
+        {news.map((article) => {
           return (
-            <Article>
+            <Article key={article._id}>
               <InnerInfoWrap>
                 <Link
-                  href={news[index].url}
+                  href={article.url}
                   style={{ cursor: "pointer", textDecoration: "none" }}
                   target="_blank"
                 >
                   <Icon src="assets/reading.png"></Icon>
                   <AllNewsInfo>
                     <SourceAndDateWrap>
-                      <PubDate>
-                        {news[index].datePublished.substr(0, 10)}
-                      </PubDate>
-                      <Source>{news[index].provider[0].name}</Source>
+                      <PubDate>{article.datePublished.substr(0, 10)}</PubDate>
+                      <Source>{article.provider[0].name}</Source>
                     </SourceAndDateWrap>
-                    <Title>{news[index].name}</Title>
-                    <Description>{news[index].description}</Description>
+                    <Title>{article.name}</Title>
+                    <Description>{article.description}</Description>
                   </AllNewsInfo>
                 </Link>
               </InnerInfoWrap>

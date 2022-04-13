@@ -32,7 +32,7 @@ const Resources = () => {
               <LinkInfo>
                 You are Not Alone! is a Reddit group for people living with VSS.
                 The online community covers all things related to the condition,
-                and is a great place to look up specific topics and ask
+                and is a great place to look up specific topics or ask
                 questions.
               </LinkInfo>
             </Link>

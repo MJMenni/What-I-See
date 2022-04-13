@@ -5,15 +5,6 @@ import { useState } from "react";
 const Dropdown = () => {
   // const [playing, setPlaying] = useState(false);
 
-  let myAudio = document.getElementById("audio1");
-  console.log(myAudio);
-
-  if (myAudio) {
-    myAudio.addEventListener("play", () => {
-      return console.log("playing");
-    });
-  }
-
   return (
     <OuterWrap>
       <DropWrap>
@@ -21,27 +12,35 @@ const Dropdown = () => {
         <AudioOuterWrap>
           <TinnitusType>Static</TinnitusType>
           <AudioWrap>
-            <audio src="assets/Static.mp3" controls id="audio1" loop />
+            <audio
+              src="assets/Static.mp3"
+              controls
+              id="static"
+              loop
+              onPlay={(e) => {
+                console.log(e.target.id);
+              }}
+            />
           </AudioWrap>
           <TinnitusType>Kettle</TinnitusType>
           <AudioWrap>
-            <audio src="assets/TeaKettle.mp3" controls id="audio2" loop />
+            <audio src="assets/TeaKettle.mp3" controls id="kettle" loop />
           </AudioWrap>
           <TinnitusType>Roaring</TinnitusType>
           <AudioWrap>
-            <audio src="assets/Roaring.mp3" controls id="audio3" loop />
+            <audio src="assets/Roaring.mp3" controls id="roaring" loop />
           </AudioWrap>
           <TinnitusType>Electric</TinnitusType>
           <AudioWrap>
-            <audio src="assets/Electric.mp3" controls id="audio4" loop />
+            <audio src="assets/Electric.mp3" controls id="electric" loop />
           </AudioWrap>
           <TinnitusType>Buzzing</TinnitusType>
           <AudioWrap>
-            <audio src="assets/buzzing.mp3" controls id="audio5" loop />
+            <audio src="assets/buzzing.mp3" controls id="buzzing" loop />
           </AudioWrap>
           <TinnitusType>Screeching</TinnitusType>
           <AudioWrap>
-            <audio src="assets/Screeching.mp3" controls id="audio6" loop />
+            <audio src="assets/Screeching.mp3" controls id="screeching" loop />
           </AudioWrap>
         </AudioOuterWrap>
         <SymptomsLabel>Notes</SymptomsLabel>
