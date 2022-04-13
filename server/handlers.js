@@ -20,7 +20,7 @@ const handleLogin = async (req, res) => {
     if (!user) {
       return res.status(401).json({
         status: 401,
-        message: "User not exists",
+        message: "User does not exists",
       });
     }
 
@@ -41,9 +41,12 @@ const handleSignup = async (req, res) => {
     await client.connect();
     const db = client.db("WhatISee");
     // email validation check
+    // const emailMatch = emailInput === userInput;
+    // console.log("emailMatch", emailMatch);
     const { emailInput, userInput } = req.body;
-
+    console.log("emailInput", emailInput);
     const user = await db.collection("users").findOne({ email: emailInput });
+    // if (user || emailMatch) {
     if (user) {
       return res.status(500).json({
         status: 500,
@@ -66,18 +69,44 @@ const handleSignup = async (req, res) => {
   }
 };
 
-// Not changed yet, still copied handler that needs to be updated for addStats
+// In progress, needs to be updated for addStats
 const addStats = async (req, res) => {
   const client = new MongoClient(MONGO_URI, options);
   try {
     await client.connect();
     const db = client.db("WhatISee");
     const { stats } = req.body;
-    const user = await db.collection("users").findOne({ email: emailInput });
-    if (!user) {
+    // const user = await db.collection("users").findOne({ email: emailInput });
+    if (!stats) {
       return res.status(401).json({
         status: 401,
-        message: "User not exists",
+        message: "Cannot add data",
+      });
+    }
+
+    return res.status(200).json({
+      status: 200,
+      data: stats,
+    });
+  } catch (err) {
+    res.status(500).json({ status: "Error", data: req.body, msg: err.message });
+  } finally {
+    client.close();
+  }
+};
+
+//In progress, needs to be updated for addStats
+const getStats = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  try {
+    await client.connect();
+    const db = client.db("WhatISee");
+    const { stats } = req.body;
+    // const user = await db.collection("users").findOne({ email: emailInput });
+    if (!stats) {
+      return res.status(401).json({
+        status: 401,
+        message: "Cannot find data",
       });
     }
 
@@ -96,7 +125,7 @@ module.exports = {
   handleLogin,
   handleSignup,
   addStats,
-  // getStats,
+  getStats,
 };
 
 // let responseHandler = (response) => {

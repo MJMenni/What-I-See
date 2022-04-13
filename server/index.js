@@ -104,7 +104,7 @@ express()
     //   });
   })
 
-  // .get("/api/get-stats", getStats)
+  .get("/api/get-stats", getStats)
 
   // POST endpoints
   .post("/api/login", handleLogin)
