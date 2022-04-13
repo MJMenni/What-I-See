@@ -72,7 +72,7 @@ const addStats = async (req, res) => {
   try {
     await client.connect();
     const db = client.db("WhatISee");
-    const { emailInput } = req.body;
+    const { stats } = req.body;
     const user = await db.collection("users").findOne({ email: emailInput });
     if (!user) {
       return res.status(401).json({
@@ -83,7 +83,7 @@ const addStats = async (req, res) => {
 
     return res.status(200).json({
       status: 200,
-      data: user,
+      data: stats,
     });
   } catch (err) {
     res.status(500).json({ status: "Error", data: req.body, msg: err.message });

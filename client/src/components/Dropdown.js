@@ -3,8 +3,13 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const Dropdown = () => {
-  // const [playing, setPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
+  let currentlyPlaying = [];
+  let newCurrentlyPlaying = [];
+
+  console.log("currentlyPlaying", currentlyPlaying);
+  console.log("isPlaying", isPlaying);
   return (
     <OuterWrap>
       <DropWrap>
@@ -18,7 +23,12 @@ const Dropdown = () => {
               id="static"
               loop
               onPlay={(e) => {
-                console.log(e.target.id);
+                currentlyPlaying.push(e.target.id);
+                console.log("is playing", e.target.id);
+                setIsPlaying(e.target.id);
+              }}
+              onPause={(e) => {
+                console.log("is paused", e.target.id);
               }}
             />
           </AudioWrap>
