@@ -107,7 +107,11 @@ const Home = () => {
   );
 };
 
-const Wrap = styled.div``;
+const Wrap = styled.div`
+  max-width: 956px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 // About section
 const AboutTitle = styled.div`
@@ -125,6 +129,7 @@ const AboutWrap = styled.div`
   margin-left: auto;
   justify-content: center;
   margin-bottom: 50px;
+
   /* border: 1px green solid; */
 `;
 
@@ -165,7 +170,7 @@ const SectionTitle = styled.div`
   font-size: 18px;
   font-weight: 900;
   margin: 50px 0px 25px 0px;
-  width: 810px;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
@@ -176,7 +181,7 @@ const SliderOuterWrap = styled.div`
   background-color: #f1f3f4;
   margin-left: auto;
   margin-right: auto;
-  width: 46%;
+  width: 72%;
   padding: 25px 0px;
   border-radius: 5px;
 `;
@@ -185,9 +190,11 @@ const SliderWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  max-width: 85%;
+  margin-top: 20px;
+  max-width: 90%;
   display: flex;
   flex-direction: column;
+  padding: 10px 0px;
   /* border: 1px yellow solid; */
 `;
 
@@ -223,7 +230,7 @@ const Input = styled.input`
 `;
 
 const CurrentValue = styled.div`
-  margin-left: 25px;
+  margin-right: 10px;
 `;
 
 export default Home;
