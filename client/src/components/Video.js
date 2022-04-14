@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import SliderContext from "./SliderContext";
-import { useContext } from "react";
 
 const Video = ({ stats }) => {
   const { size, opacity, speed } = stats;
@@ -10,6 +8,7 @@ const Video = ({ stats }) => {
   const videoRate = () => {
     vidOverlay.playbackRate = 0.5;
   };
+
   return (
     <Wrap>
       <MainVideoWrap>
@@ -23,10 +22,10 @@ const Video = ({ stats }) => {
           width={1000 * size * size}
           autoPlay={true}
           loop={true}
+          muted
           // height={size * 512}
           // controls
           // playbackRate={0.5}
-          muted
         >
           <source src="/assets/Overlay.mp4" type="video/mp4"></source>
         </video>
@@ -42,7 +41,6 @@ const Wrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   /* border: 4px yellow solid; */
-  /* display: flex; */
 
   video::-webkit-media-controls-current-time-display,
   video::-webkit-media-controls-time-remaining-display,
@@ -52,8 +50,6 @@ const Wrap = styled.div`
       object-fit: none;
 
       /* border: 4px pink solid; */
-      /* max-width: 100%; */
-      /* overflow: hidden; */
     }
   }
   video::-webkit-media-controls-timeline {
@@ -77,14 +73,6 @@ const OverlayVideoWrap = styled.div`
   overflow: hidden;
   pointer-events: none;
   /* border: 5px green solid; */
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* overflow: hidden; */
-  /* max-width: 100%; */
-  /* opacity: 40%;
-  margin: auto;
-  top: 0;
-  left: 0; */
 `;
 
 export default Video;

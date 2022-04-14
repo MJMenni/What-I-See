@@ -15,13 +15,7 @@ const Home = () => {
     setUser,
   } = useContext(UserContext);
 
-  //onSaveHandler
-
-  //get the current state of slider, audio, note
-
-  //make a http request to BE(create a new endpoint)
-
-  //on success, update user context for FE using setUser(only stats field)
+  // 1. Get the current state of slider, audio, note
 
   // Stats
   const [slider, setSlider] = useState(initialState);
@@ -55,6 +49,31 @@ const Home = () => {
   const [note, setNote] = useState("");
   console.log("note", note);
 
+  // 2. onSaveHandler
+  // 3. Make a http request to BE(create a new endpoint)
+  const onSave = (e) => {
+    e.preventDefault();
+
+    fetch("/api/add-stats", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ stats }),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("logged in");
+        setUser(json.stats);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  // 4. On success, update user context for FE using setUser(only stats field)
+
   const tinType = [
     "Static",
     "Roaring",
@@ -63,7 +82,7 @@ const Home = () => {
     "Electric",
     "Screeching",
   ];
-  console.log(tinType[0]);
+  // console.log(tinType[0]);
 
   return (
     <Wrap>
@@ -164,6 +183,7 @@ const Home = () => {
                     <audio
                       src={`assets/${typ}.mp3`}
                       // src={`assets/` + { typ } + `.mp3`}
+                      // src={"assets/" + { typ } + ".mp3"}
                       id={typ}
                       controls
                       loop
