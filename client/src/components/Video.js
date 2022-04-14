@@ -2,11 +2,11 @@ import styled from "styled-components";
 import React from "react";
 
 const Video = ({ stats }) => {
-  const { size, opacity, speed } = stats;
+  const { size, opacity } = stats;
 
   const vidOverlay = document.getElementById("vid2");
   const videoRate = () => {
-    vidOverlay.playbackRate = 0.5;
+    vidOverlay.playbackRate = 2;
   };
 
   return (
@@ -17,16 +17,7 @@ const Video = ({ stats }) => {
         </video>
       </MainVideoWrap>
       <OverlayVideoWrap onLoad={videoRate} style={{ opacity: opacity / 20 }}>
-        <video
-          id="vid2"
-          width={1000 * size * size}
-          autoPlay={true}
-          loop={true}
-          muted
-          // height={size * 512}
-          // controls
-          // playbackRate={0.5}
-        >
+        <video id="vid2" width={960 * size} autoPlay={true} loop={true} muted>
           <source src="/assets/Overlay.mp4" type="video/mp4"></source>
         </video>
       </OverlayVideoWrap>
@@ -40,7 +31,6 @@ const Wrap = styled.div`
   width: 960px;
   margin-left: auto;
   margin-right: auto;
-  /* border: 4px yellow solid; */
 
   video::-webkit-media-controls-current-time-display,
   video::-webkit-media-controls-time-remaining-display,
@@ -48,8 +38,6 @@ const Wrap = styled.div`
     display: none;
     video {
       object-fit: none;
-
-      /* border: 4px pink solid; */
     }
   }
   video::-webkit-media-controls-timeline {
@@ -62,7 +50,7 @@ const MainVideoWrap = styled.div`
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: fit-content;
+  /* width: fit-content; */
 `;
 
 const OverlayVideoWrap = styled.div`
@@ -70,9 +58,7 @@ const OverlayVideoWrap = styled.div`
   left: 0;
   position: absolute;
   width: 100%;
-  overflow: hidden;
   pointer-events: none;
-  /* border: 5px green solid; */
 `;
 
 export default Video;

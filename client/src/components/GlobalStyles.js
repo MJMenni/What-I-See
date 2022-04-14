@@ -32,7 +32,7 @@ body {
 }
 img, picture, video, canvas, svg {
   display: block;
-  max-width: 100%;
+  // max-width: 100%;
 }
 input, button, textarea, select {
   font: inherit;

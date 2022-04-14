@@ -6,8 +6,9 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Stats from "./Stats";
 import UserContext from "./UserContext";
+// import assets from "../assets";
 
-const initialState = { size: 1, speed: 1, opacity: 1 };
+const initialState = { size: 1, speed: 1, opacity: 5 };
 
 const Home = () => {
   const {
@@ -78,9 +79,9 @@ const Home = () => {
     "Static",
     "Roaring",
     "Buzzing",
+    "Screeching",
     "Kettle",
     "Electric",
-    "Screeching",
   ];
   // console.log(tinType[0]);
 
@@ -144,7 +145,7 @@ const Home = () => {
               id="size"
               type="range"
               min="1"
-              max="10"
+              max="5"
               value={slider.size}
               onChange={(e) => {
                 setSlider({ ...slider, size: parseInt(e.target.value) });
@@ -160,9 +161,11 @@ const Home = () => {
               id="speed"
               type="range"
               min="1"
-              max="10"
+              max="4"
               value={slider.speed}
               onChange={(e) => {
+                document.getElementById("vid2").playbackRate =
+                  e.target.value * 0.5;
                 setSlider({ ...slider, speed: parseInt(e.target.value) });
               }}
             />
@@ -182,8 +185,6 @@ const Home = () => {
                   <AudioWrap>
                     <audio
                       src={`assets/${typ}.mp3`}
-                      // src={`assets/` + { typ } + `.mp3`}
-                      // src={"assets/" + { typ } + ".mp3"}
                       id={typ}
                       controls
                       loop
@@ -198,82 +199,6 @@ const Home = () => {
                 </div>
               );
             })}
-
-            {/* <TinnitusType>Kettle</TinnitusType>
-            <AudioWrap>
-              <audio
-                src="assets/Kettle.mp3"
-                controls
-                id="Kettle"
-                loop
-                onPlay={(e) => {
-                  onClickHandler(e);
-                }}
-                onPause={(e) => {
-                  onClickHandler(e);
-                }}
-              />
-            </AudioWrap>
-            <TinnitusType>Roaring</TinnitusType>
-            <AudioWrap>
-              <audio
-                src="assets/Roaring.mp3"
-                controls
-                id="Roaring"
-                loop
-                onPlay={(e) => {
-                  onClickHandler(e);
-                }}
-                onPause={(e) => {
-                  onClickHandler(e);
-                }}
-              />
-            </AudioWrap>
-            <TinnitusType>Electric</TinnitusType>
-            <AudioWrap>
-              <audio
-                src="assets/Electric.mp3"
-                controls
-                id="Electric"
-                loop
-                onPlay={(e) => {
-                  onClickHandler(e);
-                }}
-                onPause={(e) => {
-                  onClickHandler(e);
-                }}
-              />
-            </AudioWrap>
-            <TinnitusType>Buzzing</TinnitusType>
-            <AudioWrap>
-              <audio
-                src="assets/Buzzing.mp3"
-                controls
-                id="Buzzing"
-                loop
-                onPlay={(e) => {
-                  onClickHandler(e);
-                }}
-                onPause={(e) => {
-                  onClickHandler(e);
-                }}
-              />
-            </AudioWrap>
-            <TinnitusType>Screeching</TinnitusType>
-            <AudioWrap>
-              <audio
-                src="assets/Screeching.mp3"
-                controls
-                id="Screeching"
-                loop
-                onPlay={(e) => {
-                  onClickHandler(e);
-                }}
-                onPause={(e) => {
-                  onClickHandler(e);
-                }}
-              />
-            </AudioWrap> */}
           </AudioOuterWrap>
           <SymptomsLabel>Notes</SymptomsLabel>
         </InnerWrap>
@@ -291,8 +216,8 @@ const Home = () => {
         ></NotesInput>
       </NotesWrap>
       <SectionTitle>Login</SectionTitle>
-      <Signup />
       <Login />
+      <Signup />
       <SectionTitle>My Stats</SectionTitle>
       <Stats />
     </Wrap>
@@ -439,8 +364,9 @@ const SymptomsLabel = styled.div`
 const TinnitusType = styled.div`
   margin-top: 25px;
   font-weight: 900;
-  width: 15%;
-  height: 15%;
+  width: 20%;
+  height: 18%;
+  /* border: 1px green solid; */
 `;
 
 const AudioOuterWrap = styled.div`
@@ -449,16 +375,19 @@ const AudioOuterWrap = styled.div`
   flex-wrap: wrap;
   width: 85%;
   background-color: #f1f3f4;
-  padding: 15px 5px 15px 35px;
+  padding: 15px 0px 15px 60px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 5px;
+  /* border: 1px yellow solid; */
+  justify-content: center;
 `;
 
 const AudioWrap = styled.div`
-  margin: 10px;
+  margin-top: -30px;
   display: flex;
-  width: 30%;
+  /* border: 1px pink solid; */
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
 
@@ -491,4 +420,5 @@ const NotesInput = styled.textarea`
   line-height: 24px;
   font-size: 16px;
 `;
+
 export default Home;
