@@ -216,13 +216,40 @@ const Home = () => {
         ></NotesInput>
       </NotesWrap>
       <SectionTitle>Login</SectionTitle>
-      <Login />
-      <Signup />
+      <LoginSignupWrap>
+        <LoginWrap>
+          {" "}
+          <Login />
+        </LoginWrap>
+
+        <SignupWrap>
+          <Signup />
+        </SignupWrap>
+      </LoginSignupWrap>
       <SectionTitle>My Stats</SectionTitle>
       <Stats />
     </Wrap>
   );
 };
+
+const LoginSignupWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 85%;
+  justify-content: space-evenly;
+  margin-right: auto;
+  margin-left: auto;
+  /* border: 3px yellow solid; */
+`;
+const LoginWrap = styled.div`
+  /* border: 1px green solid; */
+  width: 38%;
+`;
+
+const SignupWrap = styled.div`
+  /* border: 1px gray solid; */
+  width: 38%;
+`;
 
 // Outer wrap
 const Wrap = styled.div`

@@ -39,9 +39,8 @@ const Login = () => {
     <Wrap>
       <OuterWrap>
         <InnerWrap>
-          <LoginMessage>
-            Already have an account? Log in and view your stats
-          </LoginMessage>
+          <LoginMessageTitle>Already have an account?</LoginMessageTitle>
+          <LoginMessage>Log in and view your stats</LoginMessage>
         </InnerWrap>
 
         <form onSubmit={handleSubmit}>
@@ -84,61 +83,69 @@ const Login = () => {
 // Wraps
 const Wrap = styled.div`
   max-width: 540px;
-  margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
 `;
 
 const OuterWrap = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   border: 1px var(--blue) solid;
   border-radius: 5px;
-`;
-
-const InnerWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 15px 0px 25px 0px;
+  padding: 35px 25px;
 `;
 
 // Login message
-const LoginMessage = styled.div`
+const InnerWrap = styled.div`
+  /* border: 3px yellow solid; */
+`;
+
+const LoginMessageTitle = styled.div`
+  font-size: 18px;
   font-weight: 900;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 25px;
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 5px;
+  /* border: 1px purple solid; */
+`;
+
+const LoginMessage = styled.div`
+  margin-bottom: 35px;
+  text-align: center;
 `;
 
 // Login
 const LoginInputWrap = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin: 0px 25px 10px 25px;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  /* border: 1px green solid; */
 `;
 
 const UserInput = styled.input`
-  width: 150px;
-  padding: 5px 10px;
+  width: 225px;
+  padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
+  margin-bottom: 10px;
 `;
 
 const Email = styled.input`
-  width: 150px;
-  padding: 5px 10px;
+  width: 225px;
+  padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
+  margin-bottom: 10px;
 `;
 
 const LoginButton = styled.button`
   color: var(--blue);
-  width: 150px;
-  padding: 5px 10px;
+  width: 225px;
+  padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
+  margin-bottom: 10px;
 `;
 
 // Confirmation

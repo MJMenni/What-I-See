@@ -39,9 +39,8 @@ const Signup = () => {
     <Wrap>
       <LoginWrap>
         <MessagesWrap>
-          <LoginMessage>
-            New to the site? Create your free account today
-          </LoginMessage>
+          <LoginMessageTitle>New to the site?</LoginMessageTitle>
+          <LoginMessage>Create your free account today</LoginMessage>
         </MessagesWrap>
 
         <form onSubmit={handleSubmit}>
@@ -70,6 +69,11 @@ const Signup = () => {
             ></Email>
             <LoginButton type="submit">Create account</LoginButton>
           </LoginInputWrap>
+          {state === false ? (
+            <Confirmation>Invalid username, please try again</Confirmation>
+          ) : (
+            <Confirmation>Success. Account created!</Confirmation>
+          )}
         </form>
       </LoginWrap>
     </Wrap>
@@ -92,45 +96,60 @@ const LoginWrap = styled.div`
 `;
 
 const MessagesWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 25px;
+  border-radius: 5px;
+  padding: 35px 25px;
+`;
+
+const LoginMessageTitle = styled.div`
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 10px;
 `;
 
 const LoginMessage = styled.div`
-  font-weight: 900;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  text-align: center;
 `;
 
 const LoginInputWrap = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin: 0px 25px 25px 25px;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 const UserInput = styled.input`
-  width: 150px;
-  padding: 5px 10px;
+  width: 225px;
+  padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
+  margin-bottom: 10px;
 `;
 
 const Email = styled.input`
-  width: 150px;
-  padding: 5px 10px;
+  width: 225px;
+  padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
+  margin-bottom: 10px;
 `;
 
 const LoginButton = styled.button`
-  width: 150px;
-  padding: 5px 10px;
   color: var(--blue);
+  width: 225px;
+  padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
+  margin-bottom: 10px;
+`;
+
+// Confirmation
+const Confirmation = styled.div`
+  text-align: center;
+  opacity: 75%;
+  font-size: 14px;
+  margin-bottom: 15px;
 `;
 
 export default Signup;

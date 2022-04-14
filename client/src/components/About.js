@@ -103,6 +103,9 @@ const About = () => {
             </IconWrap>
           </NonVisualSymptoms>
         </SymptomsWrap>
+        <ResourcesLink>
+          To learn more about VSS, visit the Resources page.
+        </ResourcesLink>
       </AboutWrap>
     </Wrap>
   );
@@ -188,6 +191,9 @@ const Icon = styled.img`
     transition-duration: 0.5s;
   }
 `;
+
+// Resources link
+const ResourcesLink = styled.div``;
 
 // Font styles
 const Bold = styled.span`
