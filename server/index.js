@@ -109,7 +109,7 @@ express()
   // POST endpoints
   .post("/api/login", handleLogin)
   .post("/api/signup", handleSignup)
-  .post("/api/add-stats", addStats)
+  .patch("/api/add-stats", addStats)
 
   // Catch-all endpoint
   .get("*", (req, res) => {

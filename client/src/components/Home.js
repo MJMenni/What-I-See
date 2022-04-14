@@ -1,18 +1,35 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import Video from "./Video";
 import Login from "./Login";
 import Signup from "./Signup";
 import Stats from "./Stats";
+import UserContext from "./UserContext";
+
 const initialState = { size: 1, speed: 1, opacity: 1 };
 
 const Home = () => {
-  const [value, setValue] = useState(initialState);
-  console.log(value);
+  const {
+    user: { stats },
+    setUser,
+  } = useContext(UserContext);
 
-  console.log("value is", value);
+  //onSaveHandler
+
+  //get the current state of slider, audio, note
+
+  //make a http request to BE(create a new endpoint)
+
+  //on success, update user context for FE using setUser(only stats field)
+
+  //stats status
+  const [slider, setSlider] = useState(initialState);
+  //audio
+
+  //note
+
   return (
     <Wrap>
       <AboutTitle>What I See</AboutTitle>
@@ -47,7 +64,7 @@ const Home = () => {
           past entries, see the <Bold>My Stats</Bold> section.
         </AboutCopy>
       </AboutWrap>
-      <Video stats={value} />
+      <Video stats={slider} />
       <SectionTitle>Visual Snow</SectionTitle>
       <SliderOuterWrap>
         <SliderWrap>
@@ -58,12 +75,12 @@ const Home = () => {
               type="range"
               min="1"
               max="10"
-              value={value.opacity}
+              value={slider.opacity}
               onChange={(e) => {
-                setValue({ ...value, opacity: parseInt(e.target.value) });
+                setSlider({ ...slider, opacity: parseInt(e.target.value) });
               }}
             />
-            <CurrentValue>{value.opacity}</CurrentValue>
+            <CurrentValue>{slider.opacity}</CurrentValue>
           </Slider>
         </SliderWrap>
         <SliderWrap>
@@ -74,12 +91,12 @@ const Home = () => {
               type="range"
               min="1"
               max="10"
-              value={value.size}
+              value={slider.size}
               onChange={(e) => {
-                setValue({ ...value, size: parseInt(e.target.value) });
+                setSlider({ ...slider, size: parseInt(e.target.value) });
               }}
             />
-            <CurrentValue>{value.size}</CurrentValue>
+            <CurrentValue>{slider.size}</CurrentValue>
           </Slider>
         </SliderWrap>
         <SliderWrap>
@@ -90,12 +107,12 @@ const Home = () => {
               type="range"
               min="1"
               max="10"
-              value={value.speed}
+              value={slider.speed}
               onChange={(e) => {
-                setValue({ ...value, speed: parseInt(e.target.value) });
+                setSlider({ ...slider, speed: parseInt(e.target.value) });
               }}
             />
-            <CurrentValue>{value.speed}</CurrentValue>
+            <CurrentValue>{slider.speed}</CurrentValue>
           </Slider>
         </SliderWrap>
       </SliderOuterWrap>

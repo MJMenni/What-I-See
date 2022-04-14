@@ -1,14 +1,34 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Dropdown = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+const Dropdown = ({ audio, setAudio }) => {
+  const initValue = {
+    Static: false,
+    Roaring: false,
+    Buzzing: false,
+    Kettle: false,
+    Electric: false,
+    Screeching: false,
+  };
+  const [stats, setStats] = useState(initValue);
 
-  let currentlyPlaying = [];
-  let newCurrentlyPlaying = [];
+  console.log(stats);
+  const onClickHandler = (event) => {
+    //click triggered
+    event.preventDefault();
 
-  console.log("currentlyPlaying", currentlyPlaying);
-  console.log("isPlaying", isPlaying);
+    //change the stat target value
+    console.log(event.target.id);
+    const key = event.target.id;
+    setStats((prev) => {
+      return { ...prev, [key]: !prev[key] };
+    });
+  };
+
+  useEffect(() => {
+    console.log(stats);
+  }, [stats]);
+
   return (
     <Wrap>
       <InnerWrap>
@@ -18,38 +38,92 @@ const Dropdown = () => {
           <AudioWrap>
             <audio
               src="assets/Static.mp3"
-              id="static"
+              id="Static"
               controls
               loop
               onPlay={(e) => {
-                currentlyPlaying.push(e.target.id);
-                console.log("is playing", e.target.id);
-                setIsPlaying(e.target.id);
+                onClickHandler(e);
               }}
               onPause={(e) => {
-                console.log("is paused", e.target.id);
+                onClickHandler(e);
               }}
             />
           </AudioWrap>
+
           <TinnitusType>Kettle</TinnitusType>
           <AudioWrap>
-            <audio src="assets/TeaKettle.mp3" controls id="kettle" loop />
+            <audio
+              src="assets/Kettle.mp3"
+              controls
+              id="Kettle"
+              loop
+              onPlay={(e) => {
+                onClickHandler(e);
+              }}
+              onPause={(e) => {
+                onClickHandler(e);
+              }}
+            />
           </AudioWrap>
           <TinnitusType>Roaring</TinnitusType>
           <AudioWrap>
-            <audio src="assets/Roaring.mp3" controls id="roaring" loop />
+            <audio
+              src="assets/Roaring.mp3"
+              controls
+              id="Roaring"
+              loop
+              onPlay={(e) => {
+                onClickHandler(e);
+              }}
+              onPause={(e) => {
+                onClickHandler(e);
+              }}
+            />
           </AudioWrap>
           <TinnitusType>Electric</TinnitusType>
           <AudioWrap>
-            <audio src="assets/Electric.mp3" controls id="electric" loop />
+            <audio
+              src="assets/Electric.mp3"
+              controls
+              id="Electric"
+              loop
+              onPlay={(e) => {
+                onClickHandler(e);
+              }}
+              onPause={(e) => {
+                onClickHandler(e);
+              }}
+            />
           </AudioWrap>
           <TinnitusType>Buzzing</TinnitusType>
           <AudioWrap>
-            <audio src="assets/buzzing.mp3" controls id="buzzing" loop />
+            <audio
+              src="assets/Buzzing.mp3"
+              controls
+              id="Buzzing"
+              loop
+              onPlay={(e) => {
+                onClickHandler(e);
+              }}
+              onPause={(e) => {
+                onClickHandler(e);
+              }}
+            />
           </AudioWrap>
           <TinnitusType>Screeching</TinnitusType>
           <AudioWrap>
-            <audio src="assets/Screeching.mp3" controls id="screeching" loop />
+            <audio
+              src="assets/Screeching.mp3"
+              controls
+              id="Screeching"
+              loop
+              onPlay={(e) => {
+                onClickHandler(e);
+              }}
+              onPause={(e) => {
+                onClickHandler(e);
+              }}
+            />
           </AudioWrap>
         </AudioOuterWrap>
         <SymptomsLabel>Notes</SymptomsLabel>

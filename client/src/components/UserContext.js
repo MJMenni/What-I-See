@@ -3,17 +3,34 @@ import { useState, createContext } from "react";
 
 const UserContext = createContext(null);
 
-const initialState = {
-  user: "",
+const initalUser = {
+  _id: null,
+  email: null,
+  username: null,
+  stats: {
+    slider: {
+      opacity: 0,
+      speed: 0,
+      size: 0,
+    },
+    audio: {
+      static: false,
+      roaring: false,
+      buzzing: false,
+      kettle: false,
+      electric: false,
+      screeching: false,
+    },
+    note: "",
+  },
 };
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(initialState);
+  const [user, setUser] = useState(initalUser);
   const [status, setStatus] = useState("loading");
   const initialUser = localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))
     : null;
-  const [loggedInUser, setLoggedInUser] = useState(initialUser);
 
   return (
     <UserContext.Provider
@@ -22,8 +39,6 @@ export const UserProvider = ({ children }) => {
         status,
         setUser,
         setStatus,
-        loggedInUser,
-        setLoggedInUser,
       }}
     >
       {children}
