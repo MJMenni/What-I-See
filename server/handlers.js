@@ -76,7 +76,10 @@ const addStats = async (req, res) => {
     await client.connect();
     const db = client.db("WhatISee");
     const { stats } = req.body;
-    // const user = await db.collection("users").findOne({ email: emailInput });
+    const user = await db
+      .collection("users")
+      .findOne({ email: emailInput })
+      .updateOne({ data: req.body });
     if (!stats) {
       return res.status(401).json({
         status: 401,

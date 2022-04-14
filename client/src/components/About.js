@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -104,7 +105,15 @@ const About = () => {
           </NonVisualSymptoms>
         </SymptomsWrap>
         <ResourcesLink>
-          To learn more about VSS, visit the Resources page.
+          To learn more about VSS or keep up with the latest VSS news, visit the
+          <NavLinks
+            to="/resources"
+            style={{ cursor: "pointer", textDecoration: "none" }}
+          >
+            {" "}
+            {` Resources`}
+          </NavLinks>{" "}
+          page.
         </ResourcesLink>
       </AboutWrap>
     </Wrap>
@@ -193,7 +202,22 @@ const Icon = styled.img`
 `;
 
 // Resources link
-const ResourcesLink = styled.div``;
+const ResourcesLink = styled.div`
+  font-size: 18px;
+`;
+
+const NavLinks = styled(NavLink)`
+  font-weight: 900;
+  font-size: 18px;
+
+  &:hover {
+    opacity: 75%;
+  }
+  &:visited {
+    text-decoration: none;
+    color: var(--blue);
+  }
+`;
 
 // Font styles
 const Bold = styled.span`

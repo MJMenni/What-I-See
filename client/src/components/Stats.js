@@ -21,7 +21,7 @@ const Stats = () => {
 const Wrap = styled.div`
   border: 1px var(--blue) solid;
   margin-top: 50px;
-  max-width: 540px;
+  max-width: 72%;
   margin-right: auto;
   margin-left: auto;
   border-radius: 5px;
