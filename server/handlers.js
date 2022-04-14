@@ -78,7 +78,7 @@ const addStats = async (req, res) => {
     const { stats } = req.body;
     const user = await db
       .collection("users")
-      .findOne({ email: emailInput })
+      .findOne({ username })
       .updateOne({ data: req.body });
     if (!stats) {
       return res.status(401).json({
