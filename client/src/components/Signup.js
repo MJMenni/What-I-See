@@ -149,7 +149,7 @@ const Confirmation = styled.div`
   text-align: center;
   opacity: 75%;
   font-size: 14px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 `;
 
 export default Signup;

@@ -104,7 +104,7 @@ const LoginMessageTitle = styled.div`
   font-size: 18px;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   /* border: 1px purple solid; */
 `;
 
