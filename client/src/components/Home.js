@@ -23,11 +23,11 @@ const Home = () => {
 
   //on success, update user context for FE using setUser(only stats field)
 
-  //stats status
+  // Stats
   const [slider, setSlider] = useState(initialState);
   console.log(slider);
 
-  //audio
+  // Audio
   const initValue = {
     Static: false,
     Roaring: false,
@@ -51,8 +51,19 @@ const Home = () => {
     });
   };
 
-  //note
+  // Note
   const [note, setNote] = useState("");
+  console.log("note", note);
+
+  const tinType = [
+    "Static",
+    "Roaring",
+    "Buzzing",
+    "Kettle",
+    "Electric",
+    "Screeching",
+  ];
+  console.log(tinType[0]);
 
   return (
     <Wrap>
@@ -145,23 +156,30 @@ const Home = () => {
         <InnerWrap>
           <SymptomsLabel>Tinnitus</SymptomsLabel>
           <AudioOuterWrap>
-            <TinnitusType>Static</TinnitusType>
-            <AudioWrap>
-              <audio
-                src="assets/Static.mp3"
-                id="Static"
-                controls
-                loop
-                onPlay={(e) => {
-                  onClickHandler(e);
-                }}
-                onPause={(e) => {
-                  onClickHandler(e);
-                }}
-              />
-            </AudioWrap>
+            {tinType.map((typ) => {
+              return (
+                <div key={typ}>
+                  <TinnitusType>{typ}</TinnitusType>
+                  <AudioWrap>
+                    <audio
+                      src={`assets/${typ}.mp3`}
+                      // src={`assets/` + { typ } + `.mp3`}
+                      id={typ}
+                      controls
+                      loop
+                      onPlay={(e) => {
+                        onClickHandler(e);
+                      }}
+                      onPause={(e) => {
+                        onClickHandler(e);
+                      }}
+                    />
+                  </AudioWrap>
+                </div>
+              );
+            })}
 
-            <TinnitusType>Kettle</TinnitusType>
+            {/* <TinnitusType>Kettle</TinnitusType>
             <AudioWrap>
               <audio
                 src="assets/Kettle.mp3"
@@ -235,7 +253,7 @@ const Home = () => {
                   onClickHandler(e);
                 }}
               />
-            </AudioWrap>
+            </AudioWrap> */}
           </AudioOuterWrap>
           <SymptomsLabel>Notes</SymptomsLabel>
         </InnerWrap>
@@ -243,6 +261,13 @@ const Home = () => {
       <NotesWrap>
         <NotesInput
           placeholder="Feel free to add notes here. For example: &#10;Apr-20-2022 – Intense after-images and light sensitivity, especially when walking through the mall. Noticed static, tinnitus, and floaters increased as the day went on. Possible triggers: work-related stress, exposure to intense lighting, too much screen time."
+          value={note}
+          onChange={(e) => {
+            setNote(e.target.value);
+          }}
+          minlength="1"
+          maxlength="280"
+          placeholderTextColor="light-gray"
         ></NotesInput>
       </NotesWrap>
       <SectionTitle>Login</SectionTitle>
