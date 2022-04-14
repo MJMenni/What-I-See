@@ -446,6 +446,10 @@ const NotesInput = styled.textarea`
   border-radius: 5px;
   line-height: 24px;
   font-size: 16px;
+
+  &:focus::placeholder {
+    color: white;
+  }
 `;
 
 export default Home;
