@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const Stats = () => {
+const Stats = ({ onSave }) => {
   return (
     <Wrap>
       <ViewStatsWrap>
-        <AddStatsButton>Add stats</AddStatsButton>
+        <AddStatsButton onClick={onSave}>Add stats</AddStatsButton>
         <ViewStatsButton>View stats</ViewStatsButton>
       </ViewStatsWrap>
       <StatsWrap>

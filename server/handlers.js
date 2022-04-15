@@ -1,6 +1,6 @@
 "use strict";
 const { sendResponse } = require("./utils");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 
 require("dotenv").config({ path: "../.env" });
 const { MONGO_URI } = process.env;
@@ -75,21 +75,21 @@ const addStats = async (req, res) => {
   try {
     await client.connect();
     const db = client.db("WhatISee");
-    const { stats } = req.body;
-    const user = await db
-      .collection("users")
-      .findOne({ username })
-      .updateOne({ data: req.body });
-    if (!stats) {
+    const { newStats, _id } = req.body;
+    console.log(newStats);
+    if (!newStats) {
       return res.status(401).json({
         status: 401,
         message: "Cannot add data",
       });
     }
 
+    await db
+      .collection("users")
+      .updateOne({ _id: ObjectId(_id) }, { $push: { stats: newStats } });
+
     return res.status(200).json({
       status: 200,
-      data: stats,
     });
   } catch (err) {
     res.status(500).json({ status: "Error", data: req.body, msg: err.message });

@@ -6,15 +6,11 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Stats from "./Stats";
 import UserContext from "./UserContext";
-// import assets from "../assets";
 
 const initialState = { size: 1, speed: 1, opacity: 5 };
 
 const Home = () => {
-  const {
-    user: { stats },
-    setUser,
-  } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   // 1. Get the current state of slider, audio, note
 
@@ -32,8 +28,9 @@ const Home = () => {
     Screeching: false,
   };
   const [audio, setAudio] = useState(initValue);
-
   console.log(audio);
+
+  //dealing with auto changes
   const onClickHandler = (event) => {
     //click triggered
     event.preventDefault();
@@ -55,18 +52,25 @@ const Home = () => {
   const onSave = (e) => {
     e.preventDefault();
 
+    const newStats = {
+      slider,
+      audio,
+      note,
+    };
+
     fetch("/api/add-stats", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ stats }),
+      body: JSON.stringify({ newStats, _id: user._id }),
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log("logged in");
-        setUser(json.stats);
+        if (json.status === 200) {
+          setUser((prev) => ({ ...prev, stats: [...prev.stats, newStats] }));
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -227,7 +231,7 @@ const Home = () => {
         </SignupWrap>
       </LoginSignupWrap>
       <SectionTitle>My Stats</SectionTitle>
-      <Stats />
+      <Stats onSave={onSave} />
     </Wrap>
   );
 };
