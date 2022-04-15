@@ -115,7 +115,7 @@ const Home = () => {
         </AboutCopy>
       </AboutWrap>
       <Video stats={slider} />
-      <SectionTitleVS>Visual Snow</SectionTitleVS>
+      <SectionTitle>VISUAL SNOW</SectionTitle>
       <SliderOuterWrap>
         <SliderWrap>
           <Slider className="SliderOpacity">
@@ -185,7 +185,7 @@ const Home = () => {
           placeholderTextColor="light-gray"
         ></NotesInput>
       </NotesWrap>
-      {/* <SectionTitle>Login</SectionTitle> */}
+      <SectionTitle>LOGIN</SectionTitle>
       <LoginSignupWrap>
         <LoginWrap>
           {" "}
@@ -196,10 +196,7 @@ const Home = () => {
           <Signup />
         </SignupWrap>
       </LoginSignupWrap>
-      <SectionTitleWrap>
-        <SectionTitle>Add Stats</SectionTitle>
-        <SectionTitle>View Stats</SectionTitle>
-      </SectionTitleWrap>
+      <SectionTitle>MY STATS</SectionTitle>
       <Stats onSave={onSave} />
     </Wrap>
   );
@@ -214,6 +211,7 @@ const LoginSignupWrap = styled.div`
   margin-left: auto;
   /* border: 3px yellow solid; */
 `;
+
 const LoginWrap = styled.div`
   /* border: 1px green solid; */
   width: 38%;
@@ -266,7 +264,7 @@ const NavLinks = styled(NavLink)`
 
 // Bold and italic styles
 const Bold = styled.span`
-  font-weight: 600;
+  font-weight: 900;
   color: var(--blue);
 `;
 
@@ -275,30 +273,14 @@ const Italic = styled.span`
 `;
 
 // Section titles
-const SectionTitleWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-  /* border: 3px yellow solid; */
-  max-width: 72%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 75px;
-`;
-
 const SectionTitle = styled.div`
   font-size: 20px;
   font-weight: 900;
-  text-align: center;
-  width: 45%;
-  margin: 0px 0px 25px 0px;
-  /* border: 1px green solid; */
-`;
-
-const SectionTitleVS = styled.div`
-  font-size: 20px;
-  font-weight: 900;
-  text-align: center;
-  margin: 75px 0px 25px 0px;
+  text-align: left;
+  width: 72%;
+  margin: 60px 0px 20px 0px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 // Sliders
@@ -357,7 +339,6 @@ const NotesWrap = styled.div`
   max-width: 956px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 75px;
 `;
 
 const NotesInput = styled.textarea`
