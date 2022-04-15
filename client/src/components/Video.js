@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 
 const Video = ({ stats }) => {
-  const { size, opacity } = stats;
+  const { size, opacity, halo } = stats;
 
   const vidOverlay = document.getElementById("vid2");
   const videoRate = () => {
@@ -50,7 +50,6 @@ const MainVideoWrap = styled.div`
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  /* width: fit-content; */
 `;
 
 const OverlayVideoWrap = styled.div`
