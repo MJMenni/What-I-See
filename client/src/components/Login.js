@@ -37,6 +37,7 @@ const Login = () => {
 
   return (
     <Wrap>
+      <LoginTitle>Login</LoginTitle>
       <OuterWrap>
         <InnerWrap>
           <LoginMessageTitle>Already have an account?</LoginMessageTitle>
@@ -95,7 +96,17 @@ const OuterWrap = styled.div`
   padding: 35px 25px;
 `;
 
-// Login message
+// Login
+const LoginTitle = styled.div`
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  width: 85%;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 const InnerWrap = styled.div`
   /* border: 3px yellow solid; */
 `;

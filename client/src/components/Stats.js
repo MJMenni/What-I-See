@@ -29,7 +29,7 @@ const Stats = ({ onSave }) => {
           Username:
           {user.username}
         </Stat>
-        <Stat>Visual snow: {} </Stat>
+        <Stat>Visual snow: {user.stats} </Stat>
         <Stat>Tinnitus track(s):</Stat>
         <Stat>Notes:</Stat>
       </StatsWrap>

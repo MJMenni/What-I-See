@@ -37,6 +37,7 @@ const Signup = () => {
 
   return (
     <Wrap>
+      <SignupTitle>Sign Up</SignupTitle>
       <LoginWrap>
         <MessagesWrap>
           <LoginMessageTitle>New to the site?</LoginMessageTitle>
@@ -79,6 +80,16 @@ const Signup = () => {
     </Wrap>
   );
 };
+
+const SignupTitle = styled.div`
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  width: 85%;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const Wrap = styled.div`
   max-width: 540px;

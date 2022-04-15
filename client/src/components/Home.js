@@ -115,7 +115,7 @@ const Home = () => {
         </AboutCopy>
       </AboutWrap>
       <Video stats={slider} />
-      <SectionTitle>Visual Snow</SectionTitle>
+      <SectionTitleVS>Visual Snow</SectionTitleVS>
       <SliderOuterWrap>
         <SliderWrap>
           <Slider className="SliderOpacity">
@@ -185,7 +185,7 @@ const Home = () => {
           placeholderTextColor="light-gray"
         ></NotesInput>
       </NotesWrap>
-      <SectionTitle>Login</SectionTitle>
+      {/* <SectionTitle>Login</SectionTitle> */}
       <LoginSignupWrap>
         <LoginWrap>
           {" "}
@@ -196,7 +196,10 @@ const Home = () => {
           <Signup />
         </SignupWrap>
       </LoginSignupWrap>
-      <SectionTitle>My Stats</SectionTitle>
+      <SectionTitleWrap>
+        <SectionTitle>Add Stats</SectionTitle>
+        <SectionTitle>View Stats</SectionTitle>
+      </SectionTitleWrap>
       <Stats onSave={onSave} />
     </Wrap>
   );
@@ -272,14 +275,30 @@ const Italic = styled.span`
 `;
 
 // Section titles
-const SectionTitle = styled.div`
-  font-size: 18px;
-  font-weight: 900;
-  text-align: left;
-  width: 85%;
-  margin: 50px 0px 25px 0px;
+const SectionTitleWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  /* border: 3px yellow solid; */
+  max-width: 72%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 75px;
+`;
+
+const SectionTitle = styled.div`
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  width: 45%;
+  margin: 0px 0px 25px 0px;
+  /* border: 1px green solid; */
+`;
+
+const SectionTitleVS = styled.div`
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  margin: 75px 0px 25px 0px;
 `;
 
 // Sliders
@@ -338,6 +357,7 @@ const NotesWrap = styled.div`
   max-width: 956px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 75px;
 `;
 
 const NotesInput = styled.textarea`
@@ -357,101 +377,3 @@ const NotesInput = styled.textarea`
 `;
 
 export default Home;
-
-// //From dropdown
-// // Wraps
-// const WrapAudio = styled.div`
-//   display: flex;
-//   max-width: 956px;
-//   margin-right: auto;
-//   margin-left: auto;
-//   `;
-
-// const InnerWrap = styled.div`
-//   width: 85%;
-//   margin-right: auto;
-//   margin-left: auto;
-//   display: flex;
-//   flex-direction: column;
-//   line-height: 24px;
-//   `;
-
-// // Symptoms label
-// const SymptomsLabel = styled.div`
-//   font-size: 18px;
-//   font-weight: 900;
-//   margin: 40px 0px 25px 0px;
-//   `;
-
-// // Tinnitus section
-// const TinnitusType = styled.div`
-//   margin-top: 25px;
-//   font-weight: 900;
-//   width: 20%;
-//   height: 18%;
-//   /* border: 1px green solid; */
-//   `;
-
-// const AudioOuterWrap = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   width: 85%;
-//   background-color: #f1f3f4;
-//   padding: 15px 0px 15px 60px;
-//   margin-right: auto;
-//   margin-left: auto;
-//   border-radius: 5px;
-//   /* border: 1px yellow solid; */
-//   justify-content: center;
-//   `;
-
-// const AudioWrap = styled.div`
-//   margin-top: -30px;
-//   display: flex;
-//   /* border: 1px pink solid; */
-//   width: 40%;
-//   margin-left: auto;
-//   margin-right: auto;
-
-//   audio::-webkit-media-controls-current-time-display,
-//   audio::-webkit-media-controls-time-remaining-display {
-//     display: none;
-//   }
-//   audio::-webkit-media-controls-timeline,
-//   video::-webkit-media-controls-timeline {
-//     display: none;
-//   }
-//   `;
-
-{
-  /* <WrapAudio>
-<InnerWrap>
-<SymptomsLabel>Tinnitus</SymptomsLabel>
-<AudioOuterWrap>
-{tinType.map((typ) => {
-  return (
-    <div key={typ}>
-    <TinnitusType>{typ}</TinnitusType>
-    <AudioWrap>
-    <audio
-                src={`assets/${typ}.mp3`}
-                id={typ}
-                controls
-                loop
-                onPlay={(e) => {
-                  onClickHandler(e);
-                }}
-                onPause={(e) => {
-                  onClickHandler(e);
-                }}
-              />
-            </AudioWrap>
-          </div>
-        );
-      })}
-    </AudioOuterWrap>
-    <SymptomsLabel>Notes</SymptomsLabel>
-  </InnerWrap>
-</WrapAudio> */
-}
