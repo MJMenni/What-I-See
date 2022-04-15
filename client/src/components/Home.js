@@ -6,7 +6,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Stats from "./Stats";
 import UserContext from "./UserContext";
-import Tinnitus from "./Dropdown";
+import Tinnitus from "./Tinnitus";
 
 const initialState = { size: 1, speed: 1, opacity: 3 };
 

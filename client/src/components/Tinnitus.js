@@ -91,7 +91,7 @@ const TinnitusType = styled.div`
 const AudioWrap = styled.div`
   margin-top: -25px;
   display: flex;
-  width: 42%;
+  width: 43%;
   margin-left: auto;
   margin-right: auto;
   /* border: 1px green solid; */
