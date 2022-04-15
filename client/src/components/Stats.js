@@ -3,10 +3,17 @@ import styled from "styled-components";
 const Stats = ({ onSave }) => {
   return (
     <Wrap>
-      <ViewStatsWrap>
-        <AddStatsButton onClick={onSave}>Add stats</AddStatsButton>
-        <ViewStatsButton>View stats</ViewStatsButton>
-      </ViewStatsWrap>
+      <StatsButtonOuterWrap>
+        <StatsButtonWrap>
+          <ButtonMessage>To add your current stats</ButtonMessage>
+          <AddStatsButton onClick={onSave}>Add stats</AddStatsButton>
+        </StatsButtonWrap>
+        <StatsButtonWrap>
+          <ButtonMessage>To view all your stats</ButtonMessage>
+          <ViewStatsButton>View stats</ViewStatsButton>
+        </StatsButtonWrap>
+      </StatsButtonOuterWrap>
+
       <StatsWrap>
         <StatsTitle>Your VSS Stats</StatsTitle>
         <Stat>Username:</Stat>
@@ -17,19 +24,32 @@ const Stats = ({ onSave }) => {
     </Wrap>
   );
 };
-
-const Wrap = styled.div`
-  border: 1px var(--blue) solid;
-  margin-top: 50px;
-  max-width: 72%;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 5px;
+const StatsButtonOuterWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px yellow solid; */
 `;
 
-const ViewStatsWrap = styled.div`
-  width: fit-content;
+const StatsButtonWrap = styled.div`
+  padding: 35px 25px 30px 25px;
+  border: 1px var(--blue) solid;
+  border-radius: 5px;
+  width: 45%;
   display: flex;
+  flex-direction: column;
+`;
+
+const ButtonMessage = styled.div`
+  /* border: 1px pink solid; */
+  font-size: 16px;
+  font-weight: 900;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const Wrap = styled.div`
+  max-width: 72%;
   margin-right: auto;
   margin-left: auto;
 `;
@@ -46,6 +66,9 @@ const StatsTitle = styled.div`
 
 const StatsWrap = styled.div`
   padding: 25px;
+  border: 1px var(--blue) solid;
+  border-radius: 5px;
+  margin-top: 30px;
 `;
 
 const AddStatsButton = styled.button`
@@ -59,15 +82,14 @@ const AddStatsButton = styled.button`
   margin-right: auto;
   margin-left: auto;
   font-size: 18px;
-  width: 150px;
-  margin-right: 5px;
+  width: 225px;
 `;
 
 const ViewStatsButton = styled.button`
   color: white;
   font-size: 18px;
   font-weight: 900;
-  width: 150px;
+  width: 225px;
   background-color: var(--blue);
   border: var(--blue) 1px solid;
   border-radius: 5px;

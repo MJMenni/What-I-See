@@ -117,10 +117,12 @@ const Home = () => {
         </AboutCopy>
         <AboutCopy>
           <Bold>How it works:</Bold>
-          <br /> Adjust the settings below the video to recreate what you see.
-          To keep track of your symptoms, login or create an account in the{" "}
-          <Bold>Login</Bold> section. To add your current settings or view your
-          past entries, see the <Bold>My Stats</Bold> section.
+          <br />
+          Press play to start the video, then adjust the settings below it to
+          recreate what you see. To keep track of your symptoms, login or create
+          an account in the <Bold>Login</Bold> section. To add your current
+          settings or view your past entries, see the <Bold>My Stats</Bold>{" "}
+          section.
         </AboutCopy>
       </AboutWrap>
       <Video stats={slider} />

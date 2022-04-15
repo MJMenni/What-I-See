@@ -47,7 +47,7 @@ const Resources = () => {
               <LinkInfo>
                 The American Tinnitus Association is a non-profit organization
                 that focus on tinnitus. Their core purpose is to promote
-                prevention and relief, while working towards finding a cure for
+                prevention and relief, and work towards finding a cure for
                 tinnitus.
               </LinkInfo>
             </Link>
