@@ -1,8 +1,133 @@
-// import styled from "styled-components";
-// import { useState, useEffect } from "react";
+import styled from "styled-components";
+
+const tinType = [
+  "Static",
+  "Roaring",
+  "Buzzing",
+  "Screeching",
+  "Kettle",
+  "Electric",
+];
+
+const Tinnitus = ({ onClickHandler }) => {
+  return (
+    <WrapAudio>
+      <InnerWrap>
+        <SymptomsLabel>Tinnitus</SymptomsLabel>
+        <AudioOuterWrap>
+          {tinType.map((typ) => {
+            return (
+              <div key={typ}>
+                <TinnitusType>{typ}</TinnitusType>
+                <AudioWrap>
+                  <audio
+                    src={`assets/${typ}.mp3`}
+                    id={typ}
+                    controls
+                    loop
+                    onPlay={(e) => {
+                      onClickHandler(e);
+                    }}
+                    onPause={(e) => {
+                      onClickHandler(e);
+                    }}
+                  />
+                </AudioWrap>
+              </div>
+            );
+          })}
+        </AudioOuterWrap>
+        <SymptomsLabel>Notes</SymptomsLabel>
+      </InnerWrap>
+    </WrapAudio>
+  );
+};
+
+const WrapAudio = styled.div`
+  display: flex;
+  max-width: 956px;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
+const InnerWrap = styled.div`
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  line-height: 24px;
+`;
+
+// Symptoms label
+const SymptomsLabel = styled.div`
+  font-size: 18px;
+  font-weight: 900;
+  margin: 40px 0px 25px 0px;
+`;
+
+// Tinnitus section
+const TinnitusType = styled.div`
+  margin-top: 25px;
+  font-weight: 900;
+  width: 15%;
+  height: 15%;
+`;
+
+const AudioOuterWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 85%;
+  background-color: #f1f3f4;
+  padding: 15px 5px 15px 35px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 5px;
+`;
+
+const AudioWrap = styled.div`
+  margin: 10px;
+  display: flex;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px green solid;
+
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+  }
+  audio::-webkit-media-controls-timeline,
+  video::-webkit-media-controls-timeline {
+    display: none;
+  }
+`;
+
+export default Tinnitus;
+
+// Wraps
+// const Wrap = styled.div`
+//   display: flex;
+//   max-width: 956px;
+//   margin-right: auto;
+//   margin-left: auto;
+// `;
+
+// // Notes section
+// const NotesInput = styled.textarea`
+//   border: var(--blue) 1px solid;
+//   min-height: 175px;
+//   width: 85%;
+//   margin-right: auto;
+//   margin-left: auto;
+//   padding: 25px;
+//   border-radius: 5px;
+//   line-height: 24px;
+//   font-size: 16px;
+// `;
 
 // const Dropdown = () => {
-//   // const Dropdown = ({ audio, setAudio }) => {
 //   const initValue = {
 //     Static: false,
 //     Roaring: false,
@@ -30,7 +155,6 @@
 //     console.log(audio);
 //   }, [audio]);
 
-//   return (
 //     <Wrap>
 //       <InnerWrap>
 //         <SymptomsLabel>Tinnitus</SymptomsLabel>
@@ -134,80 +258,3 @@
 //       </InnerWrap>
 //     </Wrap>
 //   );
-// };
-
-// // Wraps
-// const Wrap = styled.div`
-//   display: flex;
-//   max-width: 956px;
-//   margin-right: auto;
-//   margin-left: auto;
-// `;
-
-// const InnerWrap = styled.div`
-//   width: 85%;
-//   margin-right: auto;
-//   margin-left: auto;
-//   display: flex;
-//   flex-direction: column;
-//   line-height: 24px;
-// `;
-
-// // Symptoms label
-// const SymptomsLabel = styled.div`
-//   font-size: 18px;
-//   font-weight: 900;
-//   margin: 40px 0px 25px 0px;
-// `;
-
-// // Tinnitus section
-// const TinnitusType = styled.div`
-//   margin-top: 25px;
-//   font-weight: 900;
-//   width: 15%;
-//   height: 15%;
-// `;
-
-// const AudioOuterWrap = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   width: 85%;
-//   background-color: #f1f3f4;
-//   padding: 15px 5px 15px 35px;
-//   margin-right: auto;
-//   margin-left: auto;
-//   border-radius: 5px;
-// `;
-
-// const AudioWrap = styled.div`
-//   margin: 10px;
-//   display: flex;
-//   width: 30%;
-//   margin-left: auto;
-//   margin-right: auto;
-
-//   audio::-webkit-media-controls-current-time-display,
-//   audio::-webkit-media-controls-time-remaining-display {
-//     display: none;
-//   }
-//   audio::-webkit-media-controls-timeline,
-//   video::-webkit-media-controls-timeline {
-//     display: none;
-//   }
-// `;
-
-// // Notes section
-// const NotesInput = styled.textarea`
-//   border: var(--blue) 1px solid;
-//   min-height: 175px;
-//   width: 85%;
-//   margin-right: auto;
-//   margin-left: auto;
-//   padding: 25px;
-//   border-radius: 5px;
-//   line-height: 24px;
-//   font-size: 16px;
-// `;
-
-// export default Dropdown;

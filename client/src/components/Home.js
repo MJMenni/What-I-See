@@ -6,15 +6,19 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Stats from "./Stats";
 import UserContext from "./UserContext";
+import Tinnitus from "./Tinnitus";
 
-const initialState = { size: 1, speed: 1, opacity: 5 };
+const initialState = { size: 1, speed: 1, opacity: 3 };
 
 const Home = () => {
   const { user, setUser } = useContext(UserContext);
 
   // 1. Get the current state of slider, audio, note
+  // 2. onSaveHandler
+  // 3. Make a http request to BE(create a new endpoint)
+  // 4. On success, update user context for FE using setUser(only stats field)
 
-  // Stats
+  // Slider
   const [slider, setSlider] = useState(initialState);
   console.log(slider);
 
@@ -28,11 +32,9 @@ const Home = () => {
     Screeching: false,
   };
   const [audio, setAudio] = useState(initValue);
-  console.log(audio);
 
-  //dealing with auto changes
+  // Audio changes
   const onClickHandler = (event) => {
-    //click triggered
     event.preventDefault();
 
     //change the stat target value
@@ -47,8 +49,7 @@ const Home = () => {
   const [note, setNote] = useState("");
   console.log("note", note);
 
-  // 2. onSaveHandler
-  // 3. Make a http request to BE(create a new endpoint)
+  // On save, set new stats
   const onSave = (e) => {
     e.preventDefault();
 
@@ -76,18 +77,6 @@ const Home = () => {
         console.log(err);
       });
   };
-
-  // 4. On success, update user context for FE using setUser(only stats field)
-
-  const tinType = [
-    "Static",
-    "Roaring",
-    "Buzzing",
-    "Screeching",
-    "Kettle",
-    "Electric",
-  ];
-  // console.log(tinType[0]);
 
   return (
     <Wrap>
@@ -179,36 +168,11 @@ const Home = () => {
           </Slider>
         </SliderWrap>
       </SliderOuterWrap>
-
-      <WrapAudio>
-        <InnerWrap>
-          <SymptomsLabel>Tinnitus</SymptomsLabel>
-          <AudioOuterWrap>
-            {tinType.map((typ) => {
-              return (
-                <div key={typ}>
-                  <TinnitusType>{typ}</TinnitusType>
-                  <AudioWrap>
-                    <audio
-                      src={`assets/${typ}.mp3`}
-                      id={typ}
-                      controls
-                      loop
-                      onPlay={(e) => {
-                        onClickHandler(e);
-                      }}
-                      onPause={(e) => {
-                        onClickHandler(e);
-                      }}
-                    />
-                  </AudioWrap>
-                </div>
-              );
-            })}
-          </AudioOuterWrap>
-          <SymptomsLabel>Notes</SymptomsLabel>
-        </InnerWrap>
-      </WrapAudio>
+      <Tinnitus
+        audio={audio}
+        setAudio={setAudio}
+        onClickHandler={onClickHandler}
+      />
       <NotesWrap>
         <NotesInput
           placeholder="Feel free to add notes here. For example: &#10;Apr-20-2022 – Intense after-images and light sensitivity, especially when walking through the mall. Noticed static, tinnitus, and floaters increased as the day went on. Possible triggers: work-related stress, exposure to intense lighting, too much screen time."
@@ -368,72 +332,6 @@ const CurrentValue = styled.div`
   margin-right: 10px;
 `;
 
-//From dropdown
-// Wraps
-const WrapAudio = styled.div`
-  display: flex;
-  max-width: 956px;
-  margin-right: auto;
-  margin-left: auto;
-`;
-
-const InnerWrap = styled.div`
-  width: 85%;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  flex-direction: column;
-  line-height: 24px;
-`;
-
-// Symptoms label
-const SymptomsLabel = styled.div`
-  font-size: 18px;
-  font-weight: 900;
-  margin: 40px 0px 25px 0px;
-`;
-
-// Tinnitus section
-const TinnitusType = styled.div`
-  margin-top: 25px;
-  font-weight: 900;
-  width: 20%;
-  height: 18%;
-  /* border: 1px green solid; */
-`;
-
-const AudioOuterWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 85%;
-  background-color: #f1f3f4;
-  padding: 15px 0px 15px 60px;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 5px;
-  /* border: 1px yellow solid; */
-  justify-content: center;
-`;
-
-const AudioWrap = styled.div`
-  margin-top: -30px;
-  display: flex;
-  /* border: 1px pink solid; */
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-
-  audio::-webkit-media-controls-current-time-display,
-  audio::-webkit-media-controls-time-remaining-display {
-    display: none;
-  }
-  audio::-webkit-media-controls-timeline,
-  video::-webkit-media-controls-timeline {
-    display: none;
-  }
-`;
-
 // Notes section
 const NotesWrap = styled.div`
   display: flex;
@@ -459,3 +357,101 @@ const NotesInput = styled.textarea`
 `;
 
 export default Home;
+
+// //From dropdown
+// // Wraps
+// const WrapAudio = styled.div`
+//   display: flex;
+//   max-width: 956px;
+//   margin-right: auto;
+//   margin-left: auto;
+//   `;
+
+// const InnerWrap = styled.div`
+//   width: 85%;
+//   margin-right: auto;
+//   margin-left: auto;
+//   display: flex;
+//   flex-direction: column;
+//   line-height: 24px;
+//   `;
+
+// // Symptoms label
+// const SymptomsLabel = styled.div`
+//   font-size: 18px;
+//   font-weight: 900;
+//   margin: 40px 0px 25px 0px;
+//   `;
+
+// // Tinnitus section
+// const TinnitusType = styled.div`
+//   margin-top: 25px;
+//   font-weight: 900;
+//   width: 20%;
+//   height: 18%;
+//   /* border: 1px green solid; */
+//   `;
+
+// const AudioOuterWrap = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   width: 85%;
+//   background-color: #f1f3f4;
+//   padding: 15px 0px 15px 60px;
+//   margin-right: auto;
+//   margin-left: auto;
+//   border-radius: 5px;
+//   /* border: 1px yellow solid; */
+//   justify-content: center;
+//   `;
+
+// const AudioWrap = styled.div`
+//   margin-top: -30px;
+//   display: flex;
+//   /* border: 1px pink solid; */
+//   width: 40%;
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   audio::-webkit-media-controls-current-time-display,
+//   audio::-webkit-media-controls-time-remaining-display {
+//     display: none;
+//   }
+//   audio::-webkit-media-controls-timeline,
+//   video::-webkit-media-controls-timeline {
+//     display: none;
+//   }
+//   `;
+
+{
+  /* <WrapAudio>
+<InnerWrap>
+<SymptomsLabel>Tinnitus</SymptomsLabel>
+<AudioOuterWrap>
+{tinType.map((typ) => {
+  return (
+    <div key={typ}>
+    <TinnitusType>{typ}</TinnitusType>
+    <AudioWrap>
+    <audio
+                src={`assets/${typ}.mp3`}
+                id={typ}
+                controls
+                loop
+                onPlay={(e) => {
+                  onClickHandler(e);
+                }}
+                onPause={(e) => {
+                  onClickHandler(e);
+                }}
+              />
+            </AudioWrap>
+          </div>
+        );
+      })}
+    </AudioOuterWrap>
+    <SymptomsLabel>Notes</SymptomsLabel>
+  </InnerWrap>
+</WrapAudio> */
+}
