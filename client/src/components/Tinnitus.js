@@ -67,13 +67,6 @@ const SymptomsLabel = styled.div`
 `;
 
 // Tinnitus section
-const TinnitusType = styled.div`
-  margin-top: 25px;
-  font-weight: 900;
-  width: 15%;
-  height: 15%;
-`;
-
 const AudioOuterWrap = styled.div`
   display: flex;
   flex-direction: row;
@@ -84,15 +77,24 @@ const AudioOuterWrap = styled.div`
   margin-right: auto;
   margin-left: auto;
   border-radius: 5px;
+  /* border: 5px yellow solid; */
+`;
+
+const TinnitusType = styled.div`
+  margin-top: 25px;
+  font-weight: 900;
+  width: 15%;
+  height: 15%;
+  /* border: 1px pink solid; */
 `;
 
 const AudioWrap = styled.div`
-  margin: 10px;
+  margin-top: -25px;
   display: flex;
-  width: 45%;
+  width: 42%;
   margin-left: auto;
   margin-right: auto;
-  border: 1px green solid;
+  /* border: 1px green solid; */
 
   audio::-webkit-media-controls-current-time-display,
   audio::-webkit-media-controls-time-remaining-display {

@@ -92,12 +92,12 @@ const LoginWrap = styled.div`
   flex-direction: column;
   border: 1px var(--blue) solid;
   border-radius: 5px;
-  padding-bottom: 15px;
+  padding: 35px 25px 15px 25px;
 `;
 
 const MessagesWrap = styled.div`
   border-radius: 5px;
-  padding: 35px 25px;
+  margin-bottom: 35px;
 `;
 
 const LoginMessageTitle = styled.div`
@@ -120,7 +120,7 @@ const LoginInputWrap = styled.div`
 `;
 
 const UserInput = styled.input`
-  width: 225px;
+  width: 85%;
   padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
@@ -128,7 +128,7 @@ const UserInput = styled.input`
 `;
 
 const Email = styled.input`
-  width: 225px;
+  width: 85%;
   padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
@@ -137,7 +137,7 @@ const Email = styled.input`
 
 const LoginButton = styled.button`
   color: var(--blue);
-  width: 225px;
+  width: 85%;
   padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;

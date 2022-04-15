@@ -1,6 +1,15 @@
 import styled from "styled-components";
+import UserContext from "./UserContext";
+import { useContext } from "react";
 
 const Stats = ({ onSave }) => {
+  let { user, setUser } = useContext(UserContext);
+  const userStats = localStorage.getItem("stats");
+  const userStatsData = JSON.parse(userStats);
+  setUser = userStatsData;
+  console.log("userStatsData", userStatsData);
+  console.log("user", user);
+
   return (
     <Wrap>
       <StatsButtonOuterWrap>
@@ -16,8 +25,11 @@ const Stats = ({ onSave }) => {
 
       <StatsWrap>
         <StatsTitle>Your VSS Stats</StatsTitle>
-        <Stat>Username:</Stat>
-        <Stat>Visual snow:</Stat>
+        <Stat>
+          Username:
+          {user.username}
+        </Stat>
+        <Stat>Visual snow: {} </Stat>
         <Stat>Tinnitus track(s):</Stat>
         <Stat>Notes:</Stat>
       </StatsWrap>
@@ -31,7 +43,7 @@ const StatsButtonOuterWrap = styled.div`
 `;
 
 const StatsButtonWrap = styled.div`
-  padding: 35px 25px 30px 25px;
+  padding: 35px 25px 25px 25px;
   border: 1px var(--blue) solid;
   border-radius: 5px;
   width: 45%;
@@ -46,6 +58,7 @@ const ButtonMessage = styled.div`
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 `;
 
 const Wrap = styled.div`
@@ -82,14 +95,14 @@ const AddStatsButton = styled.button`
   margin-right: auto;
   margin-left: auto;
   font-size: 18px;
-  width: 225px;
+  width: 85%;
 `;
 
 const ViewStatsButton = styled.button`
   color: white;
   font-size: 18px;
   font-weight: 900;
-  width: 225px;
+  width: 85%;
   background-color: var(--blue);
   border: var(--blue) 1px solid;
   border-radius: 5px;

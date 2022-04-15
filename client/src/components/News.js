@@ -84,7 +84,8 @@ const Article = styled.div`
   flex-direction: column;
   justify-content: space-between;
   &:hover {
-    opacity: 50%;
+    transform: scale(1.02);
+    transition-duration: 1s;
   }
 `;
 

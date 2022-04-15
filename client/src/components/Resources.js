@@ -80,7 +80,8 @@ const SingleLinkWrap = styled.div`
   border: 2px var(--blue) solid;
   border-radius: 5px;
   &:hover {
-    opacity: 75%;
+    transform: scale(1.02);
+    transition-duration: 1s;
   }
   &:visited {
     text-decoration: none;
@@ -112,9 +113,7 @@ const LinkInfo = styled.div`
   line-height: 22px;
   padding: 20px;
   font-weight: 300;
-  &:hover {
-    opacity: 75%;
-  }
+
   &:visited {
     text-decoration: none;
   }

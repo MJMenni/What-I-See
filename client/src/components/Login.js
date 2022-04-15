@@ -124,7 +124,8 @@ const LoginInputWrap = styled.div`
 `;
 
 const UserInput = styled.input`
-  width: 225px;
+  width: 85%;
+  /* width: 225px; */
   padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
@@ -132,7 +133,8 @@ const UserInput = styled.input`
 `;
 
 const Email = styled.input`
-  width: 225px;
+  width: 85%;
+  /* width: 225px; */
   padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;
@@ -141,7 +143,8 @@ const Email = styled.input`
 
 const LoginButton = styled.button`
   color: var(--blue);
-  width: 225px;
+  width: 85%;
+  /* width: 225px; */
   padding: 10px 15px;
   border: lightgray 1px solid;
   border-radius: 5px;

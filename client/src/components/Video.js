@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 
 const Video = ({ stats }) => {
-  const { size, opacity, halo } = stats;
+  const { size, opacity, speed } = stats;
 
   const vidOverlay = document.getElementById("vid2");
   const videoRate = () => {
