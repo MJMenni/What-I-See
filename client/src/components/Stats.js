@@ -79,7 +79,7 @@ const StatsWrap = styled.div`
   padding: 25px;
   border: 1px var(--blue) solid;
   border-radius: 5px;
-  margin-top: 30px;
+  margin-top: 50px;
 `;
 
 const AddStatsButton = styled.button`
