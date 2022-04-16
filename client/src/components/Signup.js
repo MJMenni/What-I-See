@@ -142,6 +142,12 @@ const LoginButton = styled.button`
   border: lightgray 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
+  &:active {
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    box-shadow: 0 1px var(--blue);
+    color: white;
+  }
 `;
 
 // Confirmation

@@ -25,10 +25,7 @@ const Stats = ({ onSave }) => {
 
       <StatsWrap>
         <StatsTitle>Your VSS Stats</StatsTitle>
-        <Stat>
-          Username:
-          {user.username}
-        </Stat>
+        <Stat>Username: {user.username}</Stat>
         <Stat>Visual snow: {user.stats} </Stat>
         <Stat>Tinnitus track(s):</Stat>
         <Stat>Notes:</Stat>
@@ -74,7 +71,8 @@ const Stat = styled.div`
 const StatsTitle = styled.div`
   font-weight: 900;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
 `;
 
 const StatsWrap = styled.div`
@@ -96,6 +94,9 @@ const AddStatsButton = styled.button`
   margin-left: auto;
   font-size: 18px;
   width: 85%;
+  &:active {
+    opacity: 85%;
+  }
 `;
 
 const ViewStatsButton = styled.button`
@@ -110,6 +111,9 @@ const ViewStatsButton = styled.button`
   margin: 20px 0px 20px 5px;
   margin-right: auto;
   margin-left: auto;
+  &:active {
+    opacity: 85%;
+  }
 `;
 
 export default Stats;

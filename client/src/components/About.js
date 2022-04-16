@@ -129,7 +129,7 @@ const Wrap = styled.div`
 
 const AboutWrap = styled.div`
   max-width: 66%;
-  padding-bottom: 200px;
+  padding-bottom: 75px;
   margin-right: auto;
   margin-left: auto;
 `;

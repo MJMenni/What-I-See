@@ -63,7 +63,7 @@ const OuterWrap = styled.div`
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
 `;
 
 const InnerWrap = styled.div`

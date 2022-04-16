@@ -196,8 +196,10 @@ const Home = () => {
           <Signup />
         </SignupWrap>
       </LoginSignupWrap>
-      <SectionTitle>MY STATS</SectionTitle>
-      <Stats onSave={onSave} />
+      <StatsWrap>
+        <SectionTitle>MY STATS</SectionTitle>
+        <Stats onSave={onSave} />
+      </StatsWrap>
     </Wrap>
   );
 };
@@ -331,6 +333,11 @@ const Input = styled.input`
 
 const CurrentValue = styled.div`
   margin-right: 10px;
+`;
+
+// Stats
+const StatsWrap = styled.div`
+  padding-bottom: 75px;
 `;
 
 // Notes section
