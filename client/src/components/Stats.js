@@ -49,12 +49,12 @@ const StatsButtonWrap = styled.div`
 `;
 
 const ButtonMessage = styled.div`
-  /* border: 1px pink solid; */
   font-size: 16px;
   font-weight: 900;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  /* border: 1px pink solid; */
   text-align: center;
 `;
 

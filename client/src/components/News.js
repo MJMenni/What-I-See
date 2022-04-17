@@ -62,7 +62,9 @@ const Wrap = styled.div`
 const AllArticlesWrap = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  overflow-x: scroll;
+  padding: 10px;
 `;
 
 // Articles
@@ -75,14 +77,15 @@ const Intro = styled.div`
 
 const Article = styled.div`
   border: 2px var(--blue) solid;
-  width: 30%;
+  min-width: 30%;
   border-radius: 5px;
   padding: 20px;
   font-size: 16px;
   line-height: 18px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  margin-right: 41px;
+  /* justify-content: space-between; */
   &:hover {
     transform: scale(1.02);
     transition-duration: 1s;
