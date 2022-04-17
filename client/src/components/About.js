@@ -8,14 +8,14 @@ const About = () => {
         <AboutTitle>About Visual Snow Syndrome</AboutTitle>
         <AboutCopy>
           <Bold>Visual Snow Syndrome (VSS)</Bold> is a neurological disorder
-          that impacts how a person processes visual and auditory information.
-          The condition causes individuals to see a continuous layer of tiny
-          flickering dots over their entire visual field. This is often
-          described as seeing through a transparent layer of television static.
-          In addition to the static, people with VSS typically experience many
-          other visual and non-visual symptoms. While some may experience
-          moderate symptoms that have little impact on their daily lives, others
-          are completely debilitated by the condition.
+          that impacts how a person sees and hears. The condition causes
+          individuals to see a continuous layer of tiny flickering dots over
+          their entire visual field. People with VSS often describe this visual
+          disturbance as seeing the world through a broken television set. In
+          addition to the static, people with VSS typically experience many
+          other visual and non-visual symptoms. While some may have moderate
+          symptoms that have little impact on their daily lives, others are
+          completely debilitated by the condition.
         </AboutCopy>
         <SpecialCopy>
           For people living with VSS, these symptoms occur 24 hours a day, 7
@@ -42,7 +42,7 @@ const About = () => {
             <IconWrap>
               <Icon src="assets/entopic.png"></Icon>
               <IconText>
-                Seeing images within the eye itself (entopic phenomena)
+                Seeing images within the eye itself (entoptic phenomena)
               </IconText>
             </IconWrap>
             <IconWrap>
@@ -59,8 +59,8 @@ const About = () => {
             <IconWrap>
               <Icon src="assets/double.png"></Icon>
               <IconText>
-                Other visual effects such as starburst, halos, and double vision
-                (diplopia)
+                Other visual effects such as starbursts, halos, and double
+                vision (diplopia)
               </IconText>
             </IconWrap>
           </VisualSymptoms>
@@ -99,7 +99,7 @@ const About = () => {
               <IconText>
                 {" "}
                 Tingling sensations in legs and arms, accompanied by general
-                pain throughout body
+                pain throughout the body
               </IconText>
             </IconWrap>
           </NonVisualSymptoms>

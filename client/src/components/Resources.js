@@ -16,7 +16,7 @@ const Resources = () => {
               <Resource>Visual Snow Initiative</Resource>
               <LinkInfo>
                 The Visual Snow Initiative was established to increase awareness
-                for visual snow, build a community for those who suffer from the
+                for VSS, build a community for those who suffer from the
                 condition, and to generate the capital necessary for research
                 and medical advancements.
               </LinkInfo>
@@ -45,10 +45,9 @@ const Resources = () => {
             >
               <Resource>American Tinnitus Association</Resource>
               <LinkInfo>
-                The American Tinnitus Association is a non-profit organization
-                that focus on tinnitus. Their core purpose is to promote
-                prevention and relief, and work towards finding a cure for
-                tinnitus.
+                The American Tinnitus Association is a nonprofit organization
+                that focuses on tinnitus. Their core purpose is to promote
+                prevention and relief, and work towards finding a cure.
               </LinkInfo>
             </Link>
           </SingleLinkWrap>
@@ -75,6 +74,7 @@ const InnerWrap = styled.div`
 const Title = styled.h1``;
 
 const SingleLinkWrap = styled.div`
+  padding: 10px 0px;
   width: 30%;
   justify-content: space-between;
   border: 2px var(--blue) solid;

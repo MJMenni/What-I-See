@@ -89,9 +89,10 @@ const Article = styled.div`
   line-height: 18px;
   display: flex;
   flex-direction: column;
-  margin-right: 41px;
+  margin-right: 44px;
+  margin-bottom: 10px;
   color: var(--blue);
-  /* justify-content: space-between; */
+  scrollbar-width: none;
   &:hover {
     transform: scale(1.02);
     transition-duration: 1s;
