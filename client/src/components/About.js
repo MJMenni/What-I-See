@@ -97,7 +97,6 @@ const About = () => {
             <IconWrap>
               <Icon src="assets/tingling.png"></Icon>
               <IconText>
-                {" "}
                 Tingling sensations in legs and arms, accompanied by general
                 pain throughout the body
               </IconText>

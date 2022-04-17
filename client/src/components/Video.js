@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 
 const Video = ({ stats }) => {
-  const { size, opacity, speed } = stats;
+  const { size, opacity, speed, halo } = stats;
 
   const vidOverlay = document.getElementById("vid2");
   const videoRate = () => {
@@ -11,7 +11,7 @@ const Video = ({ stats }) => {
 
   return (
     <Wrap>
-      <MainVideoWrap>
+      <MainVideoWrap className="bright">
         <video width={960} height={540} loop={true} controls>
           <source src="/assets/Original.mp4" type="video/mp4"></source>
         </video>
@@ -50,6 +50,9 @@ const MainVideoWrap = styled.div`
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  &.bright {
+    filter: brightness(1.5);
+  }
 `;
 
 const OverlayVideoWrap = styled.div`

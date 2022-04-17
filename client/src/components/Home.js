@@ -8,10 +8,13 @@ import Stats from "./Stats";
 import UserContext from "./UserContext";
 import Tinnitus from "./Tinnitus";
 
-const initialState = { size: 1, speed: 1, opacity: 3 };
+// const initialState = { size: 1, speed: 1, opacity: 3 };
+const initialState = { size: 1, speed: 1, opacity: 3, halo: 1 };
 
 const Home = () => {
   const { user, setUser } = useContext(UserContext);
+
+  const [halo, setHalo] = useState(initialState);
 
   // 1. Get the current state of slider, audio, note
   // 2. onSaveHandler
@@ -57,6 +60,7 @@ const Home = () => {
       slider,
       audio,
       note,
+      halo,
     };
 
     fetch("/api/add-stats", {
@@ -87,12 +91,13 @@ const Home = () => {
             <Italic>What I See </Italic>
           </Bold>
           is a video simulator that recreates the visual and auditory experience
-          of someone who has{" "}
+          of someone who has
           <Bold>
             <NavLinks
               to="/about"
               style={{ cursor: "pointer", textDecoration: "none" }}
             >
+              {" "}
               Visual Snow Syndrome (VSS)
             </NavLinks>
           </Bold>
@@ -133,6 +138,7 @@ const Home = () => {
             <CurrentValue>{slider.opacity}</CurrentValue>
           </Slider>
         </SliderWrap>
+
         <SliderWrap>
           <Slider className="SliderSize">
             <SliderLabel>Size</SliderLabel>
@@ -149,6 +155,7 @@ const Home = () => {
             <CurrentValue>{slider.size}</CurrentValue>
           </Slider>
         </SliderWrap>
+
         <SliderWrap>
           <Slider className="SliderSpeed">
             <SliderLabel>Speed</SliderLabel>
@@ -168,6 +175,24 @@ const Home = () => {
           </Slider>
         </SliderWrap>
       </SliderOuterWrap>
+
+      <SliderWrap>
+        <Slider className="SliderHalos">
+          <SliderLabel>Halos</SliderLabel>
+          <Input
+            id="halos"
+            type="range"
+            min="1"
+            max="10"
+            value={slider.halo}
+            onChange={(e) => {
+              setSlider({ ...slider, halo: parseInt(e.target.value) });
+            }}
+          />
+          <CurrentValue>{slider.halo}</CurrentValue>
+        </Slider>
+      </SliderWrap>
+
       <Tinnitus
         audio={audio}
         setAudio={setAudio}
