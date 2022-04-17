@@ -83,7 +83,7 @@ express()
     // };
     // console.log("connected");
     // fetch(
-    //   "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome",
+    //   "https://api.bing.microsoft.com/v7.0/news/search?q=visual%20snow%20syndrome&setLang=en",
     //   {
     //     headers: {
     //       "Ocp-Apim-Subscription-Key": REACT_APP_BING_KEY,

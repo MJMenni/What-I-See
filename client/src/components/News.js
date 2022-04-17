@@ -65,6 +65,11 @@ const AllArticlesWrap = styled.div`
   /* justify-content: space-between; */
   overflow-x: scroll;
   padding: 10px;
+  color: var(--blue);
+  &:visited {
+    text-decoration: none;
+    color: var(--blue);
+  }
 `;
 
 // Articles
@@ -85,6 +90,7 @@ const Article = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 41px;
+  color: var(--blue);
   /* justify-content: space-between; */
   &:hover {
     transform: scale(1.02);
@@ -100,6 +106,7 @@ const Link = styled.a`
 `;
 
 const AllNewsInfo = styled.div`
+  color: var(--blue);
   &:visited {
     text-decoration: none;
     color: var(--blue);
