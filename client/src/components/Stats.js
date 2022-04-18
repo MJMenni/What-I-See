@@ -18,35 +18,39 @@ const Stats = ({ onSave }) => {
         </StatsButtonWrap>
       </StatsButtonOuterWrap>
 
-      {user.stats.length !== 0 && (
-        <StatsWrap>
-          <StatsTitle>{user.username}'s VSS Stats</StatsTitle>
-          <StatsOuterWrap>
-            <StatsInnerWrap>
-              <StatCat>Visual snow levels </StatCat>
-              <Stat>Opacity: {user.stats[0].slider.opacity}/10</Stat>
-              <Stat>Size: {user.stats[0].slider.size}/5</Stat>
-              <Stat>Speed: {user.stats[0].slider.speed}/4</Stat>
-              <StatCat>Halo levels</StatCat>
-              <Stat>Halos: {user.stats[0].slider.halo}/10</Stat>
-            </StatsInnerWrap>
-            <StatsInnerWrap>
-              <StatCat>Tinnitus track(s) used</StatCat>
-              {user.stats[0].audio.Static === true && <Stat>Static</Stat>}
-              {user.stats[0].audio.Buzzing === true && <Stat>Buzzing</Stat>}
-              {user.stats[0].audio.Kettle === true && <Stat>Kettle</Stat>}
-              {user.stats[0].audio.Roaring === true && <Stat>Roaring</Stat>}
-              {user.stats[0].audio.Screeching === true && (
-                <Stat>Screeching</Stat>
-              )}
-              {user.stats[0].audio.Electric === true && <Stat>Electric</Stat>}
+      {user.stats.length !== 0 &&
+        user.stats
+          .slice(0)
+          .reverse()
+          .map((entry) => {
+            return (
+              <StatsWrap key={entry._id}>
+                <StatsTitle>{user.username}'s VSS Stats</StatsTitle>
+                <StatsOuterWrap>
+                  <StatsInnerWrap>
+                    <StatCat>Visual snow levels </StatCat>
+                    <Stat>Opacity: {entry.slider.opacity}/10</Stat>
+                    <Stat>Size: {entry.slider.size}/5</Stat>
+                    <Stat>Speed: {entry.slider.speed}/4</Stat>
+                    <StatCat>Halo levels</StatCat>
+                    <Stat>Halos: {entry.slider.halo}/10</Stat>
+                  </StatsInnerWrap>
+                  <StatsInnerWrap>
+                    <StatCat>Tinnitus track(s) used</StatCat>
+                    {entry.audio.Static === true && <Stat>Static</Stat>}
+                    {entry.audio.Buzzing === true && <Stat>Buzzing</Stat>}
+                    {entry.audio.Kettle === true && <Stat>Kettle</Stat>}
+                    {entry.audio.Roaring === true && <Stat>Roaring</Stat>}
+                    {entry.audio.Screeching === true && <Stat>Screeching</Stat>}
+                    {entry.audio.Electric === true && <Stat>Electric</Stat>}
 
-              <StatCat>Notes</StatCat>
-              <Stat>{user.stats[0].note}</Stat>
-            </StatsInnerWrap>
-          </StatsOuterWrap>
-        </StatsWrap>
-      )}
+                    <StatCat>Notes</StatCat>
+                    <Stat>{entry.note}</Stat>
+                  </StatsInnerWrap>
+                </StatsOuterWrap>
+              </StatsWrap>
+            );
+          })}
     </Wrap>
   );
 };
