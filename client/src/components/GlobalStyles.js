@@ -8,6 +8,8 @@ const GlobalStyles = createGlobalStyle`
     --main-font: "Helvetica", sans-serif;
     --block-font: "Red Hat Display", sans-serif;
     --blue: #004aad;
+    --light-gray: #f1f3f4;
+    --mid-gray: lightgray;
   }
 
   /*

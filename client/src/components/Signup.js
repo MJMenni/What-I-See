@@ -9,6 +9,7 @@ const Signup = () => {
   const [userInput, setUserInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const { setUser } = useContext(UserContext);
+  const [message, setMessage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,14 +24,19 @@ const Signup = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUser(data.data);
-        console.log("signed in");
-        if (data.data) {
-          localStorage.setItem("user", JSON.stringify(data.data));
+        if (data.status === 200) {
+          setUser(data.data);
+          console.log("signed in");
+          if (data.data) {
+            localStorage.setItem("user", JSON.stringify(data.data));
+          }
+          setMessage("Success. Logged in!");
+        } else {
+          setMessage("Invalid username, please try again");
         }
       })
       .catch((err) => {
-        setState(false);
+        setMessage("Error");
         console.log(err);
       });
   };
@@ -69,11 +75,12 @@ const Signup = () => {
             ></Email>
             <LoginButton type="submit">Create account</LoginButton>
           </LoginInputWrap>
-          {state === false ? (
+          {/* {state === false ? (
             <Confirmation>Invalid username, please try again</Confirmation>
           ) : (
             <Confirmation>Success. Account created!</Confirmation>
-          )}
+          )} */}
+          <Confirmation>{message}</Confirmation>
         </form>
       </LoginWrap>
     </Wrap>
@@ -122,7 +129,7 @@ const LoginInputWrap = styled.div`
 const UserInput = styled.input`
   width: 85%;
   padding: 10px 15px;
-  border: lightgray 1px solid;
+  border: var(--mid-gray) 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
 `;
@@ -130,7 +137,7 @@ const UserInput = styled.input`
 const Email = styled.input`
   width: 85%;
   padding: 10px 15px;
-  border: lightgray 1px solid;
+  border: var(--mid-gray) 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
 `;
@@ -139,7 +146,7 @@ const LoginButton = styled.button`
   color: var(--blue);
   width: 85%;
   padding: 10px 15px;
-  border: lightgray 1px solid;
+  border: var(--mid-gray) 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
   &:active {

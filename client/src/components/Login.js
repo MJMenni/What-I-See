@@ -128,7 +128,7 @@ const UserInput = styled.input`
   width: 85%;
   /* width: 225px; */
   padding: 10px 15px;
-  border: lightgray 1px solid;
+  border: var(--mid-gray) 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
 `;
@@ -137,7 +137,7 @@ const Email = styled.input`
   width: 85%;
   /* width: 225px; */
   padding: 10px 15px;
-  border: lightgray 1px solid;
+  border: var(--mid-gray) 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
 `;
@@ -147,7 +147,7 @@ const LoginButton = styled.button`
   width: 85%;
   /* width: 225px; */
   padding: 10px 15px;
-  border: lightgray 1px solid;
+  border: var(--mid-gray) 1px solid;
   border-radius: 5px;
   margin-bottom: 10px;
   &:active {

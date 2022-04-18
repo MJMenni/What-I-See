@@ -205,7 +205,7 @@ const Home = () => {
           }}
           minlength="1"
           maxlength="280"
-          placeholderTextColor="light-gray"
+          placeholderTextColor="var(--light-gray)"
         ></NotesInput>
       </NotesWrap>
       <SectionTitle>LOGIN</SectionTitle>
@@ -228,7 +228,7 @@ const Home = () => {
 };
 
 const HaloWrap = styled.div`
-  background-color: #f1f3f4;
+  background-color: var(--light-gray);
   width: 72%;
   margin-left: auto;
   margin-right: auto;
@@ -247,13 +247,13 @@ const LoginSignupWrap = styled.div`
 `;
 
 const LoginWrap = styled.div`
-  /* border: 1px green solid; */
   width: 38%;
+  /* border: 1px green solid; */
 `;
 
 const SignupWrap = styled.div`
-  /* border: 1px gray solid; */
   width: 38%;
+  /* border: 1px gray solid; */
 `;
 
 // Outer wrap
@@ -319,7 +319,7 @@ const SectionTitle = styled.div`
 
 // Sliders
 const SliderOuterWrap = styled.div`
-  background-color: #f1f3f4;
+  background-color: var(--light-gray);
   width: 72%;
   margin-left: auto;
   margin-right: auto;

@@ -31,10 +31,12 @@ const Stats = ({ onSave }) => {
               <Stat>Halos: {user.stats[0].slider.halo}/10</Stat>
             </StatsInnerWrap>
             <StatsInnerWrap>
-              <StatCat>Tinnitus track(s)</StatCat>
-              <Stat></Stat>
-              <StatCat>Notes</StatCat>
-              <Stat>{user.stats[0].note}</Stat>
+              <div>
+                <StatCat>Tinnitus track(s)</StatCat>
+                {user.stats[0].audio.Kettle === true && <Stat>"Kettle"</Stat>}
+                <StatCat>Notes</StatCat>
+                <Stat>{user.stats[0].note}</Stat>
+              </div>
             </StatsInnerWrap>
           </StatsOuterWrap>
         </StatsWrap>

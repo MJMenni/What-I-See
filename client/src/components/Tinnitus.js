@@ -75,7 +75,7 @@ const AudioOuterWrap = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 85%;
-  background-color: #f1f3f4;
+  background-color: var(--light-gray);
   padding: 15px 5px 15px 35px;
   margin-right: auto;
   margin-left: auto;
