@@ -15,11 +15,6 @@ const Home = () => {
 
   const [halo, setHalo] = useState(initialState);
 
-  // 1. Get the current state of slider, audio, note
-  // 2. onSaveHandler
-  // 3. Make a http request to BE(create a new endpoint)
-  // 4. On success, update user context for FE using setUser(only stats field)
-
   // Slider
   const [slider, setSlider] = useState(initialState);
   console.log(slider);
