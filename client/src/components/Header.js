@@ -20,7 +20,7 @@ const Header = () => {
       </InnerWrap>
       <NavLink to="/">
         <LogoWrap>
-          <Logo src="assets/logoColor.png"></Logo>
+          <Logo src="assets/logoColor.png" alt="Round logo with eye"></Logo>
         </LogoWrap>
       </NavLink>
     </OuterWrap>

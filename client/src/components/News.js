@@ -35,7 +35,7 @@ const News = () => {
                   style={{ cursor: "pointer", textDecoration: "none" }}
                   target="_blank"
                 >
-                  <Icon src="assets/reading.png"></Icon>
+                  <Icon src="assets/reading.png" alt="Reading"></Icon>
                   <AllNewsInfo>
                     <SourceAndDateWrap>
                       <PubDate>{article.datePublished.substr(0, 10)}</PubDate>

@@ -26,38 +26,38 @@ const About = () => {
           <VisualSymptoms>
             <SymptomType>Visual Symptoms</SymptomType>
             <IconWrap>
-              <Icon src="assets/snow.png"></Icon>
+              <Icon src="assets/snow.png" alt="Visual snow"></Icon>
               <IconText>
                 Snow-like dots all over the field of vision (visual snow)
               </IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/starbursts.png"></Icon>
+              <Icon src="assets/starbursts.png" alt="Flashing lights"></Icon>
               <IconText>Small floating objects or flashing lights</IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/brightness.png"></Icon>
+              <Icon src="assets/brightness.png" alt="Photophobia"></Icon>
               <IconText>Sensitivity to light (photophobia)</IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/entopic.png"></Icon>
+              <Icon src="assets/entopic.png" alt="Entoptic phenomena"></Icon>
               <IconText>
                 Seeing images within the eye itself (entoptic phenomena)
               </IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/palinopsia.png"></Icon>
+              <Icon src="assets/palinopsia.png" alt="Palinopsia"></Icon>
               <IconText>
                 Continuing to see an image after it is no longer in the field of
                 vision (palinopsia)
               </IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/night.png"></Icon>
+              <Icon src="assets/night.png" alt="Nyctalopia"></Icon>
               <IconText>Impaired night vision (nyctalopia)</IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/double.png"></Icon>
+              <Icon src="assets/double.png" alt="Diplopia"></Icon>
               <IconText>
                 Other visual effects such as starbursts, halos, and double
                 vision (diplopia)
@@ -67,35 +67,38 @@ const About = () => {
           <NonVisualSymptoms>
             <SymptomType>Non-Visual Symptoms</SymptomType>
             <IconWrap>
-              <Icon src="assets/tinnitus.png"></Icon>
+              <Icon src="assets/tinnitus.png" alt="Tinnitus"></Icon>
               <IconText>
                 Ringing, humming, or buzzing sounds (tinnitus)
               </IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/depersonalization.png"></Icon>
+              <Icon
+                src="assets/depersonalization.png"
+                alt="Depersonalization"
+              ></Icon>
               <IconText>
                 Feeling detached from yourself (depersonalization)
               </IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/depression.png"></Icon>
+              <Icon src="assets/depression.png" alt="Depression"></Icon>
               <IconText>Symptoms of anxiety and/or depression</IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/migraines.png"></Icon>
+              <Icon src="assets/migraines.png" alt="Migraines"></Icon>
               <IconText>Frequent migraines, brain fog, and confusion</IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/dizzy.png"></Icon>
+              <Icon src="assets/dizzy.png" alt="Dizziness"></Icon>
               <IconText>Dizziness and nausea</IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/insomnia.png"></Icon>
+              <Icon src="assets/insomnia.png" alt="Insomnia"></Icon>
               <IconText>Insomnia and other sleep-related issues</IconText>
             </IconWrap>
             <IconWrap>
-              <Icon src="assets/tingling.png"></Icon>
+              <Icon src="assets/tingling.png" alt="Body pain"></Icon>
               <IconText>
                 Tingling sensations in legs and arms, accompanied by general
                 pain throughout the body
