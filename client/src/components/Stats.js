@@ -23,20 +23,26 @@ const Stats = ({ onSave }) => {
           <StatsTitle>{user.username}'s VSS Stats</StatsTitle>
           <StatsOuterWrap>
             <StatsInnerWrap>
-              <StatCat>Visual snow </StatCat>
+              <StatCat>Visual snow levels </StatCat>
               <Stat>Opacity: {user.stats[0].slider.opacity}/10</Stat>
               <Stat>Size: {user.stats[0].slider.size}/5</Stat>
               <Stat>Speed: {user.stats[0].slider.speed}/4</Stat>
-              <StatCat>Halos</StatCat>
+              <StatCat>Halo levels</StatCat>
               <Stat>Halos: {user.stats[0].slider.halo}/10</Stat>
             </StatsInnerWrap>
             <StatsInnerWrap>
-              <div>
-                <StatCat>Tinnitus track(s)</StatCat>
-                {user.stats[0].audio.Kettle === true && <Stat>"Kettle"</Stat>}
-                <StatCat>Notes</StatCat>
-                <Stat>{user.stats[0].note}</Stat>
-              </div>
+              <StatCat>Tinnitus track(s) used</StatCat>
+              {user.stats[0].audio.Static === true && <Stat>Static</Stat>}
+              {user.stats[0].audio.Buzzing === true && <Stat>Buzzing</Stat>}
+              {user.stats[0].audio.Kettle === true && <Stat>Kettle</Stat>}
+              {user.stats[0].audio.Roaring === true && <Stat>Roaring</Stat>}
+              {user.stats[0].audio.Screeching === true && (
+                <Stat>Screeching</Stat>
+              )}
+              {user.stats[0].audio.Electric === true && <Stat>Electric</Stat>}
+
+              <StatCat>Notes</StatCat>
+              <Stat>{user.stats[0].note}</Stat>
             </StatsInnerWrap>
           </StatsOuterWrap>
         </StatsWrap>

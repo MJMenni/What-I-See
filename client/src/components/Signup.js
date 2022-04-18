@@ -100,11 +100,12 @@ const LoginWrap = styled.div`
   border: 1px var(--blue) solid;
   border-radius: 5px;
   padding: 35px 25px 15px 25px;
+  min-height: 312px;
 `;
 
 const MessagesWrap = styled.div`
   border-radius: 5px;
-  margin-bottom: 35px;
+  /* margin-bottom: 35px; */
 `;
 
 const LoginMessageTitle = styled.div`
@@ -148,7 +149,7 @@ const LoginButton = styled.button`
   padding: 10px 15px;
   border: var(--mid-gray) 1px solid;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   &:active {
     background-color: var(--blue);
     border: 1px solid var(--blue);

@@ -93,7 +93,8 @@ const OuterWrap = styled.div`
   flex-direction: column;
   border: 1px var(--blue) solid;
   border-radius: 5px;
-  padding: 35px 25px;
+  padding: 35px 25px 15px 25px;
+  min-height: 312px;
 `;
 
 // Login message
