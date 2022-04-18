@@ -8,7 +8,6 @@ import Stats from "./Stats";
 import UserContext from "./UserContext";
 import Tinnitus from "./Tinnitus";
 
-// const initialState = { size: 1, speed: 1, opacity: 3 };
 const initialState = { size: 1, speed: 1, opacity: 3, halo: 1 };
 
 const Home = () => {
@@ -39,9 +38,7 @@ const Home = () => {
   // Audio changes
   const onClickHandler = (event) => {
     event.preventDefault();
-
-    //change the stat target value
-    console.log(event.target.id);
+    // console.log(event.target.id);
     const key = event.target.id;
     setAudio((prev) => {
       return { ...prev, [key]: !prev[key] };
@@ -50,7 +47,6 @@ const Home = () => {
 
   // Note
   const [note, setNote] = useState("");
-  console.log("note", note);
 
   // On save, set new stats
   const onSave = (e) => {
@@ -175,22 +171,25 @@ const Home = () => {
         </SliderWrap>
       </SliderOuterWrap>
 
-      <SliderWrap>
-        <Slider className="SliderHalos">
-          <SliderLabel>Halos</SliderLabel>
-          <Input
-            id="halos"
-            type="range"
-            min="1"
-            max="10"
-            value={slider.halo}
-            onChange={(e) => {
-              setSlider({ ...slider, halo: parseInt(e.target.value) });
-            }}
-          />
-          <CurrentValue>{slider.halo}</CurrentValue>
-        </Slider>
-      </SliderWrap>
+      <SectionTitle>HALOS</SectionTitle>
+      <HaloWrap>
+        <SliderWrap>
+          <Slider className="SliderHalos">
+            <SliderLabel>Halos</SliderLabel>
+            <Input
+              id="halos"
+              type="range"
+              min="1"
+              max="10"
+              value={slider.halo}
+              onChange={(e) => {
+                setSlider({ ...slider, halo: parseInt(e.target.value) });
+              }}
+            />
+            <CurrentValue>{slider.halo}</CurrentValue>
+          </Slider>
+        </SliderWrap>
+      </HaloWrap>
 
       <Tinnitus
         audio={audio}
@@ -199,7 +198,7 @@ const Home = () => {
       />
       <NotesWrap>
         <NotesInput
-          placeholder="Feel free to add notes here. For example: &#10;Apr-20-2022 – Intense after-images and light sensitivity, especially when walking through the mall. Noticed static, tinnitus, and floaters increased as the day went on. Possible triggers: work-related stress, exposure to intense lighting, too much screen time."
+          placeholder="Feel free to add notes here. For example: &#10;Apr-20-2022 – Intense after-images and light sensitivity, especially when walking through the mall. Noticed static, tinnitus, and floaters increased as the day went on. Possible triggers include work-related stress, exposure to intense lighting, and too much screen time."
           value={note}
           onChange={(e) => {
             setNote(e.target.value);
@@ -227,6 +226,15 @@ const Home = () => {
     </Wrap>
   );
 };
+
+const HaloWrap = styled.div`
+  background-color: #f1f3f4;
+  width: 72%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 0px;
+  border-radius: 5px;
+`;
 
 const LoginSignupWrap = styled.div`
   display: flex;
@@ -324,10 +332,11 @@ const SliderWrap = styled.div`
   margin-right: auto;
   margin-bottom: 20px;
   margin-top: 20px;
-  max-width: 90%;
+  max-width: 85%;
   display: flex;
   flex-direction: column;
   padding: 10px 0px;
+  /* border: 1px green solid; */
 `;
 
 const Slider = styled.div`
@@ -374,11 +383,11 @@ const NotesWrap = styled.div`
 
 const NotesInput = styled.textarea`
   border: var(--blue) 1px solid;
-  min-height: 150px;
+  min-height: 190px;
   width: 72%;
   margin-right: auto;
   margin-left: auto;
-  padding: 25px;
+  padding: 35px;
   border-radius: 5px;
   line-height: 24px;
   font-size: 16px;

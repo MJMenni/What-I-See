@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import UserContext from "./UserContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 const Stats = ({ onSave }) => {
   let { user, setUser } = useContext(UserContext);
