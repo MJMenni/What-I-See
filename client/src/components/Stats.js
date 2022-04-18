@@ -17,7 +17,9 @@ const Stats = ({ onSave }) => {
           <ViewStatsButton>View stats</ViewStatsButton>
         </StatsButtonWrap>
       </StatsButtonOuterWrap>
-
+      {user.stats.length !== 0 && (
+        <StatsTitle> {user.username}'s VSS Stats</StatsTitle>
+      )}
       {user.stats.length !== 0 &&
         user.stats
           .slice(0)
@@ -25,7 +27,6 @@ const Stats = ({ onSave }) => {
           .map((entry) => {
             return (
               <StatsWrap key={entry._id}>
-                <StatsTitle>{user.username}'s VSS Stats</StatsTitle>
                 <StatsOuterWrap>
                   <StatsInnerWrap>
                     <StatCat>Visual snow levels </StatCat>
@@ -110,9 +111,9 @@ const Stat = styled.div`
 const StatsTitle = styled.div`
   font-weight: 900;
   font-size: 20px;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 25px;
+  /* text-align: center; */
+  margin-top: 50px;
+  margin-bottom: -5px;
 `;
 
 const StatsWrap = styled.div`
@@ -120,7 +121,7 @@ const StatsWrap = styled.div`
   border: 1px var(--blue) solid;
   line-height: 30px;
   border-radius: 5px;
-  margin-top: 50px;
+  margin-top: 25px;
 `;
 
 const AddStatsButton = styled.button`
