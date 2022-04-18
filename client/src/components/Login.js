@@ -5,7 +5,7 @@ import styled from "styled-components";
 // Missing useHistory b/c using new React version. Refer to Facespace to see useHistory use.
 
 const Login = () => {
-  const [state, setState] = useState(true);
+  const [message, setMessage] = useState(null);
   const [userInput, setUserInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const { user, setUser } = useContext(UserContext);
@@ -24,13 +24,18 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log("logged in");
-        setUser(data.data);
-        if (data.data) {
-          localStorage.setItem("user", JSON.stringify(data.data));
+        if (data.status === 200) {
+          setUser(data.data);
+          if (data.data) {
+            localStorage.setItem("user", JSON.stringify(data.data));
+          }
+          setMessage("Success. Logged in!");
+        } else {
+          setMessage("Invalid username, please try again");
         }
       })
       .catch((err) => {
-        setState(false);
+        setMessage("Error");
         console.log(err);
       });
   };
@@ -69,11 +74,7 @@ const Login = () => {
             ></Email>
             <LoginButton type="submit">Log in</LoginButton>
           </LoginInputWrap>
-          {state === false ? (
-            <Confirmation>Invalid username, please try again</Confirmation>
-          ) : (
-            <Confirmation>Success. Logged in!</Confirmation>
-          )}
+          <Confirmation>{message}</Confirmation>
         </form>
       </OuterWrap>
     </Wrap>

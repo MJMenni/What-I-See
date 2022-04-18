@@ -1,14 +1,9 @@
 import styled from "styled-components";
 import UserContext from "./UserContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const Stats = ({ onSave }) => {
   let { user, setUser } = useContext(UserContext);
-  const userStats = localStorage.getItem("stats");
-  const userStatsData = JSON.parse(userStats);
-  setUser = userStatsData;
-  console.log("userStatsData", userStatsData);
-  console.log("user", user);
 
   return (
     <Wrap>
@@ -23,16 +18,35 @@ const Stats = ({ onSave }) => {
         </StatsButtonWrap>
       </StatsButtonOuterWrap>
 
-      <StatsWrap>
-        <StatsTitle>Your VSS Stats</StatsTitle>
-        <Stat>Username: {user.username}</Stat>
-        <Stat>Visual snow: {user.stats} </Stat>
-        <Stat>Tinnitus track(s):</Stat>
-        <Stat>Notes:</Stat>
-      </StatsWrap>
+      {user.stats.length !== 0 && (
+        <StatsWrap>
+          <StatsTitle>{user.username}'s VSS Stats</StatsTitle>
+          <StatCat>Visual snow: </StatCat>
+          <StatIndented>
+            Opacity: {user.stats[0].slider.opacity}/10
+          </StatIndented>
+          <StatIndented>Size: {user.stats[0].slider.size}/5</StatIndented>
+          <StatIndented>Speed: {user.stats[0].slider.speed}/4</StatIndented>
+          <StatCat>Halos:</StatCat>
+          <Stat> {user.stats[0].slider.halo}/10</Stat>
+          <StatCat>Tinnitus track(s):</StatCat>
+          <StatIndented></StatIndented>
+          <StatCat>Notes:</StatCat>
+          <StatIndented>{user.stats[0].note}</StatIndented>
+        </StatsWrap>
+      )}
     </Wrap>
   );
 };
+
+const StatCat = styled.div`
+  font-weight: 900;
+`;
+
+const StatIndented = styled.div`
+  margin-left: 25px;
+`;
+
 const StatsButtonOuterWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -64,20 +78,23 @@ const Wrap = styled.div`
   margin-left: auto;
 `;
 
+// Stats section
 const Stat = styled.div`
   line-height: 30px;
 `;
 
 const StatsTitle = styled.div`
   font-weight: 900;
-  font-size: 18px;
+  font-size: 20px;
+  text-align: center;
   margin-top: 15px;
   margin-bottom: 25px;
 `;
 
 const StatsWrap = styled.div`
-  padding: 25px;
+  padding: 25px 45px;
   border: 1px var(--blue) solid;
+  line-height: 30px;
   border-radius: 5px;
   margin-top: 50px;
 `;

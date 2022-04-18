@@ -8,7 +8,7 @@ const Signup = () => {
   const [state, setState] = useState(true);
   const [userInput, setUserInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
-  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const Signup = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setLoggedInUser(data.data);
+        setUser(data.data);
         console.log("signed in");
         if (data.data) {
           localStorage.setItem("user", JSON.stringify(data.data));

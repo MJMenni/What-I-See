@@ -60,7 +60,6 @@ const Home = () => {
       slider,
       audio,
       note,
-      halo,
     };
 
     fetch("/api/add-stats", {

@@ -54,9 +54,13 @@ const handleSignup = async (req, res) => {
       });
     }
 
+    const { insertedId } = await db
+      .collection("users")
+      .insertOne({ email: emailInput, username: userInput, stats: [] });
+
     const newUser = await db
       .collection("users")
-      .insertOne({ email: emailInput, username: userInput });
+      .findOne({ _id: ObjectId(insertedId) });
 
     return res.status(200).json({
       status: 200,

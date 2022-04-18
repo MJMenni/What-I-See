@@ -10,34 +10,33 @@ const tinType = [
 ];
 
 const Tinnitus = ({ onClickHandler }) => {
+  const audios = tinType.map((typ) => {
+    return (
+      <div key={typ}>
+        <TinnitusType>{typ}</TinnitusType>
+        <AudioWrap>
+          <audio
+            src={`assets/${typ}.mp3`}
+            id={typ}
+            controls
+            loop
+            onPlay={(e) => {
+              onClickHandler(e);
+            }}
+            onPause={(e) => {
+              onClickHandler(e);
+            }}
+          />
+        </AudioWrap>
+      </div>
+    );
+  });
   return (
     <WrapAudio>
       <InnerWrap>
         <SymptomsLabel>TINNITUS</SymptomsLabel>
 
-        <AudioOuterWrap>
-          {tinType.map((typ) => {
-            return (
-              <div key={typ}>
-                <TinnitusType>{typ}</TinnitusType>
-                <AudioWrap>
-                  <audio
-                    src={`assets/${typ}.mp3`}
-                    id={typ}
-                    controls
-                    loop
-                    onPlay={(e) => {
-                      onClickHandler(e);
-                    }}
-                    onPause={(e) => {
-                      onClickHandler(e);
-                    }}
-                  />
-                </AudioWrap>
-              </div>
-            );
-          })}
-        </AudioOuterWrap>
+        <AudioOuterWrap>{audios}</AudioOuterWrap>
         <SymptomsLabel>NOTES</SymptomsLabel>
       </InnerWrap>
     </WrapAudio>
