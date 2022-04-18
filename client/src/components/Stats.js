@@ -21,30 +21,41 @@ const Stats = ({ onSave }) => {
       {user.stats.length !== 0 && (
         <StatsWrap>
           <StatsTitle>{user.username}'s VSS Stats</StatsTitle>
-          <StatCat>Visual snow: </StatCat>
-          <StatIndented>
-            Opacity: {user.stats[0].slider.opacity}/10
-          </StatIndented>
-          <StatIndented>Size: {user.stats[0].slider.size}/5</StatIndented>
-          <StatIndented>Speed: {user.stats[0].slider.speed}/4</StatIndented>
-          <StatCat>Halos:</StatCat>
-          <Stat> {user.stats[0].slider.halo}/10</Stat>
-          <StatCat>Tinnitus track(s):</StatCat>
-          <StatIndented></StatIndented>
-          <StatCat>Notes:</StatCat>
-          <StatIndented>{user.stats[0].note}</StatIndented>
+          <StatsOuterWrap>
+            <StatsInnerWrap>
+              <StatCat>Visual snow </StatCat>
+              <Stat>Opacity: {user.stats[0].slider.opacity}/10</Stat>
+              <Stat>Size: {user.stats[0].slider.size}/5</Stat>
+              <Stat>Speed: {user.stats[0].slider.speed}/4</Stat>
+              <StatCat>Halos</StatCat>
+              <Stat>Halos: {user.stats[0].slider.halo}/10</Stat>
+            </StatsInnerWrap>
+            <StatsInnerWrap>
+              <StatCat>Tinnitus track(s)</StatCat>
+              <Stat></Stat>
+              <StatCat>Notes</StatCat>
+              <Stat>{user.stats[0].note}</Stat>
+            </StatsInnerWrap>
+          </StatsOuterWrap>
         </StatsWrap>
       )}
     </Wrap>
   );
 };
 
-const StatCat = styled.div`
-  font-weight: 900;
+const StatsOuterWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
-const StatIndented = styled.div`
-  margin-left: 25px;
+const StatsInnerWrap = styled.div`
+  /* border: 1px green solid; */
+  width: 45%;
+`;
+
+const StatCat = styled.div`
+  font-weight: 900;
+  margin-top: 15px;
 `;
 
 const StatsButtonOuterWrap = styled.div`
@@ -81,6 +92,7 @@ const Wrap = styled.div`
 // Stats section
 const Stat = styled.div`
   line-height: 30px;
+  margin-left: 25px;
 `;
 
 const StatsTitle = styled.div`
