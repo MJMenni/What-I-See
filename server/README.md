@@ -2,11 +2,11 @@
 
 ## Category Endpoints
 
-Calls are made to the Bing News Search API: www.microsoft.com/en-us/bing/apis/bing-news-search-api
+API calls are made using the Bing News Search API: www.microsoft.com/en-us/bing/apis/bing-news-search-api
 
 ### GET /api/resources
 
-Gets three top news stories that match the "visual snow syndrome" query.
+Gets the top news stories that match the "visual snow syndrome" query.
 
 Should come in this shape:
 
@@ -69,8 +69,12 @@ Should come in this shape:
 
 | Endpoint | Method | Description |
 
-| `/api/resources` | GET | This endpoint returns an array of objects with three top news stories about VSS |
+| `/api/resources` | GET | This endpoint returns an array of objects with top news stories about VSS |
 
-| `/api/login` | POST | This endpoint |
+| `/api/get-stats` | GET | This endpoint returns all the stats for the current user |
 
-| `/api/signup` | POST | This endpoint |
+| `/api/login` | POST | This endpoint handles logins from existing users |
+
+| `/api/signup` | POST | This endpoint handles new users who are creating a new account |
+
+| `/api/add-stats` | PATCH | This endpoint adds current stats to an existing user's account |
