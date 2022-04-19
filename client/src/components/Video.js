@@ -11,7 +11,7 @@ const Video = ({ stats }) => {
 
   return (
     <Wrap>
-      <MainVideoWrap className="bright">
+      <MainVideoWrap halo={halo} className="bright">
         <video width={960} height={540} loop={true} controls>
           <source src="/assets/Original.mp4" type="video/mp4"></source>
         </video>
@@ -51,7 +51,9 @@ const MainVideoWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   &.bright {
-    filter: brightness(1.5);
+    filter: ${(props) => {
+      return `brightness(${props.halo})`;
+    }};
   }
 `;
 
