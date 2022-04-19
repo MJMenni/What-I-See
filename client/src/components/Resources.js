@@ -3,8 +3,8 @@ import News from "./News";
 
 const Resources = () => {
   return (
-    <OuterWrap>
-      <InnerWrap>
+    <Container>
+      <Wrap>
         <Title>Visual Snow Syndrome Resources</Title>
         <LinksWrap>
           <SingleLinkWrap>
@@ -53,25 +53,32 @@ const Resources = () => {
           </SingleLinkWrap>
         </LinksWrap>
         <News />
-      </InnerWrap>
-    </OuterWrap>
+      </Wrap>
+    </Container>
   );
 };
 
-const OuterWrap = styled.div`
+const Container = styled.div`
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 75px;
 `;
 
-const InnerWrap = styled.div`
+const Wrap = styled.div`
   width: 66%;
   margin-right: auto;
   margin-left: auto;
 `;
 
 const Title = styled.h1``;
+
+const LinksWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  color: var(--blue);
+  justify-content: space-between;
+`;
 
 const SingleLinkWrap = styled.div`
   padding: 10px 0px;
@@ -88,14 +95,7 @@ const SingleLinkWrap = styled.div`
   }
 `;
 
-const LinksWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  color: var(--blue);
-  justify-content: space-between;
-`;
-
-const Resource = styled.div`
+const Resource = styled.p`
   text-align: center;
   margin-top: 20px;
   font-size: 18px;
@@ -108,7 +108,7 @@ const Link = styled.a`
   margin-top: 50px;
 `;
 
-const LinkInfo = styled.div`
+const LinkInfo = styled.p`
   font-size: 16px;
   line-height: 22px;
   padding: 20px;

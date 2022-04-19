@@ -2,8 +2,6 @@ import { useState, useContext } from "react";
 import UserContext from "./UserContext";
 import styled from "styled-components";
 
-// Missing useHistory b/c using new React version. Refer to Facespace to see useHistory use.
-
 const Signup = () => {
   const [userInput, setUserInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
@@ -13,6 +11,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Handle login from new user
     fetch("/api/signup", {
       method: "POST",
       headers: {
@@ -40,7 +39,7 @@ const Signup = () => {
   };
 
   return (
-    <Wrap>
+    <Container>
       <LoginWrap>
         <MessagesWrap>
           <LoginMessageTitle>New to the site?</LoginMessageTitle>
@@ -49,7 +48,7 @@ const Signup = () => {
 
         <form onSubmit={handleSubmit}>
           <LoginInputWrap>
-            <UserInput
+            <Input
               id="username"
               value={userInput}
               type="test"
@@ -59,8 +58,8 @@ const Signup = () => {
               minlength="1"
               placeholder="Username"
               placeholderTextColor="#004aad"
-            ></UserInput>
-            <Email
+            ></Input>
+            <Input
               id="email"
               value={emailInput}
               type="test"
@@ -70,7 +69,7 @@ const Signup = () => {
               minlength="1"
               placeholder="Email"
               placeholderTextColor="#004aad"
-            ></Email>
+            ></Input>
             <LoginButton type="submit">Create account</LoginButton>
           </LoginInputWrap>
           {/* {state === false ? (
@@ -81,11 +80,11 @@ const Signup = () => {
           <Confirmation>{message}</Confirmation>
         </form>
       </LoginWrap>
-    </Wrap>
+    </Container>
   );
 };
 
-const Wrap = styled.div`
+const Container = styled.div`
   max-width: 540px;
   margin-right: auto;
   margin-left: auto;
@@ -101,22 +100,23 @@ const LoginWrap = styled.div`
   min-height: 312px;
 `;
 
+// Login message
 const MessagesWrap = styled.div`
   border-radius: 5px;
-  /* margin-bottom: 35px; */
 `;
 
-const LoginMessageTitle = styled.div`
+const LoginMessageTitle = styled.p`
   font-size: 18px;
   font-weight: 900;
   text-align: center;
   margin-bottom: 10px;
 `;
 
-const LoginMessage = styled.div`
+const LoginMessage = styled.p`
   text-align: center;
 `;
 
+// Login
 const LoginInputWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -125,15 +125,7 @@ const LoginInputWrap = styled.div`
   margin-left: auto;
 `;
 
-const UserInput = styled.input`
-  width: 85%;
-  padding: 10px 15px;
-  border: var(--mid-gray) 1px solid;
-  border-radius: 5px;
-  margin-bottom: 10px;
-`;
-
-const Email = styled.input`
+const Input = styled.input`
   width: 85%;
   padding: 10px 15px;
   border: var(--mid-gray) 1px solid;

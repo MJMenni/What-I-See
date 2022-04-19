@@ -5,6 +5,7 @@ import { Loading } from "./Loading";
 const News = () => {
   const [news, setNews] = useState();
 
+  // Get news articles from Bing API
   useEffect(() => {
     fetch(`/api/resources`)
       .then((res) => res.json())
@@ -21,7 +22,7 @@ const News = () => {
   }
 
   return (
-    <Wrap>
+    <Container>
       <Intro>Keep up with the latest news about VSS!</Intro>
 
       <AllArticlesWrap>
@@ -49,19 +50,17 @@ const News = () => {
           );
         })}
       </AllArticlesWrap>
-    </Wrap>
+    </Container>
   );
 };
 
-// Wraps
-const Wrap = styled.div`
+const Container = styled.div`
   line-height: 24px;
 `;
 
 const AllArticlesWrap = styled.div`
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   overflow-x: scroll;
   padding: 10px;
   color: var(--blue);
@@ -72,24 +71,24 @@ const AllArticlesWrap = styled.div`
 `;
 
 // Articles
-const Intro = styled.div`
+const Intro = styled.p`
   font-size: 24px;
   font-weight: 900;
   margin: 65px 0px 40px 0px;
   text-align: center;
 `;
 
-const Article = styled.div`
-  border: 2px var(--blue) solid;
-  min-width: 30%;
-  border-radius: 5px;
-  padding: 20px;
+const Article = styled.p`
   font-size: 16px;
   line-height: 18px;
   display: flex;
   flex-direction: column;
+  min-width: 30%;
+  padding: 20px;
   margin-right: 44px;
   margin-bottom: 10px;
+  border: 2px var(--blue) solid;
+  border-radius: 5px;
   color: var(--blue);
   scrollbar-width: none;
   &:hover {
@@ -134,11 +133,11 @@ const SourceAndDateWrap = styled.div`
   margin: 10px 0px;
 `;
 
-const Source = styled.div``;
+const Source = styled.p``;
 
-const PubDate = styled.div``;
+const PubDate = styled.p``;
 
-const Title = styled.div`
+const Title = styled.p`
   font-size: 16px;
   font-weight: 900;
   text-align: center;
@@ -146,7 +145,7 @@ const Title = styled.div`
   margin-bottom: 15px;
 `;
 
-const Description = styled.div`
+const Description = styled.p`
   font-size: 16px;
   line-height: 22px;
   font-weight: 300;
