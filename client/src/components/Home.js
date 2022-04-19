@@ -13,11 +13,8 @@ const initialState = { size: 1, speed: 1, opacity: 3, halo: 0 };
 const Home = () => {
   const { user, setUser } = useContext(UserContext);
 
-  const [halo, setHalo] = useState(initialState);
-
   // Slider
   const [slider, setSlider] = useState(initialState);
-  console.log(slider);
 
   // Audio
   const initValue = {
@@ -33,7 +30,6 @@ const Home = () => {
   // Audio changes
   const onClickHandler = (event) => {
     event.preventDefault();
-    // console.log(event.target.id);
     const key = event.target.id;
     setAudio((prev) => {
       return { ...prev, [key]: !prev[key] };

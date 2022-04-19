@@ -42,9 +42,7 @@ const handleSignup = async (req, res) => {
     const db = client.db("WhatISee");
     // email validation check
     // const emailMatch = emailInput === userInput;
-    // console.log("emailMatch", emailMatch);
     const { emailInput, userInput } = req.body;
-    // console.log("emailInput", emailInput);
     const user = await db.collection("users").findOne({ email: emailInput });
     // if (user || emailMatch) {
     if (user) {

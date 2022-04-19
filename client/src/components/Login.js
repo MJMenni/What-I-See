@@ -8,7 +8,7 @@ const Login = () => {
   const [message, setMessage] = useState(null);
   const [userInput, setUserInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +23,6 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("logged in");
         if (data.status === 200) {
           setUser(data.data);
           if (data.data) {

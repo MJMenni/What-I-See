@@ -9,7 +9,6 @@ const News = () => {
     fetch(`/api/resources`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setNews(data.data.value);
       })
       .catch((err) => {

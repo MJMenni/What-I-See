@@ -3,7 +3,7 @@ import UserContext from "./UserContext";
 import { useContext } from "react";
 
 const Stats = ({ onSave }) => {
-  let { user, setUser } = useContext(UserContext);
+  let { user } = useContext(UserContext);
 
   return (
     <Wrap>
@@ -63,7 +63,7 @@ const Stats = ({ onSave }) => {
 
 const AllStatsWrap = styled.div`
   overflow-x: scroll;
-  height: 800px;
+  max-height: 800px;
   ::-webkit-scrollbar {
     display: none;
   }

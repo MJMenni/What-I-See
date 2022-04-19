@@ -49,6 +49,9 @@ express()
   // GET endpoints
 
   // Toggle between the next two GET endpoints to get data while limiting API calls.
+  // The first endpoint gets stored data from MongoDB, while the second enpoint gets the data straight from the API.
+  // Toggle between the two to limit unneccesary API calls.
+
   // GET stored API data in MongoDB
   .get("/api/resources", async (req, res) => {
     const client = new MongoClient(MONGO_URI, options);
@@ -57,7 +60,6 @@ express()
       const db = client.db("WhatISee");
 
       const news = await db.collection("news").find({}).toArray();
-      console.log("news", news);
       return res.status(200).json({
         status: 200,
         message: "news fetched",

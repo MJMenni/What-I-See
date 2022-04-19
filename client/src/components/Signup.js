@@ -5,7 +5,6 @@ import styled from "styled-components";
 // Missing useHistory b/c using new React version. Refer to Facespace to see useHistory use.
 
 const Signup = () => {
-  const [state, setState] = useState(true);
   const [userInput, setUserInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const { setUser } = useContext(UserContext);
@@ -26,7 +25,6 @@ const Signup = () => {
       .then((data) => {
         if (data.status === 200) {
           setUser(data.data);
-          console.log("signed in");
           if (data.data) {
             localStorage.setItem("user", JSON.stringify(data.data));
           }
