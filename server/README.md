@@ -50,48 +50,52 @@ Should come in this shape:
 				],
 				"datePublished": "2022-04-10T15:13:44.0000000Z"
 			}
-      ... }
 ```
 
 ### POST /api/login
 
-Description
-
-Should come in this shape:
-
-```json
-// {
-//   "status": 200,
-//   "data": {
-//     "_id": "625ed9f02c93c66cb1d5123b",
-//     "email": null,
-//     "username": null,
-//     "stats": []
-//   }
-// }
-```
-
-### POST /api/signup
-
-Description
+This endpoint handles logins from existing users.
 
 Should come in this shape:
 
 ```json
 {
-  "status": 200,
-  "data": {
-    "_id": "625ed9f02c93c66cb1d5123b",
-    "email": null,
-    "username": null,
-    "stats": []
-  }
+  _id: new ObjectId("625e2257fc2ac0697491b75b"),
+  email: 'LizardQueen@gmail.com',
+  username: 'Lisa Simpson',
+  stats: [
+    {
+      slider: [Object],
+      audio: [Object],
+      note: 'Apr-17-2022 –– It rained today, so I spent all day in my room reading and listening to jazz. Light visual snow and some body aches, but very mild symptoms overall. Possible triggers: none.'
+    },
+    {
+      slider: [Object],
+      audio: [Object],
+      note: 'Apr-19-2022 –– Had really bad insomnia last night and felt tired all day. Visual snow, after-images, and brain fog were more intense than usual. Noticed my symptoms spiked after I got a B+ in gym. Possible triggers: lack of sleep, school-related stress.'
+    }
+  ]
+}
+```
+
+### POST /api/signup
+
+This endpoint creates a new account for a first-time user.
+
+Should come in this shape:
+
+```json
+{
+  _id: new ObjectId("625ee6977d00c96ce4490954"),
+  email: 'MyMomSaysImCool@gmail.com',
+  username: 'MilhouseVH',
+  stats: []
 }
 ```
 
 ### PATCH /api/add-stats
 
-Description
+This endpoint adds the current stats to an existing user's account.
 
 Should come in this shape:
 
@@ -106,11 +110,11 @@ Should come in this shape:
     "Electric": false,
     "Screeching": false
   },
-  "note": "Apr-20-2022 – Intense after-images and light sensitivity, especially when walking through the mall. Noticed static, tinnitus, and floaters increased as the day went on. Possible triggers include work-related stress, exposure to intense lighting, and too much screen time."
+  "note": "Apr-20-2022 –– Went on a road trip with the family. Experienced intense light sensitivity because of the sun and an increase in tinnitus due to dad’s loud music. Possible triggers: intense sunlight, loud music in the car, heightened stress due to brother being a brat."
 }
 ```
 
-| Endpoint | Method | Description |
+### | Endpoint | Method | Description |
 
 | `/api/resources` | GET | This endpoint returns an array of objects with top news stories about VSS. The endpoint can be called in two ways: using the data stored in MongoDB, or directly with the Bing API. Toggle between the two to avoid unneccessary API calls. |
 

@@ -48,9 +48,8 @@ express()
 
   // GET endpoints
 
-  // Toggle between the next two GET endpoints to get data while limiting API calls.
-  // The first endpoint gets stored data from MongoDB, while the second enpoint gets the data straight from the API.
-  // Toggle between the two to limit unneccesary API calls.
+  // Toggle between the next two GET endpoints to get data while limiting unneccesary API calls.
+  // The first endpoint gets stored data from MongoDB, while the second endpoint gets the data straight from the API.
 
   // GET stored API data in MongoDB
   .get("/api/resources", async (req, res) => {

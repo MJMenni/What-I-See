@@ -24,6 +24,7 @@ const handleLogin = async (req, res) => {
       });
     }
 
+    console.log(user);
     return res.status(200).json({
       status: 200,
       data: user,
@@ -45,6 +46,7 @@ const handleSignup = async (req, res) => {
     const { emailInput, userInput } = req.body;
     const user = await db.collection("users").findOne({ email: emailInput });
     // if (user || emailMatch) {
+
     if (user) {
       return res.status(500).json({
         status: 500,
@@ -59,7 +61,7 @@ const handleSignup = async (req, res) => {
     const newUser = await db
       .collection("users")
       .findOne({ _id: ObjectId(insertedId) });
-
+    console.log(newUser);
     return res.status(200).json({
       status: 200,
       data: newUser,
