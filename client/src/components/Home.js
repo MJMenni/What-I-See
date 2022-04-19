@@ -386,6 +386,7 @@ const NotesInput = styled.textarea`
   border-radius: 5px;
   line-height: 24px;
   font-size: 16px;
+  color: var(--blue);
 
   &:focus::placeholder {
     color: white;
