@@ -18,44 +18,56 @@ const Stats = ({ onSave }) => {
         </StatsButtonWrap>
       </StatsButtonOuterWrap>
       {user.stats.length !== 0 && (
-        <StatsTitle> {user.username}'s VSS Stats</StatsTitle>
+        <StatsTitle> {user.username}'s VSS STATS</StatsTitle>
       )}
-      {user.stats.length !== 0 &&
-        user.stats
-          .slice(0)
-          .reverse()
-          .map((entry) => {
-            return (
-              <StatsWrap key={entry._id}>
-                <StatsOuterWrap>
-                  <StatsInnerWrap>
-                    <StatCat>Visual snow levels </StatCat>
-                    <Stat>Opacity: {entry.slider.opacity}/10</Stat>
-                    <Stat>Size: {entry.slider.size}/5</Stat>
-                    <Stat>Speed: {entry.slider.speed}/4</Stat>
-                  </StatsInnerWrap>
-                  <StatsInnerWrap>
-                    <StatCat>Halo levels</StatCat>
-                    <Stat>Halos: {entry.slider.halo}/10</Stat>
-                  </StatsInnerWrap>
-                  <StatsInnerWrap>
-                    <StatCat>Tinnitus track(s)</StatCat>
-                    {entry.audio.Static === true && <Stat>Static</Stat>}
-                    {entry.audio.Buzzing === true && <Stat>Buzzing</Stat>}
-                    {entry.audio.Kettle === true && <Stat>Kettle</Stat>}
-                    {entry.audio.Roaring === true && <Stat>Roaring</Stat>}
-                    {entry.audio.Screeching === true && <Stat>Screeching</Stat>}
-                    {entry.audio.Electric === true && <Stat>Electric</Stat>}
-                  </StatsInnerWrap>
-                </StatsOuterWrap>
-                <StatCat id="notes">Notes</StatCat>
-                <Stat>{entry.note}</Stat>
-              </StatsWrap>
-            );
-          })}
+      <AllStatsWrap>
+        {user.stats.length !== 0 &&
+          user.stats
+            .slice(0)
+            .reverse()
+            .map((entry, index) => {
+              return (
+                <StatsWrap key={index}>
+                  <StatsOuterWrap>
+                    <StatsInnerWrap>
+                      <StatCat>Visual snow levels </StatCat>
+                      <Stat>Opacity: {entry.slider.opacity}/10</Stat>
+                      <Stat>Size: {entry.slider.size}/5</Stat>
+                      <Stat>Speed: {entry.slider.speed}/4</Stat>
+                    </StatsInnerWrap>
+                    <StatsInnerWrap>
+                      <StatCat>Halo levels</StatCat>
+                      <Stat>Halos: {entry.slider.halo}/10</Stat>
+                    </StatsInnerWrap>
+                    <StatsInnerWrap>
+                      <StatCat>Tinnitus track(s)</StatCat>
+                      {entry.audio.Static === true && <Stat>Static</Stat>}
+                      {entry.audio.Buzzing === true && <Stat>Buzzing</Stat>}
+                      {entry.audio.Kettle === true && <Stat>Kettle</Stat>}
+                      {entry.audio.Roaring === true && <Stat>Roaring</Stat>}
+                      {entry.audio.Screeching === true && (
+                        <Stat>Screeching</Stat>
+                      )}
+                      {entry.audio.Electric === true && <Stat>Electric</Stat>}
+                    </StatsInnerWrap>
+                  </StatsOuterWrap>
+                  <StatCat id="notes">Notes</StatCat>
+                  <Stat>{entry.note}</Stat>
+                </StatsWrap>
+              );
+            })}
+      </AllStatsWrap>
     </Wrap>
   );
 };
+
+const AllStatsWrap = styled.div`
+  overflow-x: scroll;
+  height: 800px;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 const StatsOuterWrap = styled.div`
   display: flex;
@@ -116,7 +128,7 @@ const StatsTitle = styled.div`
   font-weight: 900;
   font-size: 20px;
   margin-top: 50px;
-  margin-bottom: -5px;
+  padding-bottom: 10px;
 `;
 
 const StatsWrap = styled.div`
