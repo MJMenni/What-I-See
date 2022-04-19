@@ -125,6 +125,7 @@ const StatsWrap = styled.div`
   line-height: 30px;
   border-radius: 5px;
   margin-top: 25px;
+  padding-bottom: 35px;
 `;
 
 const AddStatsButton = styled.button`
