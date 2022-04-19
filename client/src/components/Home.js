@@ -8,7 +8,7 @@ import Stats from "./Stats";
 import UserContext from "./UserContext";
 import Tinnitus from "./Tinnitus";
 
-const initialState = { size: 1, speed: 1, opacity: 3, halo: 1 };
+const initialState = { size: 1, speed: 1, opacity: 3, halo: 0 };
 
 const Home = () => {
   const { user, setUser } = useContext(UserContext);
@@ -175,7 +175,7 @@ const Home = () => {
               id="halos"
               type="range"
               min="1"
-              max="10"
+              max="5"
               value={slider.halo}
               onChange={(e) => {
                 setSlider({ ...slider, halo: parseInt(e.target.value) });

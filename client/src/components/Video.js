@@ -52,7 +52,7 @@ const MainVideoWrap = styled.div`
   margin-right: auto;
   &.bright {
     filter: ${(props) => {
-      return `brightness(${props.halo})`;
+      return `brightness(${props.halo / 5 + 1})`;
     }};
   }
 `;
