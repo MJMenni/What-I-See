@@ -6,7 +6,7 @@
 
 Gets the top news stories on "visual snow syndrome" from the Bing News Search API (www.microsoft.com/en-us/bing/apis/bing-news-search-api)
 
-Should come in this shape:
+Comes in this format:
 
 ```json
 {
@@ -54,9 +54,9 @@ Should come in this shape:
 
 ### POST /api/login
 
-This endpoint handles logins from existing users.
+Handles login from existing user and gets that user's data.
 
-Should come in this shape:
+Comes in this format:
 
 ```json
 {
@@ -80,9 +80,9 @@ Should come in this shape:
 
 ### POST /api/signup
 
-This endpoint creates a new account for a first-time user.
+Creates a new account for a first-time user.
 
-Should come in this shape:
+Comes in this format:
 
 ```json
 {
@@ -95,9 +95,9 @@ Should come in this shape:
 
 ### PATCH /api/add-stats
 
-This endpoint adds the current stats to an existing user's account.
+Adds the current stats to an existing user's account.
 
-Should come in this shape:
+Comes in this format:
 
 ```json
 {
@@ -116,10 +116,10 @@ Should come in this shape:
 
 ### | Endpoint | Method | Description |
 
-| `/api/resources` | GET | This endpoint returns an array of objects with top news stories about VSS. The endpoint can be called in two ways: using the data stored in MongoDB, or directly with the Bing API. Toggle between the two to avoid unneccessary API calls. |
+| `/api/resources` | GET | This endpoint returns an array of objects with news articles about VSS. The endpoint can be called in two ways: using the data stored in MongoDB, or directly with the Bing API. Toggle between the two to avoid unneccessary API calls. |
 
 | `/api/login` | POST | This endpoint handles logins from existing users |
 
-| `/api/signup` | POST | This endpoint handles new users who are creating a new account |
+| `/api/signup` | POST | This endpoint handles new users and creates a new account |
 
 | `/api/add-stats` | PATCH | This endpoint adds current stats to an existing user's account |

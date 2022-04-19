@@ -72,11 +72,6 @@ const Signup = () => {
             ></Input>
             <LoginButton type="submit">Create account</LoginButton>
           </LoginInputWrap>
-          {/* {state === false ? (
-            <Confirmation>Invalid username, please try again</Confirmation>
-          ) : (
-            <Confirmation>Success. Account created!</Confirmation>
-          )} */}
           <Confirmation>{message}</Confirmation>
         </form>
       </LoginWrap>

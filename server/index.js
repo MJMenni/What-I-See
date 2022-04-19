@@ -49,7 +49,7 @@ express()
   // GET endpoints
 
   // Toggle between the next two GET endpoints to get data while limiting unneccesary API calls.
-  // The first endpoint gets stored data from MongoDB, while the second endpoint gets the data straight from the API.
+  // The first endpoint gets stored API data from MongoDB, while the second endpoint gets the data straight from the Bing News API.
 
   // GET stored API data in MongoDB
   .get("/api/resources", async (req, res) => {

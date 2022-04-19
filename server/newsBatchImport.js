@@ -1,5 +1,4 @@
 const { MongoClient } = require("mongodb");
-const { v4: uuidv4 } = require("uuid");
 require("dotenv").config({ path: "../.env" });
 const fetch = require("node-fetch");
 

@@ -10,6 +10,7 @@ const options = {
   useUnifiedTopology: true,
 };
 
+// Log in existing user
 const handleLogin = async (req, res) => {
   const client = new MongoClient(MONGO_URI, options);
   try {
@@ -36,6 +37,7 @@ const handleLogin = async (req, res) => {
   }
 };
 
+// Create new account for new user
 const handleSignup = async (req, res) => {
   const client = new MongoClient(MONGO_URI, options);
   try {

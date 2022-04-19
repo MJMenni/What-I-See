@@ -10,7 +10,7 @@ const tinType = [
 ];
 
 const Tinnitus = ({ onClickHandler }) => {
-  const audios = tinType.map((typ) => {
+  const audio = tinType.map((typ) => {
     return (
       <div key={typ}>
         <TinnitusType>{typ}</TinnitusType>
@@ -32,41 +32,38 @@ const Tinnitus = ({ onClickHandler }) => {
     );
   });
   return (
-    <WrapAudio>
-      <InnerWrap>
+    <Container>
+      <Wrap>
         <SymptomsLabel>TINNITUS</SymptomsLabel>
 
-        <AudioOuterWrap>{audios}</AudioOuterWrap>
+        <AudioOuterWrap>{audio}</AudioOuterWrap>
         <SymptomsLabel>NOTES</SymptomsLabel>
-      </InnerWrap>
-    </WrapAudio>
+      </Wrap>
+    </Container>
   );
 };
 
-const WrapAudio = styled.div`
+const Container = styled.div`
   display: flex;
   max-width: 956px;
   margin-right: auto;
   margin-left: auto;
 `;
 
-const InnerWrap = styled.div`
+const Wrap = styled.div`
   width: 85%;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   flex-direction: column;
   line-height: 24px;
-  /* border: 2px yellow solid; */
 `;
 
 // Symptoms label
-const SymptomsLabel = styled.div`
+const SymptomsLabel = styled.p`
   font-size: 20px;
   font-weight: 900;
   margin: 60px 0px 20px 60px;
-
-  /* border: 1px green solid; */
 `;
 
 // Tinnitus section
@@ -76,11 +73,10 @@ const AudioOuterWrap = styled.div`
   flex-wrap: wrap;
   width: 85%;
   background-color: var(--light-gray);
-  padding: 15px 5px 15px 35px;
+  padding: 25px 15px 25px 45px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 5px;
-  /* border: 5px yellow solid; */
 `;
 
 const TinnitusType = styled.div`
@@ -89,7 +85,6 @@ const TinnitusType = styled.div`
   font-weight: 900;
   width: 15%;
   height: 15%;
-  /* border: 1px pink solid; */
 `;
 
 const AudioWrap = styled.div`
@@ -97,7 +92,6 @@ const AudioWrap = styled.div`
   display: flex;
   width: 43%;
   margin-left: 40%;
-  /* border: 1px green solid; */
 
   audio::-webkit-media-controls-current-time-display,
   audio::-webkit-media-controls-time-remaining-display {

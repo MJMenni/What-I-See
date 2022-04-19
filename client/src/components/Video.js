@@ -4,13 +4,14 @@ import React from "react";
 const Video = ({ stats }) => {
   const { size, opacity, halo } = stats;
 
+  // Video playback speed
   const vidOverlay = document.getElementById("vid2");
   const videoRate = () => {
     vidOverlay.playbackRate = 2;
   };
 
   return (
-    <Wrap>
+    <Container>
       <MainVideoWrap halo={halo} className="bright">
         <video width={960} height={540} loop={true} controls>
           <source src="/assets/Original.mp4" type="video/mp4"></source>
@@ -21,11 +22,11 @@ const Video = ({ stats }) => {
           <source src="/assets/Overlay.mp4" type="video/mp4"></source>
         </video>
       </OverlayVideoWrap>
-    </Wrap>
+    </Container>
   );
 };
 
-const Wrap = styled.div`
+const Container = styled.div`
   position: relative;
   overflow: hidden;
   width: 960px;

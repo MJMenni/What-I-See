@@ -7,24 +7,7 @@ const anonymousUser = {
   _id: null,
   email: null,
   username: null,
-  stats: [
-    // {
-    //   slider: {
-    //     opacity: 0,
-    //     speed: 0,
-    //     size: 0,
-    //   },
-    //   audio: {
-    //     static: false,
-    //     roaring: false,
-    //     buzzing: false,
-    //     kettle: false,
-    //     electric: false,
-    //     screeching: false,
-    //   },
-    //   note: "",
-    // },
-  ],
+  stats: [],
 };
 
 export const UserProvider = ({ children }) => {

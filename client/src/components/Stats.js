@@ -6,7 +6,7 @@ const Stats = ({ onSave }) => {
   let { user } = useContext(UserContext);
 
   return (
-    <Wrap>
+    <Container>
       <StatsButtonOuterWrap>
         <StatsButtonWrap>
           <ButtonMessage>To add your current stats</ButtonMessage>
@@ -57,9 +57,15 @@ const Stats = ({ onSave }) => {
               );
             })}
       </AllStatsWrap>
-    </Wrap>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  max-width: 72%;
+  margin-right: auto;
+  margin-left: auto;
+`;
 
 const AllStatsWrap = styled.div`
   overflow-x: scroll;
@@ -69,29 +75,10 @@ const AllStatsWrap = styled.div`
   }
 `;
 
-const StatsOuterWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const StatsInnerWrap = styled.div`
-  width: 30%;
-  /* border: 1px green solid; */
-`;
-
-const StatCat = styled.div`
-  font-weight: 900;
-  margin-top: 15px;
-  font-size: 18px;
-  &#notes {
-    margin-top: 25px;
-  }
-`;
-
+// Stat buttons
 const StatsButtonOuterWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  /* border: 2px yellow solid; */
 `;
 
 const StatsButtonWrap = styled.div`
@@ -109,35 +96,7 @@ const ButtonMessage = styled.div`
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  /* border: 1px pink solid; */
   text-align: center;
-`;
-
-const Wrap = styled.div`
-  max-width: 72%;
-  margin-right: auto;
-  margin-left: auto;
-`;
-
-// Stats section
-const Stat = styled.div`
-  line-height: 30px;
-`;
-
-const StatsTitle = styled.div`
-  font-weight: 900;
-  font-size: 20px;
-  margin-top: 50px;
-  padding-bottom: 10px;
-`;
-
-const StatsWrap = styled.div`
-  padding: 25px 45px;
-  border: 1px var(--blue) solid;
-  line-height: 30px;
-  border-radius: 5px;
-  margin-top: 25px;
-  padding-bottom: 35px;
 `;
 
 const AddStatsButton = styled.button`
@@ -172,6 +131,45 @@ const ViewStatsButton = styled.button`
   &:active {
     opacity: 85%;
   }
+`;
+
+// Stats
+const StatsOuterWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const StatsInnerWrap = styled.div`
+  width: 30%;
+`;
+
+const StatsWrap = styled.div`
+  padding: 25px 45px;
+  border: 1px var(--blue) solid;
+  line-height: 30px;
+  border-radius: 5px;
+  margin-top: 25px;
+  padding-bottom: 35px;
+`;
+
+const StatCat = styled.div`
+  font-weight: 900;
+  margin-top: 15px;
+  font-size: 18px;
+  &#notes {
+    margin-top: 25px;
+  }
+`;
+
+const Stat = styled.div`
+  line-height: 30px;
+`;
+
+const StatsTitle = styled.div`
+  font-weight: 900;
+  font-size: 20px;
+  margin-top: 50px;
+  padding-bottom: 10px;
 `;
 
 export default Stats;
