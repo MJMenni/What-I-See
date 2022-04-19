@@ -41,11 +41,8 @@ const handleSignup = async (req, res) => {
   try {
     await client.connect();
     const db = client.db("WhatISee");
-    // email validation check
-    // const emailMatch = emailInput === userInput;
     const { emailInput, userInput } = req.body;
     const user = await db.collection("users").findOne({ email: emailInput });
-    // if (user || emailMatch) {
 
     if (user) {
       return res.status(500).json({

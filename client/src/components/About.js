@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
-    <Wrap>
-      <AboutWrap>
+    <Container>
+      <Wrap>
         <AboutTitle>About Visual Snow Syndrome</AboutTitle>
         <AboutCopy>
           <Bold>Visual Snow Syndrome (VSS)</Bold> is a neurological disorder
@@ -117,19 +117,18 @@ const About = () => {
           </NavLinks>{" "}
           page.
         </ResourcesLink>
-      </AboutWrap>
-    </Wrap>
+      </Wrap>
+    </Container>
   );
 };
 
-// Outer wrappers
-const Wrap = styled.div`
+const Container = styled.div`
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
 `;
 
-const AboutWrap = styled.div`
+const Wrap = styled.div`
   max-width: 66%;
   padding-bottom: 75px;
   margin-right: auto;
@@ -139,14 +138,14 @@ const AboutWrap = styled.div`
 // Title
 const AboutTitle = styled.h1``;
 
-// About section
-const AboutCopy = styled.div`
+// About
+const AboutCopy = styled.p`
   line-height: 24px;
   font-size: 18px;
   text-align: justify;
 `;
 
-const SpecialCopy = styled.div`
+const SpecialCopy = styled.p`
   text-align: justify;
   line-height: 24px;
   font-size: 18px;
@@ -154,7 +153,7 @@ const SpecialCopy = styled.div`
   font-weight: 600;
 `;
 
-// List of symptoms section
+// List of symptoms
 const SymptomsWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -183,7 +182,7 @@ const IconWrap = styled.div`
   margin-top: 10px;
 `;
 
-const IconText = styled.div`
+const IconText = styled.p`
   padding-top: 7%;
   padding-left: 10px;
   line-height: 20px;

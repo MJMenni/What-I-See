@@ -2,8 +2,6 @@ import { useState, useContext } from "react";
 import UserContext from "./UserContext";
 import styled from "styled-components";
 
-// Missing useHistory b/c using new React version. Refer to Facespace to see useHistory use.
-
 const Login = () => {
   const [message, setMessage] = useState(null);
   const [userInput, setUserInput] = useState("");
@@ -13,6 +11,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Handle login from existing user
     fetch("/api/login", {
       method: "POST",
       headers: {
@@ -40,7 +39,7 @@ const Login = () => {
   };
 
   return (
-    <Wrap>
+    <Container>
       <OuterWrap>
         <InnerWrap>
           <LoginMessageTitle>Already have an account?</LoginMessageTitle>
@@ -49,7 +48,7 @@ const Login = () => {
 
         <form onSubmit={handleSubmit}>
           <LoginInputWrap>
-            <UserInput
+            <Input
               id="username"
               value={userInput}
               type="test"
@@ -59,8 +58,8 @@ const Login = () => {
               minlength="1"
               placeholder="Username"
               placeholderTextColor="#004aad"
-            ></UserInput>
-            <Email
+            ></Input>
+            <Input
               id="email"
               value={emailInput}
               type="test"
@@ -70,18 +69,17 @@ const Login = () => {
               minlength="1"
               placeholder="Email"
               placeholderTextColor="#004aad"
-            ></Email>
+            ></Input>
             <LoginButton type="submit">Log in</LoginButton>
           </LoginInputWrap>
           <Confirmation>{message}</Confirmation>
         </form>
       </OuterWrap>
-    </Wrap>
+    </Container>
   );
 };
 
-// Wraps
-const Wrap = styled.div`
+const Container = styled.div`
   max-width: 540px;
   margin-right: auto;
   margin-left: auto;
@@ -97,19 +95,16 @@ const OuterWrap = styled.div`
 `;
 
 // Login message
-const InnerWrap = styled.div`
-  /* border: 3px yellow solid; */
-`;
+const InnerWrap = styled.div``;
 
-const LoginMessageTitle = styled.div`
+const LoginMessageTitle = styled.p`
   font-size: 18px;
   font-weight: 900;
   text-align: center;
   margin-bottom: 10px;
-  /* border: 1px purple solid; */
 `;
 
-const LoginMessage = styled.div`
+const LoginMessage = styled.p`
   margin-bottom: 35px;
   text-align: center;
 `;
@@ -121,21 +116,10 @@ const LoginInputWrap = styled.div`
   align-items: center;
   margin-right: auto;
   margin-left: auto;
-  /* border: 1px green solid; */
 `;
 
-const UserInput = styled.input`
+const Input = styled.input`
   width: 85%;
-  /* width: 225px; */
-  padding: 10px 15px;
-  border: var(--mid-gray) 1px solid;
-  border-radius: 5px;
-  margin-bottom: 10px;
-`;
-
-const Email = styled.input`
-  width: 85%;
-  /* width: 225px; */
   padding: 10px 15px;
   border: var(--mid-gray) 1px solid;
   border-radius: 5px;
@@ -145,7 +129,6 @@ const Email = styled.input`
 const LoginButton = styled.button`
   color: var(--blue);
   width: 85%;
-  /* width: 225px; */
   padding: 10px 15px;
   border: var(--mid-gray) 1px solid;
   border-radius: 5px;
@@ -159,7 +142,7 @@ const LoginButton = styled.button`
 `;
 
 // Confirmation
-const Confirmation = styled.div`
+const Confirmation = styled.p`
   text-align: center;
   opacity: 75%;
   font-size: 14px;

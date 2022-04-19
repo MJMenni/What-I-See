@@ -3,31 +3,31 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <OuterWrap>
-      <InnerWrap>
+    <Container>
+      <Wrap>
         <NavLink
           to="/about"
           style={{ cursor: "pointer", textDecoration: "none" }}
         >
-          <About>ABOUT VSS</About>
+          <MenuItem>ABOUT VSS</MenuItem>
         </NavLink>
         <NavLink
           to="/resources"
           style={{ cursor: "pointer", textDecoration: "none" }}
         >
-          <Resources>RESOURCES</Resources>
+          <MenuItem>RESOURCES</MenuItem>
         </NavLink>
-      </InnerWrap>
+      </Wrap>
       <NavLink to="/">
         <LogoWrap>
           <Logo src="assets/logoColor.png" alt="Round logo with eye"></Logo>
         </LogoWrap>
       </NavLink>
-    </OuterWrap>
+    </Container>
   );
 };
 
-const OuterWrap = styled.div`
+const Container = styled.div`
   width: 100%;
   height: 50px;
   margin-bottom: 300px;
@@ -35,19 +35,13 @@ const OuterWrap = styled.div`
   background-color: var(--blue);
 `;
 
-const InnerWrap = styled.div`
+const Wrap = styled.div`
   font-weight: 900;
   display: flex;
   justify-content: space-between;
 `;
 
-const About = styled.div`
-  color: white;
-  font-size: 18px;
-  margin-top: -5px;
-`;
-
-const Resources = styled.div`
+const MenuItem = styled.div`
   color: white;
   font-size: 18px;
   margin-top: -5px;

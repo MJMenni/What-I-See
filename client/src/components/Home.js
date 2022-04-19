@@ -49,6 +49,7 @@ const Home = () => {
       note,
     };
 
+    // Add current stats to user's account
     fetch("/api/add-stats", {
       method: "PATCH",
       headers: {
@@ -69,7 +70,7 @@ const Home = () => {
   };
 
   return (
-    <Wrap>
+    <Container>
       <AboutTitle>What I See</AboutTitle>
       <AboutWrap>
         <AboutCopy>
@@ -161,7 +162,6 @@ const Home = () => {
           </Slider>
         </SliderWrap>
       </SliderOuterWrap>
-
       <SectionTitle>HALOS</SectionTitle>
       <HaloWrap>
         <SliderWrap>
@@ -181,7 +181,6 @@ const Home = () => {
           </Slider>
         </SliderWrap>
       </HaloWrap>
-
       <Tinnitus
         audio={audio}
         setAudio={setAudio}
@@ -206,49 +205,19 @@ const Home = () => {
           <Login />
         </LoginWrap>
 
-        <SignupWrap>
+        <LoginWrap>
           <Signup />
-        </SignupWrap>
+        </LoginWrap>
       </LoginSignupWrap>
       <StatsWrap>
         <SectionTitle>MY STATS</SectionTitle>
         <Stats onSave={onSave} />
       </StatsWrap>
-    </Wrap>
+    </Container>
   );
 };
 
-const HaloWrap = styled.div`
-  background-color: var(--light-gray);
-  width: 72%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 25px 0px;
-  border-radius: 5px;
-`;
-
-const LoginSignupWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  max-width: 85%;
-  justify-content: space-evenly;
-  margin-right: auto;
-  margin-left: auto;
-  /* border: 3px yellow solid; */
-`;
-
-const LoginWrap = styled.div`
-  width: 38%;
-  /* border: 1px green solid; */
-`;
-
-const SignupWrap = styled.div`
-  width: 38%;
-  /* border: 1px gray solid; */
-`;
-
-// Outer wrap
-const Wrap = styled.div`
+const Container = styled.div`
   max-width: 956px;
   margin-left: auto;
   margin-right: auto;
@@ -267,7 +236,7 @@ const AboutWrap = styled.div`
   margin-bottom: 50px;
 `;
 
-const AboutCopy = styled.div`
+const AboutCopy = styled.p`
   font-size: 18px;
   text-align: justify;
   line-height: 24px;
@@ -301,7 +270,6 @@ const Italic = styled.span`
 const SectionTitle = styled.div`
   font-size: 20px;
   font-weight: 900;
-  text-align: left;
   width: 72%;
   margin: 60px 0px 20px 0px;
   margin-left: auto;
@@ -325,9 +293,13 @@ const SliderWrap = styled.div`
   margin-top: 20px;
   max-width: 85%;
   display: flex;
-  flex-direction: column;
   padding: 10px 0px;
-  /* border: 1px green solid; */
+`;
+
+const SliderLabel = styled.span`
+  width: 75px;
+  font-weight: 600;
+  font-size: 16px;
 `;
 
 const Slider = styled.div`
@@ -340,12 +312,6 @@ const Slider = styled.div`
   justify-content: space-between;
 `;
 
-const SliderLabel = styled.div`
-  width: 75px;
-  font-weight: 600;
-  font-size: 16px;
-`;
-
 const Input = styled.input`
   -webkit-appearance: none;
   height: 7px;
@@ -355,16 +321,21 @@ const Input = styled.input`
   background-repeat: no-repeat;
 `;
 
-const CurrentValue = styled.div`
+const CurrentValue = styled.span`
   margin-right: 10px;
 `;
 
-// Stats
-const StatsWrap = styled.div`
-  padding-bottom: 75px;
+// Halos
+const HaloWrap = styled.div`
+  background-color: var(--light-gray);
+  width: 72%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 0px;
+  border-radius: 5px;
 `;
 
-// Notes section
+// Notes
 const NotesWrap = styled.div`
   display: flex;
   max-width: 956px;
@@ -387,6 +358,25 @@ const NotesInput = styled.textarea`
   &:focus::placeholder {
     color: white;
   }
+`;
+
+// Login and signup
+const LoginSignupWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 85%;
+  justify-content: space-evenly;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
+const LoginWrap = styled.div`
+  width: 38%;
+`;
+
+// Stats
+const StatsWrap = styled.div`
+  padding-bottom: 75px;
 `;
 
 export default Home;

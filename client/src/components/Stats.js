@@ -63,7 +63,7 @@ const Stats = ({ onSave }) => {
 
 const AllStatsWrap = styled.div`
   overflow-x: scroll;
-  max-height: 800px;
+  max-height: 750px;
   ::-webkit-scrollbar {
     display: none;
   }
