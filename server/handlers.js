@@ -71,7 +71,7 @@ const handleSignup = async (req, res) => {
   }
 };
 
-// In progress, needs to be updated for addStats
+// Add user's current stats
 const addStats = async (req, res) => {
   const client = new MongoClient(MONGO_URI, options);
   try {
@@ -100,35 +100,8 @@ const addStats = async (req, res) => {
   }
 };
 
-//In progress, needs to be updated for addStats
-const getStats = async (req, res) => {
-  const client = new MongoClient(MONGO_URI, options);
-  try {
-    await client.connect();
-    const db = client.db("WhatISee");
-    const { stats } = req.body;
-    // const user = await db.collection("users").findOne({ email: emailInput });
-    if (!stats) {
-      return res.status(401).json({
-        status: 401,
-        message: "Cannot find data",
-      });
-    }
-
-    return res.status(200).json({
-      status: 200,
-      data: stats,
-    });
-  } catch (err) {
-    res.status(500).json({ status: "Error", data: req.body, msg: err.message });
-  } finally {
-    client.close();
-  }
-};
-
 module.exports = {
   handleLogin,
   handleSignup,
   addStats,
-  getStats,
 };

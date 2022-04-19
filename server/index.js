@@ -12,7 +12,7 @@ const PORT = 4000;
 
 let https = require("https");
 
-const { handleLogin, handleSignup, addStats, getStats } = require("./handlers");
+const { handleLogin, handleSignup, addStats } = require("./handlers");
 
 const options = {
   useNewUrlParser: true,
@@ -106,11 +106,11 @@ express()
     //   });
   })
 
-  .get("/api/get-stats", getStats)
-
   // POST endpoints
   .post("/api/login", handleLogin)
   .post("/api/signup", handleSignup)
+
+  // PATCH endpoint
   .patch("/api/add-stats", addStats)
 
   // Catch-all endpoint
