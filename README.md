@@ -9,3 +9,7 @@ Through a variety of settings, users can recreate their symptoms to better commu
 ## Home Page
 
 ![What I See - Main page](https://user-images.githubusercontent.com/97915345/167015635-c35857c5-d3b2-48a6-b9da-974c497883c2.jpg)
+
+
+## Resources Page
+![Resources](https://user-images.githubusercontent.com/97915345/167020638-f822bf89-3d51-481b-a868-67f4af4bf207.jpg)
