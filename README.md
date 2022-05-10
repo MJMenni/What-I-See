@@ -15,6 +15,6 @@ The About VSS page includes a general description of Visual Snow Syndrome (VSS) 
 
 
 ## Resources Page
-The Resources page includes links to three important VSS resources: the Visual Snow Initiative (VSI), the *You Are Not Alone!* VSS Reddit group, and the American Tinnitus Association. It also includes a newsfeed section that showcases breaking news stories about VSS, which was achieved using the Bing News API.
+The Resources page includes links to three important VSS resources: the Visual Snow Initiative (VSI), the *You Are Not Alone!* VSS Reddit group, and the American Tinnitus Association. It also includes a newsfeed section that showcases the latest news stories about VSS, which was achieved using the Bing News API.
 
 ![Resources](https://user-images.githubusercontent.com/97915345/167020638-f822bf89-3d51-481b-a868-67f4af4bf207.jpg)
